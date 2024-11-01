@@ -1,0 +1,27 @@
+@media (max-width: 798px){
+ .container {
+    margin: 0 auto; /* Centraliza horizontalmente */
+    display: block; /* Usar flexbox */
+    justify-content: center; /* Centraliza horizontalmente os itens */
+    align-items: center; /* Centraliza verticalmente os itens */ 
+}
+
+
+}
+
+@media (max-width: 987px){
+
+   .cont{
+     display:block;
+
+   }
+   }
+
+@media (min-width: 798px){
+    .container{
+        display:flex;
+    }
+}
+
+ 
+
