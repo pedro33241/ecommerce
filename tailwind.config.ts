@@ -11,11 +11,12 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-      },
-      screens: {
-        'sm': '70px',
+      },   
+      
+      screens: {  
+        'sx': '0px', 
         'md': '899px', 
-        'mf': '900px', 
+        'mf': '930px',  
         'lg': '1087px',
         'xl': '1280px',
       },

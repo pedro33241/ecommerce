@@ -14,10 +14,11 @@ export default function Home() {
   <div className="cover">     
      <div className="back">
         <div className="back2">
-          <h1 className=" text-white font-bold text-[58px] ">
-            Faça suas compras na D2 Dinâmico e <br /> receba seu pedido em questão de minutos!
+          <h1 className=" text-white font-bold xl:text-6xl  mf:text-4xl text-2xl">
+            Faça suas compras na D2 Dinâmico e <br/>
+            receba seu pedido em questão de minutos!
           </h1>
-          <div className=" text-white text-2xl font-normal">
+        <div className=" text-white mf:text-lg xl:text-xl font-normal md:base">
           Aproveite ao máximo cada segundo! Com nossa entrega em apenas 15 minutos, você não perderá nenhum momento!
           </div>
         </div>
@@ -28,7 +29,7 @@ export default function Home() {
     <div className="p-7 justify-center mx-auto flex flex-wrap gap-24 mt-2 border border-[#e4e7e9]">
    
    
-    <aside className="flex flex-row gap-4 border-r pr-20">
+    <aside className="flex flex-row gap-4 md:border-r md:pr-24">
      
      <Image
      src="/entrega.svg"
@@ -43,7 +44,7 @@ export default function Home() {
       </div>
     </aside>
 
-    <aside className="flex flex-row gap-4 border-r pr-20">
+    <aside className="flex flex-row gap-4 md:border-r md:pr-24">
      
      <Image
      src="/trop.svg"
@@ -59,7 +60,7 @@ export default function Home() {
       <span className="font-normal text-[14px]">Garantia de devolução de <br/> 100% do dinheiro</span>
       </div>
     </aside>
-    <aside className="flex flex-row gap-4 border-r pr-20">
+    <aside className="flex flex-row gap-4 md:border-r md:pr-24">
      
      <Image
      src="/pagamento.svg"
@@ -74,7 +75,7 @@ export default function Home() {
       </div>
     </aside>
 
-    <aside className="flex flex-row gap-4">
+    <aside className="flex flex-row gap-4 ">
      
      <Image
      src="/music.svg"

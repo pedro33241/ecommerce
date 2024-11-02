@@ -1,0 +1,11 @@
+.container{
+    display:block
+}
+
+@media (max-width: 930px){
+    .container {
+         display: none; /* Usar flexbox */
+      }
+   
+   
+   }
