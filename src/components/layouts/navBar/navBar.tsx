@@ -12,11 +12,13 @@ export function NavBar() {
 const handleClick = ()=>{
     setIsVisible(false)
 }
+const phone = 947032985;
+const menssage = "Olá! Estou interessado(a) em um produto da sua empresa. Poderia me fornecer mais informações sobre ele, como preço, disponibilidade e características? Obrigado(a)!"
     return(
       <>
       <div className="h-[80px] w-full bg-[#0071c1] flex m-0 justify-between">
           <div className="ml-10">
-              <Link href="">
+              <Link href="/">
                   <Image
                       src="/logo.svg"
                       alt="logo"
@@ -36,28 +38,9 @@ const handleClick = ()=>{
               <div className="flex  flex-row gap-1">
                                
              
-                          <Image
-                              src="/payment.svg"
-                              alt="payment"
-                              width={32}
-                              height={32}
-                              className=""
-                          />
-                          <Image
-                              src="/follow.svg"
-                              alt="follow"
-                              width={32}
-                              height={32}
-                              className="m-3"
-                          />
-                          <Image
-                              src="/User.svg"
-                              alt="User"
-                              width={32}
-                              height={32}
-                              className="m-3"
-                          />
-                
+              <Link href="/" className="m-3 text-white ">Home</Link>
+              <Link href="/product" className="m-3 text-white ">Produtos</Link>
+              
                 
               
                     
@@ -83,8 +66,8 @@ const handleClick = ()=>{
                       <span className="mf:text-[14px] sx:text-sm text-white font-medium mt-8 ml-3">de Desconto</span>
                       </div>
                   <div>
-                      <button className="outline-none flex mt-4 mb-3 gap-1 mr-10 bg-[#ebc80c] pl-7 rounded-[2px] w-[194px] h-[48px]">
-                          <span className="font-bold sx:text-xs md:text-[14px] text-[#191c1f] sx:mt-4 md:mt-3">COMPRE AGORA</span>
+                      <Link href={`https://wa.me/${phone}?text=${menssage}`} className="outline-none flex mt-4 mb-3 gap-1 mr-10 bg-[#ebc80c] pl-7 rounded-[2px] w-[194px] h-[48px]">
+                          <span className="font-bold sx:text-xs md:text-[14px] text-[#191c1f] sx:mt-4 md:mt-4">COMPRE AGORA</span>
                           <Image
                               src="/set.svg"
                               alt="seta"
@@ -92,13 +75,13 @@ const handleClick = ()=>{
                               height={20}
                               className="m-3"
                           />
-                      </button>
+                      </Link>
                   </div>
               </div>
 
               <button onClick={handleClick} className="outline-none w-[32px] h-[32px] bg-[#303639] top-5 rounded-[2px] absolute right-6">
                   <Image
-                      src="/closed.svg"
+                      src="/X.svg"
                       alt="closed"
                       width={16}
                       height={16}

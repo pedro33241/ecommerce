@@ -1,11 +1,16 @@
 
+"use client"
+
 import { NavBar } from "@/components/layouts/navBar/navBar";
 import "./globals.css"
 import {Product} from "../components/product";
 
+import {Footer} from "../components/footer/footer";
+
 import {Product2} from "../components/product2";
 
-import {Publicity} from "../components/publicity";
+import {Publicity} from "../components/publicity"
+import {PublicityProductSecond} from "../components/publicity2";
 import Image from "next/image"
 export default function Home() {
   return (
@@ -96,9 +101,16 @@ export default function Home() {
     <Product/>
 
     <Publicity/>
-    
+    <div className="flex flex-col md:flex-row gap-8 mx-auto ">
+    <PublicityProductSecond />
+    <Product2 />
+</div>
 
-    <Product2/>
-   </>
+<Footer/>
+ 
+ </>
   );
 }
+
+
+ 

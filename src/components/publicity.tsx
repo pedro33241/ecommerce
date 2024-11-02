@@ -1,8 +1,14 @@
 import Image from "next/image"
 import style from "./style.module.css"
+import Link from 'next/link';
+
 
 export function Publicity()
+
 {
+    const phone = 947032985;
+const menssage = "Olá! Estou interessado(a) em dos produtos de sua empresa. Poderia me fornecer mais informações sobre ele, como preço, disponibilidade e características? Obrigado(a)!";
+ 
     return(
         <>
 
@@ -11,18 +17,20 @@ export function Publicity()
     <label htmlFor="" className="font-normal md:text-[18px] sm:text-[14px] md:w-[195px] sm:w-[165px] bg-[#2591d2] py-[6px] px-[12px] ">Economizar até 20%</label>
     <div>
         <h2 className="font-semibold md:text-[36px]  sm:text-[24px]">Produtos de Limpeza</h2>
-        <span className="w-[360px] md:text-[16px] sm:text-[14px]">Lorem Ipsum has been the  standard dummy text ever since the 1500s, when an unknown </span>
+        <span className="w-[360px] md:text-[16px] sm:text-[14px]">Descubra nossa linha completa de produtos de limpeza e muito mais! Oferecemos tudo o que você precisa para manter sua casa e seu ambiente de trabalho impecáveis. </span>
     </div>
 
-    <button className="rounded-[4px]  bg-[#fa8232] py-[12px] px-[32px] text-white md:w-[206px] sm:w-[180px]  sm:text-[14px] flex flex-row gap-3 " > Compre&nbsp;agora 
+    <Link  href={`https://wa.me/${phone}?text=${menssage}`} className="rounded-[4px]  bg-[#fa8232] py-[12px] px-[32px] text-white md:w-[206px] sm:w-[180px]  sm:text-[14px] flex flex-row gap-3 " > 
+    Compre&nbsp;agora 
 <Image
 alt=""
 src="setD.svg"
 width={24}
 height={24}/>
 
-</button>
+</Link>
 </div>
+
 <Image
 alt=""
 src="publicity.svg"

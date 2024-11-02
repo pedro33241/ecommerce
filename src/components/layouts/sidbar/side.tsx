@@ -33,7 +33,7 @@ export function AccountMenu() {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
           >
-            <Avatar sx={{ background: "#0071c1", width: 100, height: 40 }}>
+            <Avatar sx={{ background: "#0071c1", width: 40, height: 40 }}>
               <svg
                 className="w-6 h-6"
                 fill="none"
@@ -62,13 +62,11 @@ export function AccountMenu() {
           elevation: 0,
           sx: {
             overflow: "visible",
-            width: 200,
+            width: "120%",
             height: "40%",
             filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.3))",
-            mt: 1.5,
-            "& .MuiAvatar-root": {
-              ml: -0.5,
-              mr: 1,
+            mt: 2,
+            "& .MuiAvatar-root": {  
             },
             "&::before": {
               content: '""',
@@ -104,45 +102,18 @@ export function AccountMenu() {
           </MenuItem>
         </Link>
 
-        <Link href="/#servises" prefetch={true}>
+        <Link href="/product" prefetch={true}>
           {" "}
           <MenuItem onClick={handleClose} className="p-5">
             <ListItemIcon>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                className="bi bi-layout-text-sidebar"
-                viewBox="0 0 16 16"
-              >
-                <path d="M3.5 3a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM3 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z" />
-                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm12-1v14h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm-1 0H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h9z" />
-              </svg>
-            </ListItemIcon>
-            Serviços
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+</svg> </ListItemIcon>
+            Produtos
           </MenuItem>
         </Link>
 
-        <Link href="/about" prefetch={true}>
-          {" "}
-          <MenuItem onClick={handleClose} className="p-5">
-            <ListItemIcon>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                className="bi bi-buildings"
-                viewBox="0 0 16 16"
-              >
-                <path d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022M6 8.694 1 10.36V15h5zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5z" />
-                <path d="M2 11h1v1H2zm2 0h1v1H4zm-2 2h1v1H2zm2 0h1v1H4zm4-4h1v1H8zm2 0h1v1h-1zm-2 2h1v1H8zm2 0h1v1h-1zm2-2h1v1h-1zm0 2h1v1h-1zM8 7h1v1H8zm2 0h1v1h-1zm2 0h1v1h-1zM8 5h1v1H8zm2 0h1v1h-1zm2 0h1v1h-1zm0-2h1v1h-1z" />
-              </svg>
-            </ListItemIcon>
-            Sobre&nbsp;Nós
-          </MenuItem>
-        </Link>
+         
 
         {/*   <Link href="#news"  prefetch={true}> <MenuItem onClick={handleClose} className="p-5">
           <ListItemIcon>
