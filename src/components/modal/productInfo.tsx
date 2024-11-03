@@ -32,7 +32,7 @@ export function ModalProduct(product: any) {
   };
   console.log(product)
 
-  const formatCurrency = (value, currency = 'AOA') => {
+  const formatCurrency = (value:any, currency = 'AOA') => {
     return new Intl.NumberFormat('pt-AO', {
         style: 'currency',
         currency: currency,
@@ -81,7 +81,7 @@ const phone = 947032985;
        
     <div className="mt-10 flex sx:flex-col gap-10 md:flex-row justify-between">
     <div className="border boder-gray-900">
-    <img 
+    <Image 
     alt="produto"
     src={`${product?.product?.srcImage}`}
     width={200}
