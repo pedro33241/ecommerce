@@ -59,7 +59,7 @@ export function Footer(){
     /> 
  Copyright® 2D DINÂMICO 2024 . Todos os direitos reservados.
 </aside>
-<div className="flex sx:flex-col md:flex-row w-full md:gap-36 sx:gap:16">
+<div className="flex sx:flex-col md:flex-row w-full md:gap-36 sx:gap-10">
    
 
 <aside className="flex flex-col gap-3 ">

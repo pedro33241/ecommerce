@@ -43,8 +43,9 @@ export function ModalProductFirst(product: dataType) {
 
   const phone = 947032985;
 
-  const handleDialogClose2 = (_event: React.SyntheticEvent, reason?: string) => {
-    if (reason === "backdropClick" || reason === "escapeKeyDown") {
+  const handleDialogClose2 = (event: React.MouseEvent<HTMLDivElement>) => {
+    const dialogContent = event.currentTarget.querySelector('.MuiDialogContent-root');
+    if (dialogContent && !dialogContent.contains(event.target as Node)) {
       handleClose2();
     }
   };
@@ -55,6 +56,7 @@ export function ModalProductFirst(product: dataType) {
         open={openProductSecond}
         TransitionComponent={Transition}
         keepMounted 
+        onClose={handleClose2} // Adicione onClose aqui
         onClick={handleDialogClose2}
         aria-describedby="alert-dialog-slide-description"
         className="bg-gray"
@@ -62,7 +64,6 @@ export function ModalProductFirst(product: dataType) {
           style: { backgroundColor: "rgba(0, 0, 0, 0.6)" },
         }}
         disableEscapeKeyDown
-       
       >
         <DialogContent>
           <div className="mt-4 flex flex-col gap-4">
@@ -81,7 +82,7 @@ export function ModalProductFirst(product: dataType) {
               <h2 className="text-base font-semibold">Preço {formatCurrency(product?.product?.price)}</h2>
               <Link
                 href={`https://wa.me/${phone}?text=Olá! Estou interessado(a) no produto ${product?.product?.nameProduct} que esta no valor de ${formatCurrency(product?.product?.price)}. Poderia me fornecer mais informações sobre ele, disponibilidade e características? Obrigado(a)!`}
-                className="flex mt-4 gap-1 bg-[#F3DE6D] p-2 rounded-lg w-full justify-center" // Largura total
+                className="flex mt-4 gap-1 bg-[#F3DE6D] p-2 rounded-lg w-full justify-center"
               >
                 <span className="text-[#191c1f] font-medium">Comprar</span>
                 <Image
