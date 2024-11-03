@@ -16,15 +16,15 @@ const phone = 947032985;
 const menssage = "Olá! Estou interessado(a) em um produto da sua empresa. Poderia me fornecer mais informações sobre ele, como preço, disponibilidade e características? Obrigado(a)!"
     return(
       <>
-      <div className="h-[80px] w-full bg-[#0071c1] flex m-0 justify-between">
+      <div className=" h-[80px] w-full bg-[#0071c1] flex m-0 justify-between">
           <div className="ml-10">
               <Link href="/">
                   <Image
-                      src="/logo.svg"
+                      src="/logo2.jpeg"
                       alt="logo"
-                      width={122}
+                      width={152}
                       height={62}
-                      className="m-3"
+                      className="-mt-7"
                   />
               </Link>
           </div>

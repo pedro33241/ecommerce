@@ -1,4 +1,3 @@
-
 "use client"
 
 import { NavBar } from "@/components/layouts/navBar/navBar";
@@ -7,6 +6,8 @@ import {Product} from "../components/product";
 
 import {Footer} from "../components/footer/footer";
 
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react";
 import {Product2} from "../components/product2";
 
 import {Publicity} from "../components/publicity"
@@ -20,7 +21,7 @@ export default function Home() {
      <div className="back">
         <div className="back2">
           <h1 className=" text-white font-bold xl:text-5xl  mf:text-4xl text-2xl">
-            Faça suas compras na D2 Dinâmico e <br/>
+            Faça suas compras na DBSD e <br/>
             receba seu pedido em questão de minutos!
           </h1>
         <div className=" text-white mf:text-lg xl:text-xl font-normal md:base">
@@ -107,6 +108,8 @@ export default function Home() {
 </div>
 
 <Footer/>
+<Analytics />
+      <SpeedInsights /> 
  
  </>
   );

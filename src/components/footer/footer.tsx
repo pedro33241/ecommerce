@@ -47,17 +47,16 @@ export function Footer(){
 
 
 
-<div className="flex gap-10 sx:flex-col md:flex-row justify-between mx-auto px-24 py-32">
+<div className="flex gap-10   border border-t-gray-100 shadow-lg  sx:flex-col md:flex-row justify-between mx-auto px-24 py-32">
 
-<aside className="w-full  text-[#2E323A99] flex flex-col  ">
+<aside className="w-full text-[#2E323A99] flex flex-col  ">
 <Image 
         alt="star"
-        src="logo2.svg"
-        width={432}
-        height={128}
-        className="-mt-2" 
-    /> 
- Copyright® 2D DINÂMICO 2024 . Todos os direitos reservados.
+        src="/logo.jpg"
+        width={352}
+        height={8}
+        className="-mt-24" 
+    />  
 </aside>
 <div className="flex sx:flex-col md:flex-row w-full md:gap-36 sx:gap-10">
    

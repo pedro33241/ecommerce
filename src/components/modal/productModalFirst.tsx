@@ -56,7 +56,7 @@ export function ModalProductFirst(product: dataType) {
         open={openProductSecond}
         TransitionComponent={Transition}
         keepMounted 
-        onClose={handleClose2} // Adicione onClose aqui
+        onClose={handleClose2}  
         onClick={handleDialogClose2}
         aria-describedby="alert-dialog-slide-description"
         className="bg-gray"

@@ -1,22 +1,22 @@
-export const  dataProduct = [
+export const  dataProductLuz = [
     {id:1,
-        nameProduct:"Frigideira Antiaderente",
+        nameProduct:"CLEA | Lanterna LED",
         details:"Produto de compras",
-        srcImage:"frigideira.svg",
-        alt:"imagem de frigideira",
+        srcImage:"clea.svg",
+        alt:"imagem de Lanterna",
         price:10000
     },  {
         id:2,
-        nameProduct:"Panela de Pressão",
+        nameProduct:"CLEA | Lanterna Recarregável",
         details:"Produto de compras",
-        srcImage:"panela.svg",
-        alt:"imagem de panela",
+        srcImage:"clea2.svg",
+        alt:"imagem de Lanterna Recarregável",
         price:7000
     } , {
         id:3,
-        nameProduct:"Pratos",
+        nameProduct:"CLEA | Lanterna 50LED Bbright",
         details:"Produto de compras",
-        srcImage:"pratos.svg",
+        srcImage:"lanterna3.svg",
         alt:"imagem de pratos",
         price:11000
     } , {
@@ -28,25 +28,17 @@ export const  dataProduct = [
         price:5000
     }, {
         id:5,
-        nameProduct:"Tábua de Corte de Carne",
+        nameProduct:"CLEA | Lanterna 4V",
         details:"Produto de compras",
-        srcImage:"tabua.svg",
+        srcImage:"lanterna4.svg",
         alt:"imagem de tabua",
         price:5000
     },{
         id:6,
-        nameProduct:"Faqueiro",
+        nameProduct:"Lâmpada Led 5W/300K/GU5.3",
         details:"Produto de compras",
-        srcImage:"faqueiro.svg",
+        srcImage:"lanterna5.svg",
         alt:"imagem de facas",
         price:5000
-    },{
-        id:7,
-        nameProduct:"Talheres",
-        details:"Produto de compras",
-        srcImage:"talher.svg",
-        alt:"imagem de talher",
-        price:5000
     }
-  
 ]
