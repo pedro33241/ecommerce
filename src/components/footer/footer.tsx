@@ -4,7 +4,8 @@ import Link from 'next/link';
 export function Footer(){
 
     const phone = 947032985;
-const menssage = "Olá! Eu sou [Seu Nome] e estou interessado(a) no produto [Nome do Produto]. Poderia me fornecer mais informações sobre ele, como preço, disponibilidade e características? Obrigado(a)!"
+
+    const menssage = "Olá! Estou interessado(a) em um produto da sua empresa. Poderia me fornecer mais informações sobre ele, como preço, disponibilidade e características? Obrigado(a)!"
     return(
         <>
         <div id="contact" className=" relative w-full bg-[#f9fbfc] mt-36">
@@ -58,7 +59,7 @@ const menssage = "Olá! Eu sou [Seu Nome] e estou interessado(a) no produto [Nom
     /> 
  Copyright® 2D DINÂMICO 2024 . Todos os direitos reservados.
 </aside>
-<div className="flex sx:flex-col md:flex-row w-full md:gap-36 sx:gap:12">
+<div className="flex sx:flex-col md:flex-row w-full md:gap-36 sx:gap:16">
    
 
 <aside className="flex flex-col gap-3 ">
@@ -77,7 +78,7 @@ const menssage = "Olá! Eu sou [Seu Nome] e estou interessado(a) no produto [Nom
 
 <aside className="flex flex-col gap-3">
     <h3 className="sx:text-[13px] lg:text-[18px] text-[#191c1e]">Contactos </h3>
-    <Link href="" className="text-[#2E323A99] flex flex-row gap-3  text-[14px]">   <Image 
+    <Link href="tel:99947032985" className="text-[#2E323A99] flex flex-row gap-3  text-[14px]">   <Image 
         alt="star"
         src="Phone.svg"
         width={20}

@@ -7,7 +7,7 @@ export function Publicity()
 
 {
     const phone = 947032985;
-const menssage = "Olá! Estou interessado(a) em dos produtos de sua empresa. Poderia me fornecer mais informações sobre ele, como preço, disponibilidade e características? Obrigado(a)!";
+const menssage = "Olá! Estou interessado(a) em um dos produtos de sua empresa. Poderia me fornecer mais informações sobre ele, como preço, disponibilidade e características? Obrigado(a)!";
  
     return(
         <>
