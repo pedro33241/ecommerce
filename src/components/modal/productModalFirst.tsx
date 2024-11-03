@@ -29,7 +29,7 @@ type dataType = {
    }
 }
 
-export function ModalProduct(product: dataType) {
+export function ModalProductFirst(product: dataType) {
 
      
  const {open,handleClick} = useZustand()

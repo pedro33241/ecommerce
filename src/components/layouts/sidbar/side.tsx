@@ -14,9 +14,11 @@ import Link from "next/link";
 export function AccountMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-  const handleClick = (event: any) => {
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
-  };
+};
+
   const handleClose = () => {
     setAnchorEl(null);
   };
