@@ -6,8 +6,7 @@
   --background: #ffffff;
   --foreground: #fff;
    
-  --font-public-sans: 'Public Sans', sans-serif;
-}
+  font-family: "Poppins", sans-serif;}
 
 body {
   padding: 0;
@@ -17,9 +16,9 @@ body {
 }
 @media (min-width: 3000px) {
   body {
-    width: 2200px; /* Define a largura fixa */
-    margin: 0 auto; /* Centraliza o corpo horizontalmente */
-    overflow-x: hidden; /* Evita rolagem horizontal */
+    width: 2200px; 
+    margin: 0 auto; 
+    overflow-x: hidden; 
   }
 }
 

@@ -32,14 +32,13 @@ type dataType = {
 export function ModalProduct(product: dataType) {
 
      
- const {open,handleClick} = useZustand()
+ const {openProductFirst,handleClickFirst} = useZustand()
     
   const handleClose2 = () => {
   
-      handleClick(false);
+    handleClickFirst(false);
      
   };
-  console.log(product)
 
   const formatCurrency = (value:number, currency = 'AOA') => {
     return new Intl.NumberFormat('pt-AO', {
@@ -65,7 +64,7 @@ const phone = 947032985;
   return (
     <>
       <Dialog
-        open={open}
+        open={openProductFirst}
         TransitionComponent={Transition}
         keepMounted
         onClose={handleDialogClose2}
@@ -101,11 +100,11 @@ const phone = 947032985;
 
 <div className="w-[50%]" >
 <h2 className="md:text-[18px] sx:text-[16px] mf:text-[23px]">{product?.product?.nameProduct}</h2>
-<br/>
-<h2 className="md:text-[15px] sx:text-[14px] mf:text-[19px]">  Preço {formatCurrency(product?.product?.price)}</h2>
+
+<h2 className="md:text-[15px] sx:text-[14px] mf:text-[19px] font-semibold">  Preço {formatCurrency(product?.product?.price)}</h2>
 
 <Link href={`https://wa.me/${phone}?text=Olá! Estou interessado(a) no produto ${product?.product?.nameProduct} que esta no valor de ${formatCurrency(product?.product?.price)}. Poderia me fornecer mais informações sobre ele, disponibilidade e características? Obrigado(a)!`} className="outline-none flex mt-4 mb-3 gap-1 mr-10 bg-[#F3DE6D] pl-7 rounded-[2px] w-[150px] h-[48px]">
-                          <span className="font-bold sx:text-xs md:text-[14px] text-[#191c1f] sx:mt-4 md:mt-4">Comprar</span>
+                          <span className=" sx:text-xs md:text-[14px] text-[#191c1f] sx:mt-4 md:mt-4 font-medium">Comprar</span>
                           <Image
                               src="/set.svg"
                               alt="seta"

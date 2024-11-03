@@ -35,7 +35,7 @@ const menssage = "Olá! Estou interessado(a) em um produto da sua empresa. Poder
 
          <div className={`  ${style.container} mt-2 `}>
                     
-              <div className="flex  flex-row gap-1">
+              <div className="flex  flex-row gap-3 mr-5">
                                
              
               <Link href="/" className="m-3 text-white ">Home</Link>

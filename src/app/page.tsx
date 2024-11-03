@@ -19,7 +19,7 @@ export default function Home() {
   <div className="cover">     
      <div className="back">
         <div className="back2">
-          <h1 className=" text-white font-bold xl:text-6xl  mf:text-4xl text-2xl">
+          <h1 className=" text-white font-bold xl:text-5xl  mf:text-4xl text-2xl">
             Faça suas compras na D2 Dinâmico e <br/>
             receba seu pedido em questão de minutos!
           </h1>

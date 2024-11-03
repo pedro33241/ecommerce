@@ -26,5 +26,34 @@ export const  dataProduct = [
         srcImage:"copos.svg",
         alt:"imagem de copos",
         price:5000
+    }, {
+        id:5,
+        nameProduct:"Tábua de Corte de Carne",
+        details:"Produto de compras",
+        srcImage:"tabua.svg",
+        alt:"imagem de tabua",
+        price:5000
+    },{
+        id:6,
+        nameProduct:"Faqueiro",
+        details:"Produto de compras",
+        srcImage:"faqueiro.svg",
+        alt:"imagem de facas",
+        price:5000
+    },{
+        id:7,
+        nameProduct:"Talheres",
+        details:"Produto de compras",
+        srcImage:"talher.svg",
+        alt:"imagem de talher",
+        price:5000
+    }
+    ,{
+        id:8,
+        nameProduct:"Plainas Elétricas",
+        details:"Produto de compras",
+        srcImage:"plainas.svg",
+        alt:"imagem de plainas",
+        price:5000
     }
 ]

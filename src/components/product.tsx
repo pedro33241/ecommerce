@@ -16,18 +16,24 @@ type ProductType = {
 
 export function Product() {
     const [activeTab, setActiveTab] = useState<number>(0);
-    const { open, handleClick } = useZustand();
+    const { openProductSecond, handleClickSecond } = useZustand();
     const [data, setData] = useState<string>('');
-    const [product, setProduct] = useState<ProductType | null>(null); // Usando null inicialmente
+    const [product, setProduct] = useState<ProductType>({
+        id: 0,
+        nameProduct: "",
+        details: "",
+        srcImage:"",
+        alt: "",
+        price: 0,
+    }); 
 
     const handleTabChange = (index: number) => {
         setActiveTab(index);
     };
 
     const handleClickModal = (item: ProductType) => {
-        console.log("Produto clicado:", item); // Log do produto clicado
         setProduct(item);
-        handleClick(true); // Abrir o modal
+        handleClickSecond(true); 
     };
 
     const handleChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -82,29 +88,31 @@ export function Product() {
                             <div className="lg:ml-10 sm:ml-0 flex flex-wrap justify-center gap-10 mt-24">
                                 {filterProduct.length > 0 ? filterProduct.map((item: ProductType) => (
                                     <button 
-                                        key={item.id} // Adicione uma chave única
-                                        onClick={() => handleClickModal(item)} 
-                                        className="card border-[#e4e7e9] w-[317px] gap-3 flex flex-col border pb-3 rounded-[8px] pt-3 pr-2"
-                                    >
+                                    key={item.id} 
+                                    onClick={() => handleClickModal(item)} 
+                                    className="card border-[#e4e7e9] w-[317px] gap-3 flex flex-col border pb-3 rounded-[8px] pt-3 pr-2"
+                                >
+                                    <Image 
+                                        alt={item.alt}
+                                        src={item.srcImage}
+                                        width={250}
+                                        height={180} 
+                                        className="mx-auto h-[180px] w-[250px] object-cover" 
+                                    />
+                                    
+                                    <div className="ml-[18px] flex flex-col gap-1"> 
                                         <Image 
-                                            alt={item.alt}
-                                            src={item.srcImage}
-                                            width={250}
-                                            height={180} 
-                                            className="mx-auto h-[180px] w-[250px] object-cover" 
-                                        />
-                                        
-                                        <div className="ml-[18px] flex flex-col gap-4">
-                                            <Image 
-                                                alt="star"
-                                                src="star.svg"
-                                                width={80}
-                                                height={16}
-                                            />     
-                                            <h4 className="font-semibold text-[16px]">{item.nameProduct}</h4>
-                                            <span className="text-[#2da5f3]">Detalhe do Produto</span>
-                                        </div>
-                                    </button>
+                                            alt="star"
+                                            src="star.svg"
+                                            width={80}
+                                            height={16}
+                                            className="mb-1"
+                                        />     
+                                        <h4 className="font-semibold text-[16px] text-left">{item.nameProduct}</h4>
+                                        <span className="text-[#2da5f3] text-left">Detalhe do Produto</span> 
+                                    </div>
+                                </button>
+                                
                                 )) : (
                                     <div className="mx-auto gap-3 flex flex-col justify-center items-center text-gray-400 text-xl h-full">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
@@ -114,7 +122,7 @@ export function Product() {
                                     </div>
                                 )}
 
-                                {open && product && (
+                                {openProductSecond  && (
                                     <ModalProductFirst product={product} />
                                 )}
                             </div>

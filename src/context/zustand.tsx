@@ -2,11 +2,15 @@ import { create } from 'zustand';
 
 
 type zustandData = {
-    open: boolean;
-    handleClick: (value: boolean) => void;
+    openProductFirst: boolean;
+    openProductSecond: boolean;
+    handleClickFirst: (value: boolean) => void;
+    handleClickSecond: (value: boolean) => void;
 }
 
 export const useZustand = create<zustandData>((set) => ({
-    open: false,
-    handleClick: (value: boolean) => set({ open: value })
+    openProductFirst: false,
+    openProductSecond: false,
+    handleClickFirst: (value: boolean) => set({ openProductFirst: value }),
+    handleClickSecond: (value: boolean) => set({ openProductSecond: value })
 }));
