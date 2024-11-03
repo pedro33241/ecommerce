@@ -17,7 +17,7 @@ const menssage = "Olá! Estou interessado(a) em um produto da sua empresa. Poder
     return(
       <>
       <div className=" h-[80px] w-full bg-[#0071c1] flex m-0 justify-between">
-          <div className="ml-10">
+          <div className="">
               <Link href="/">
                   <Image
                       src="/logo2.jpeg"
