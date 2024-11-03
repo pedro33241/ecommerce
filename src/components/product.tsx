@@ -56,7 +56,7 @@ export function Product() {
                 <h1 className="font-semibold ml-10 lg:text-[22px] sm:text-[19px] text-black">Categorias De Produtos</h1>
 
                 <div className="tabs mt-7 ml-10 flex flex-wrap gap-4 justify-between">
-               <div className="flex flex-row gap-5">
+               <div className="flex flex-wrap gap-5">
                <button 
                         className={`bg-[#DEFADE] text-[#32cd32] flex flex-row gap-4 pt-4 rounded-[15px] w-[210px] h-[60px] justify-center px-2 py-auto text-[14px] font-medium ${activeTab === 0 ? "active" : ""}`}
                         onClick={() => handleTabChange(0)}
