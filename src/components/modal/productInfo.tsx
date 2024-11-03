@@ -41,7 +41,7 @@ export function ModalProduct(product: dataType) {
   };
   console.log(product)
 
-  const formatCurrency = (value:any, currency = 'AOA') => {
+  const formatCurrency = (value:number, currency = 'AOA') => {
     return new Intl.NumberFormat('pt-AO', {
         style: 'currency',
         currency: currency,
