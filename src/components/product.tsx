@@ -1,10 +1,7 @@
 "use client";
 import Image from "next/image"; 
 import { ModalProductFirst } from "./modal/productModalFirst";
-import { UseSearch } from "@/hook/useSearch";
-import { electricalProduct } from "./mook/electricalProduct";
-import { accessoryProducts } from "./mook/accessoryProducts";
-
+import { UseSearch } from "@/hook/useSearch"; 
 
 type ProductType = {
     id: number;
