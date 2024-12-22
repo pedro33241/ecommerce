@@ -98,6 +98,7 @@ export function Product() {
             
                         {objectMaterial.map((item) => (
                             <button
+                                key={item.id}
                                 className={` flex flex-row gap-4 pt-4 rounded-[15px] h-[60px] justify-center px-4 py-auto text-[14px] font-medium ${activeTab === item?.id ? "active" : ""}`}
                                 style={{ background: `${item?.background}`, color:`${ item?.color}`}}
                                 onClick={() => handleTabChange(item?.id)}
