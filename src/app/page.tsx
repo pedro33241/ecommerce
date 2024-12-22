@@ -15,7 +15,7 @@ import { PublicityProductSecond } from "../components/publicity2";
 import Image from "next/image"
 
 import { motion, useInView } from "framer-motion";
-import { useState, useRef } from "react";
+import {  useRef } from "react";
 export default function Home() {
 
 
