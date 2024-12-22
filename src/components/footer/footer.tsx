@@ -8,14 +8,18 @@ export function Footer(){
     const menssage = "Olá! Estou interessado(a) em um produto da sua empresa. Poderia me fornecer mais informações sobre ele, como preço, disponibilidade e características? Obrigado(a)!"
     return(
         <>
-        <div id="contact" className=" relative w-full bg-[#f9fbfc] mt-36">
+            <div id="contact" className=" relative w-full bg-[#f9fbfc] mt-36" style={{
+                borderTop: '1px solid',
+                borderImageSource: 'linear-gradient(90deg, rgba(1, 2, 2, 0.16) 0%, rgba(255, 255, 255, 0.16) 50%, rgba(1, 2, 2, 0.16) 100%)',
+                borderImageSlice: 1
+            }}>
 
        
         <Image 
                       alt="star"
                       src="img.svg"
                       width={116}
-                      className="-mt-2 top-0 absolute left-0"
+                      className=" top-0 absolute left-0"
                       height={124}
                       /> 
 
@@ -23,7 +27,7 @@ export function Footer(){
                       alt="star"
                       src="img.svg"
                       width={116}
-                      className="-mt-2 top-0 absolute right-0"
+                      className=" top-0 absolute right-0"
                       height={124}
                       /> 
 
@@ -84,26 +88,26 @@ export function Footer(){
         height={20} 
     />  (+244)&nbsp;954949449</Link>
 
-     <Link  href={`https://wa.me/${phone}?text=${menssage}`}   className="text-[#2E323A99] flex flex-row gap-3 text-[14px] ">   <Image 
+                            <Link href={`https://wa.me/${phone}?text=${menssage}`} target="_blank"   className="text-[#2E323A99] flex flex-row gap-3 text-[14px] ">   <Image 
         alt="star"
         src="zap.svg"
         width={20}
         height={20} 
     />  (+244)&nbsp;954949449</Link>
 
-<Link href="" className=" text-[#2E323A99] flex flex-row gap-3 text-[14px] ">   <Image 
+                            <Link href="tel:954949449" target="_blank" className=" text-[#2E323A99] flex flex-row gap-3 text-[14px] ">   <Image 
         alt="star"
         src="Phone.svg"
         width={20}
         height={20} 
     />  (+244)&nbsp;954949449</Link>
 
-<Link href="" className=" text-[#2E323A99]  flex flex-row gap-3  text-[14px]">   <Image 
+                            <Link href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank" className=" text-[#2E323A99]  flex flex-row gap-3  text-[14px]">   <Image 
         alt="star"
         src="email.svg"
         width={20}
         height={20} 
-    />  cliente@gmail.com</Link>
+    />  dbsd@gmail.com</Link>
 </aside>
 </div>
 

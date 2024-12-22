@@ -13,7 +13,37 @@ import { Product2 } from "../components/product2";
 import { Publicity } from "../components/publicity"
 import { PublicityProductSecond } from "../components/publicity2";
 import Image from "next/image"
+
+import { motion, useInView } from "framer-motion";
+import { useState, useRef } from "react";
 export default function Home() {
+
+
+
+  const variant = {
+    initial: { opacity: 0, y: 50 },
+    animate: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 50, damping: 25, duration: 1.5 } }
+  };
+
+
+  const ref0 = useRef(null);
+  const isInView0 = useInView(ref0, { once: true });
+
+  const ref1 = useRef(null);
+  const isInView1 = useInView(ref1, { once: true });
+
+  const ref2= useRef(null);
+  const isInView2 = useInView(ref2, { once: true });
+
+  const ref3 = useRef(null);
+  const isInView3 = useInView(ref3, { once: true });
+
+
+  const ref4 = useRef(null);
+  const isInView4 = useInView(ref4, { once: true });
+
+
+
   return (
     <>
       <NavBar />
@@ -30,7 +60,13 @@ export default function Home() {
           </div>
         </div>
       </div>
-
+      <motion.div
+        ref={ref0}
+        initial="initial"
+        animate={isInView0 ? "animate" : "initial"}
+        transition={{ duration: 0.2, delay: 0 }}
+        variants={variant}
+      > 
 
       <div className="p-7 justify-center mx-auto flex flex-wrap gap-24 mt-2 border border-[#e4e7e9]">
 
@@ -50,6 +86,8 @@ export default function Home() {
           </div>
         </aside>
 
+
+ 
         <aside className="flex flex-row gap-4 md:border-r md:pr-24">
 
           <Image
@@ -96,15 +134,52 @@ export default function Home() {
           </div>
         </aside>
 
-
       </div>
 
+      </motion.div>
+      <motion.div
+        ref={ref1}
+        initial="initial"
+        animate={isInView1 ? "animate" : "initial"}
+        transition={{ duration: 0.2, delay: 0 }}
+        variants={variant}
+      > 
       <Product />
 
-      <Publicity />
+
+      </motion.div>
+      <motion.div
+        ref={ref2}
+        initial="initial"
+        animate={isInView2 ? "animate" : "initial"}
+        transition={{ duration: 0.2, delay: 0 }}
+        variants={variant}
+      > 
+        <Publicity />
+
+      </motion.div>
+    
       <div className="flex flex-col md:flex-row gap-8 mx-auto ">
-        <PublicityProductSecond />
-        <Product2 />
+          <motion.div
+            ref={ref3}
+            initial="initial"
+            animate={isInView3 ? "animate" : "initial"}
+            transition={{ duration: 0.2, delay: 0 }}
+            variants={variant}
+          >
+            <PublicityProductSecond />
+          </motion.div>
+
+        <motion.div
+          ref={ref4}
+          initial="initial"
+          animate={isInView4 ? "animate" : "initial"}
+          transition={{ duration: 0.2, delay: 0 }}
+          variants={variant}
+        > 
+          <Product2 />
+        </motion.div>
+
       </div>
 
       <Footer />

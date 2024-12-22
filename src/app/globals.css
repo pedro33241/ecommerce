@@ -16,7 +16,7 @@ body {
 }
 @media (min-width: 3000px) {
   body {
-    width: 2200px; 
+    width: 1800px; 
     margin: 0 auto; 
     overflow-x: hidden; 
   }
@@ -28,7 +28,7 @@ body {
   width: 100%; 
   font-weight: 500;
   height: 100vh;
- background-image: url('../../public/cover.jpg');
+ background-image: url('../../public/cover.png');
   background-size: cover;
   background-position: center;
 }

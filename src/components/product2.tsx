@@ -47,7 +47,7 @@ export function Product2() {
                             <button
                                 key={item.id}
                                 onClick={() => handleClickModal(item)}
-                                className="card border-[#e4e7e9] w-[317px] gap-3 flex flex-col border pb-3 rounded-[8px] pt-3 pr-2  transition-transform duration-300 hover:scale-110 "
+                                className="card border-[#e4e7e9] sx:w-[250px] md:w-[317px]  gap-3 flex flex-col border pb-3 rounded-[8px] pt-3 pr-2  transition-transform duration-300 hover:scale-110 "
 
                             >
                                 <Image

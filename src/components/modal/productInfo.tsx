@@ -84,7 +84,7 @@ export function ModalProduct(product: dataType) {
 
               <Link
                 href={`https://wa.me/${phone}?text=Olá! Estou interessado(a) no produto ${product?.product?.nameProduct} que esta no valor de ${formatCurrency(product?.product?.price)}. Poderia me fornecer mais informações sobre ele, disponibilidade e características? Obrigado(a)!`}
-                className="flex mt-4 gap-1 bg-[#F3DE6D] p-2 rounded-lg w-full justify-center"
+                className="flex mt-4 gap-1 bg-[#F3DE6D] p-2 rounded-lg w-full justify-center" target="_blank"
               >
                 <span className="text-[#191c1f] font-medium">Comprar</span>
                 <Image

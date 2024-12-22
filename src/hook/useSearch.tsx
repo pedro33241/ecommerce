@@ -5,6 +5,11 @@ import { useZustand } from "@/context/zustand";
 import { useState } from "react";
 import { electricalProduct } from "@/components/mook/electricalProduct";
 import { accessoryProducts } from "@/components/mook/accessoryProducts";
+import { manualProducts } from "@/components/mook/manualProduct";
+import { hygieneSafety } from "@/components/mook/hygieneSafety";
+import { resistanceProduct } from "@/components/mook/resistanceProduct";
+import { batteryProducts } from "@/components/mook/battery";
+import { cleaningProducts } from "@/components/mook/cleaning";
 
 type ProductType = {
     id: number;
@@ -16,7 +21,7 @@ type ProductType = {
 };
 
 export function UseSearch() {
-    const [activeTab, setActiveTab] = useState<number>(0);
+    const [activeTab, setActiveTab] = useState<number>(1);
 
 
     const { openProductSecond, handleClickSecond } = useZustand();
@@ -59,5 +64,23 @@ export function UseSearch() {
     const filterAccessoryProducts = accessoryProducts.filter(item =>
         item.nameProduct.toLowerCase().includes(data.toLowerCase())
     );
-    return { filterProductLuz,filterAccessoryProducts,filterElectricalProduct, filterProduct, handleChangeSearch, handleClickModal, handleTabChange, openProductSecond, product, activeTab }
+    const filterManualProducts = manualProducts.filter(item =>
+        item.nameProduct.toLowerCase().includes(data.toLowerCase())
+    );
+    const filterHygieneSafetyProducts = hygieneSafety.filter(item =>
+        item.nameProduct.toLowerCase().includes(data.toLowerCase())
+    );
+
+    const filterResistanceProducts= resistanceProduct.filter(item =>
+        item.nameProduct.toLowerCase().includes(data.toLowerCase())
+    );
+
+    const filterBatteryProducts = batteryProducts.filter(item =>
+        item.nameProduct.toLowerCase().includes(data.toLowerCase())
+    );
+    const filterCleaningProducts = cleaningProducts.filter(item =>
+        item.nameProduct.toLowerCase().includes(data.toLowerCase())
+    );
+    return { filterProductLuz, filterCleaningProducts, filterAccessoryProducts, filterBatteryProducts, filterResistanceProducts, filterElectricalProduct, filterHygieneSafetyProducts,filterManualProducts,filterProduct, handleChangeSearch, handleClickModal, handleTabChange, openProductSecond, product, activeTab }
 }
+

@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image"; 
 import { ModalProductFirst } from "./modal/productModalFirst";
-import { UseSearch } from "@/hook/useSearch"; 
+import { UseSearch } from "@/hook/useSearch";  
 
 type ProductType = {
     id: number;
@@ -34,42 +34,50 @@ export function Product() {
         },
         {
             id: 3,
-            name: "FERRAMENTAS ELÉTRICAS E MANUAIS",
-            background: "#FFF5C5", 
+            name: "FERRAMENTAS ELÉTRICAS",
+            background: "#FFF5C5",
+            color: "#FFA500",
+            description: "",
+            image: "electric.svg",
+        },
+        {
+            id: 4,
+            name: "FERRAMENTAS MANUAIS",
+            background: "#FFF5C5",
             color: "#FFA500",
             description: "",
             image: "electric.svg",
         }, {
-            id: 4,
+            id: 5,
             name: "ACESSÓRIOS E CONSUMÍVEIS DE DESGASTE RÁPIDO",
             background: "#E5E8FF",
             color: "#00008B",
             description: "",
             image: "wrench.svg",
         }, {
-            id: 5,
+            id: 6,
             name: "HIGIENE E SEGURANÇA",
             background: "#D7F1FF",
             color: "#1E90FF",
             description: "",
             image: "droplet.svg",
         }, {
-            id: 6,
+            id: 7,
             name: "BATERIA",
             background: "#FFEAD3",
             color: "#FF4500",
             description: "",
             image: "setup.svg",
         }, {
-            id: 7,
+            id: 8,
             name: "COLA E RESISTENTE",
             background: "#fffec1",
             color: "#ffd700",
             description: "",
             image: "luz.svg",
         }, {
-            id: 8,
-            name: "MATERIAL DE ESCRITÓRIO E ESCOLAR",
+            id: 9,
+            name: "ADITIVO DE LIMPEZA",
             background: "#F3E9FE",
             color: "#8A2BE2",
             description: "",
@@ -77,7 +85,7 @@ export function Product() {
         }
     ]
 
-    const { filterProductLuz, filterProduct, handleChangeSearch, filterElectricalProduct, filterAccessoryProducts, handleClickModal, handleTabChange, openProductSecond, product, activeTab } = UseSearch();
+    const { filterProductLuz, filterProduct, filterManualProducts, filterResistanceProducts, filterCleaningProducts, filterBatteryProducts, filterHygieneSafetyProducts,handleChangeSearch, filterElectricalProduct, filterAccessoryProducts, handleClickModal, handleTabChange, openProductSecond, product, activeTab } = UseSearch();
 
     return (
         <>
@@ -133,7 +141,7 @@ export function Product() {
                                     <button 
                                     key={item.id} 
                                     onClick={() => handleClickModal(item)} 
-                                        className="card border-[#e4e7e9] w-[317px] gap-3 flex flex-col border pb-3 rounded-[8px] pt-3 pr-2  transition-transform duration-300 hover:scale-110"
+                                        className="card border-[#e4e7e9] sx:w-[250px] md:w-[317px] gap-3 flex flex-col border pb-3 rounded-[8px] pt-3 pr-2  transition-transform duration-300 hover:scale-110"
                                 >
                                     <Image 
                                         alt={item.alt}
@@ -182,7 +190,7 @@ export function Product() {
                                     <button
                                         key={item.id}
                                         onClick={() => handleClickModal(item)}
-                                        className="card border-[#e4e7e9] w-[317px] gap-3 flex flex-col border pb-3 rounded-[8px] pt-3 pr-2  transition-transform duration-300 hover:scale-110"
+                                        className="card border-[#e4e7e9] sx:w-[250px] md:w-[317px]  gap-3 flex flex-col border pb-3 rounded-[8px] pt-3 pr-2  transition-transform duration-300 hover:scale-110"
                                     >
                                         <Image
                                             alt={item.alt}
@@ -230,7 +238,7 @@ export function Product() {
                                     <button
                                         key={item.id}
                                         onClick={() => handleClickModal(item)}
-                                        className="card border-[#e4e7e9] w-[317px] gap-3 flex flex-col border pb-3 rounded-[8px] pt-3 pr-2  transition-transform duration-300 hover:scale-110"
+                                        className="card border-[#e4e7e9] sx:w-[250px] md:w-[317px]  gap-3 flex flex-col border pb-3 rounded-[8px] pt-3 pr-2  transition-transform duration-300 hover:scale-110"
                                     >
                                         <Image
                                             alt={item.alt}
@@ -269,15 +277,16 @@ export function Product() {
                         </div>
                     )}
 
+
                     {activeTab === 4 && (
                         <div>
-                            <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Acessórios</h2>
+                            <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Ferramentas Manuais</h2>
                             <div className="lg:ml-10 sm:ml-0 flex flex-wrap justify-center gap-10 mt-24">
-                                {filterAccessoryProducts.length > 0 ? filterAccessoryProducts.map((item: ProductType) => (
+                                {filterManualProducts.length > 0 ? filterManualProducts.map((item: ProductType) => (
                                     <button
                                         key={item.id}
                                         onClick={() => handleClickModal(item)}
-                                        className="card border-[#e4e7e9] w-[317px] gap-3 flex flex-col border pb-3 rounded-[8px] pt-3 pr-2  transition-transform duration-300 hover:scale-110"
+                                        className="card border-[#e4e7e9] sx:w-[250px] md:w-[317px]  gap-3 flex flex-col border pb-3 rounded-[8px] pt-3 pr-2  transition-transform duration-300 hover:scale-110"
                                     >
                                         <Image
                                             alt={item.alt}
@@ -318,36 +327,236 @@ export function Product() {
 
                     {activeTab === 5 && (
                         <div>
-                            <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Higiene e Segurança</h2>
-                            <div className="lg:ml-10 sm:ml-0 flex flex-wrap text-gray-500 justify-center gap-10 mt-24">
-                                Sem Produtos
+                            <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Acessórios</h2>
+                            <div className="lg:ml-10 sm:ml-0 flex flex-wrap justify-center gap-10 mt-24">
+                                {filterAccessoryProducts.length > 0 ? filterAccessoryProducts.map((item: ProductType) => (
+                                    <button
+                                        key={item.id}
+                                        onClick={() => handleClickModal(item)}
+                                        className="card border-[#e4e7e9] sx:w-[250px] md:w-[317px] gap-3 flex flex-col border pb-3 rounded-[8px] pt-3 pr-2  transition-transform duration-300 hover:scale-110"
+                                    >
+                                        <Image
+                                            alt={item.alt}
+                                            src={item.srcImage}
+                                            width={250}
+                                            height={180}
+                                            className="mx-auto h-[180px] w-[250px] object-cover"
+                                        />
+
+                                        <div className="ml-[18px] flex flex-col gap-1">
+                                            <Image
+                                                alt="star"
+                                                src="star.svg"
+                                                width={80}
+                                                height={16}
+                                                className="mb-1"
+                                            />
+                                            <h4 className="font-semibold text-[16px] text-left">{item.nameProduct}</h4>
+                                            <span className="text-[#2da5f3] text-left">Detalhe do Produto</span>
+                                        </div>
+                                    </button>
+
+                                )) : (
+                                    <div className="mx-auto gap-3 flex flex-col justify-center items-center text-gray-400 text-xl h-full">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
+                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                        </svg>
+                                        <span>Nenhum produto encontrado</span>
+                                    </div>
+                                )}
+
+                                {openProductSecond && (
+                                    <ModalProductFirst product={product} />
+                                )}
                             </div>
                         </div>
                     )}
 
-                    {activeTab === 6 && (
-                        <div>
-                            <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Batéria</h2>
-                            <div className="lg:ml-10 sm:ml-0 flex flex-wrap text-gray-500 justify-center gap-10 mt-24">
-                                Sem Produtos
+                    {activeTab === 6 && ( 
+                          <div>
+                            <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Higiene e Segurança</h2>
+                            <div className="lg:ml-10 sm:ml-0 flex flex-wrap justify-center gap-10 mt-24">
+                                {filterHygieneSafetyProducts.length > 0 ? filterHygieneSafetyProducts.map((item: ProductType) => (
+                                    <button
+                                        key={item.id}
+                                        onClick={() => handleClickModal(item)}
+                                        className="card border-[#e4e7e9] sx:w-[250px] md:w-[317px] gap-3 flex flex-col border pb-3 rounded-[8px] pt-3 pr-2  transition-transform duration-300 hover:scale-110"
+                                    >
+                                        <Image
+                                            alt={item.alt}
+                                            src={item.srcImage}
+                                            width={250}
+                                            height={180}
+                                            className="mx-auto h-[180px] w-[250px] object-cover"
+                                        />
+
+                                        <div className="ml-[18px] flex flex-col gap-1">
+                                            <Image
+                                                alt="star"
+                                                src="star.svg"
+                                                width={80}
+                                                height={16}
+                                                className="mb-1"
+                                            />
+                                            <h4 className="font-semibold text-[16px] text-left">{item.nameProduct}</h4>
+                                            <span className="text-[#2da5f3] text-left">Detalhe do Produto</span>
+                                        </div>
+                                    </button>
+
+                                )) : (
+                                    <div className="mx-auto gap-3 flex flex-col justify-center items-center text-gray-400 text-xl h-full">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
+                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                        </svg>
+                                        <span>Nenhum produto encontrado</span>
+                                    </div>
+                                )}
+
+                                {openProductSecond && (
+                                    <ModalProductFirst product={product} />
+                                )}
                             </div>
                         </div>
                     )}
 
                     {activeTab === 7 && (
                         <div>
-                            <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Cola</h2>
-                            <div className="lg:ml-10 sm:ml-0 flex flex-wrap text-gray-500 justify-center gap-10 mt-24">
-                                Sem Produtos
+                            <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Batéria</h2>
+                            <div className="lg:ml-10 sm:ml-0 flex flex-wrap justify-center gap-10 mt-24">
+                                {filterBatteryProducts.length > 0 ? filterBatteryProducts.map((item: ProductType) => (
+                                    <button
+                                        key={item.id}
+                                        onClick={() => handleClickModal(item)}
+                                        className="card border-[#e4e7e9] sx:w-[250px] md:w-[317px] gap-3 flex flex-col border pb-3 rounded-[8px] pt-3 pr-2  transition-transform duration-300 hover:scale-110"
+                                    >
+                                        <Image
+                                            alt={item.alt}
+                                            src={item.srcImage}
+                                            width={250}
+                                            height={180}
+                                            className="mx-auto h-[180px] w-[250px] object-cover"
+                                        />
+
+                                        <div className="ml-[18px] flex flex-col gap-1">
+                                            <Image
+                                                alt="star"
+                                                src="star.svg"
+                                                width={80}
+                                                height={16}
+                                                className="mb-1"
+                                            />
+                                            <h4 className="font-semibold text-[16px] text-left">{item.nameProduct}</h4>
+                                            <span className="text-[#2da5f3] text-left">Detalhe do Produto</span>
+                                        </div>
+                                    </button>
+
+                                )) : (
+                                    <div className="mx-auto gap-3 flex flex-col justify-center items-center text-gray-400 text-xl h-full">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
+                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                        </svg>
+                                        <span>Nenhum produto encontrado</span>
+                                    </div>
+                                )}
+
+                                {openProductSecond && (
+                                    <ModalProductFirst product={product} />
+                                )}
                             </div>
                         </div>
+
                     )}
 
                     {activeTab === 8 && (
                         <div>
-                            <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Materiais Escolar</h2>
-                            <div className="lg:ml-10 sm:ml-0 flex flex-wrap text-gray-500 justify-center gap-10 mt-24">
-                                Sem Produtos
+                            <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Cola e Resistente</h2>
+                            <div className="lg:ml-10 sm:ml-0 flex flex-wrap justify-center gap-10 mt-24">
+                                {filterResistanceProducts.length > 0 ? filterResistanceProducts.map((item: ProductType) => (
+                                    <button
+                                        key={item.id}
+                                        onClick={() => handleClickModal(item)}
+                                        className="card border-[#e4e7e9] sx:w-[250px] md:w-[317px] gap-3 flex flex-col border pb-3 rounded-[8px] pt-3 pr-2  transition-transform duration-300 hover:scale-110"
+                                    >
+                                        <Image
+                                            alt={item.alt}
+                                            src={item.srcImage}
+                                            width={250}
+                                            height={180}
+                                            className="mx-auto h-[180px] w-[250px] object-cover"
+                                        />
+
+                                        <div className="ml-[18px] flex flex-col gap-1">
+                                            <Image
+                                                alt="star"
+                                                src="star.svg"
+                                                width={80}
+                                                height={16}
+                                                className="mb-1"
+                                            />
+                                            <h4 className="font-semibold text-[16px] text-left">{item.nameProduct}</h4>
+                                            <span className="text-[#2da5f3] text-left">Detalhe do Produto</span>
+                                        </div>
+                                    </button>
+
+                                )) : (
+                                    <div className="mx-auto gap-3 flex flex-col justify-center items-center text-gray-400 text-xl h-full">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
+                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                        </svg>
+                                        <span>Nenhum produto encontrado</span>
+                                    </div>
+                                )}
+
+                                {openProductSecond && (
+                                    <ModalProductFirst product={product} />
+                                )}
+                            </div>
+                        </div>
+                    )}
+
+                    {activeTab === 9 && (
+                        <div>
+                            <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Aditivo de Limpeza</h2>
+                            <div className="lg:ml-10 sm:ml-0 flex flex-wrap justify-center gap-10 mt-24">
+                                {filterCleaningProducts.length > 0 ? filterCleaningProducts.map((item: ProductType) => (
+                                    <button
+                                        key={item.id}
+                                        onClick={() => handleClickModal(item)}
+                                        className="card border-[#e4e7e9] sx:w-[250px] md:w-[317px] gap-3 flex flex-col border pb-3 rounded-[8px] pt-3 pr-2  transition-transform duration-300 hover:scale-110"
+                                    >
+                                        <Image
+                                            alt={item.alt}
+                                            src={item.srcImage}
+                                            width={250}
+                                            height={180}
+                                            className="mx-auto h-[180px] w-[250px] object-cover"
+                                        />
+
+                                        <div className="ml-[18px] flex flex-col gap-1">
+                                            <Image
+                                                alt="star"
+                                                src="star.svg"
+                                                width={80}
+                                                height={16}
+                                                className="mb-1"
+                                            />
+                                            <h4 className="font-semibold text-[16px] text-left">{item.nameProduct}</h4>
+                                            <span className="text-[#2da5f3] text-left">Detalhe do Produto</span>
+                                        </div>
+                                    </button>
+
+                                )) : (
+                                    <div className="mx-auto gap-3 flex flex-col justify-center items-center text-gray-400 text-xl h-full">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
+                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                        </svg>
+                                        <span>Nenhum produto encontrado</span>
+                                    </div>
+                                )}
+
+                                {openProductSecond && (
+                                    <ModalProductFirst product={product} />
+                                )}
                             </div>
                         </div>
                     )}
