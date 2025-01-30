@@ -51,11 +51,10 @@ export default function Home() {
         <div className="back">
           <div className="back2">
             <h1 className=" text-white font-bold xl:text-5xl  mf:text-4xl text-2xl">
-              Faça suas compras na DBSD e <br />
-              receba seu pedido em questão de minutos!
+              Suas compras na DBSD é nossa prioridade. Entregas realizadas menos de 24hr sobre confirmação de pagamento.
             </h1>
             <div className=" text-white mf:text-lg xl:text-xl font-normal md:base">
-              Aproveite ao máximo cada segundo! Com nossa entrega em apenas 15 minutos, você não perderá nenhum momento!
+              Sua compra te esperando em um ponto de coleta conveniente.
             </div>
           </div>
         </div>
@@ -73,16 +72,17 @@ export default function Home() {
 
         <aside className="flex flex-row gap-4 md:border-r md:pr-24">
 
-          <Image
-            src="/entrega.svg"
-            width={40}
-            height={40}
-            className="-mt-4"
-            alt="imagem de entrega"
-          />
 
-          <div className="flex flex-col gap-2"><h1 className="font-medium text-[14px]">ENTREGA MAIS RÁPIDA</h1>
-            <span className="font-normal text-[14px]">Entrega em 24/H</span>
+            <div className="flex flex-col gap-2 w-[240px] ">
+
+              <Image
+                src="/entrega.svg"
+                width={40}
+                height={40}
+                className=""
+                alt="imagem de entrega"
+              /><h1 className="font-medium text-[14px]">ENTREGA MAIS RÁPIDA</h1>
+              <span className="font-normal text-[14px] text-justify">Entrega em 24/H sobre confirmação de pagamento em transferência ou depósito bancário.</span>
           </div>
         </aside>
 
@@ -90,46 +90,51 @@ export default function Home() {
  
         <aside className="flex flex-row gap-4 md:border-r md:pr-24">
 
-          <Image
-            src="/trop.svg"
-            width={40}
 
-            className="-mt-4"
-            height={40}
-            alt="imagem de entrega"
-          />
+          <div className="flex flex-col gap-2 w-[240px]">
 
-          <div className="flex flex-col gap-2">
-            <h1 className="font-medium text-[14px]">RETORNO EM 24 HORAS</h1>
-            <span className="font-normal text-[14px]">Garantia de devolução de <br /> 100% do dinheiro</span>
+              <Image
+                src="/trop.svg"
+                width={40}
+
+                className="-mt-4"
+                height={40}
+                alt="imagem de entrega"
+              />
+              <h1 className="font-medium text-[14px]">RETORNO EM 24 HORAS</h1>
+              <span className="font-normal text-[14px] text-justify">
+                As devoluções são feitas apenas sobre defeitos de fábrica. As devoluções não poderão ser efectuadas 24 horas após a data de compra.
+                Os artigos e as embalagens a devolver terão de estar em boas condições.
+                Sujeito a desconto de 12% referentes despesas bancarias e custos administrativos.
+              </span>
           </div>
         </aside>
         <aside className="flex flex-row gap-4 md:border-r md:pr-24">
 
-          <Image
-            src="/pagamento.svg"
-            width={40}
-            height={40}
-            className="-mt-4"
-            alt="imagem de entrega"
-          />
 
-          <div className="flex flex-col gap-2"><h1 className="font-medium text-[14px]">PAGAMENTO SEGURO</h1>
-            <span className="font-normal text-[14px]">Seu dinheiro está seguro</span>
+            <div className="flex flex-col gap-2">
+              <Image
+                src="/pagamento.svg"
+                width={40}
+                height={40}
+                className="-mt-4"
+                alt="imagem de entrega"
+              />
+              <h1 className="font-medium text-[14px]">PAGAMENTO SEGURO</h1>
+          <span className="font-normal text-[14px]">Seu dinheiro está seguro</span>
           </div>
         </aside>
 
-        <aside className="flex flex-row gap-4 ">
-
-          <Image
-            src="/music.svg"
-            width={40}
-            height={40}
-            className="-mt-4"
-            alt="imagem de entrega"
-          />
-
-          <div className="flex flex-col gap-2"><h1 className="font-medium text-[14px]">SUPORTE DE 24 HORAS POR <br /> DIA, 7 DIAS POR SEMANA</h1>
+        <aside className="flex flex-row gap-4 "> 
+            <div className="flex flex-col gap-2">
+              <Image
+                src="/music.svg"
+                width={40}
+                height={40}
+                className="-mt-4"
+                alt="imagem de entrega"
+              />
+              <h1 className="font-medium text-[14px]">SUPORTE DE 24 HORAS POR <br /> DIA, 7 DIAS POR SEMANA</h1>
             <span className="font-normal text-[14px]">Contato/mensagem ao vivo</span>
           </div>
         </aside>
