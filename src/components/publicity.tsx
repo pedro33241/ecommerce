@@ -6,7 +6,7 @@ import Link from 'next/link';
 export function Publicity()
 
 {
-    const phone = 947032985;
+    const phone = 936884337;
 const menssage = "Olá! Estou interessado(a) em um dos produtos de sua empresa. Poderia me fornecer mais informações sobre ele, como preço, disponibilidade e características? Obrigado(a)!";
  
     return(
