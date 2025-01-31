@@ -12,7 +12,7 @@ export function NavBar() {
 const handleClick = ()=>{
     setIsVisible(false)
 }
-const phone = 947032985;
+    const phone = 936884337;
 const menssage = "Olá! Estou interessado(a) em um produto da sua empresa. Poderia me fornecer mais informações sobre ele, como preço, disponibilidade e características? Obrigado(a)!"
     return(
       <>
@@ -66,7 +66,7 @@ const menssage = "Olá! Estou interessado(a) em um produto da sua empresa. Poder
                       <span className="mf:text-[14px] sx:text-sm text-white font-medium mt-8 ml-3">de Desconto</span>
                       </div>
                   <div>
-                      <Link href={`https://wa.me/${phone}?text=${menssage}`} className="outline-none flex mt-4 mb-3 gap-1 mr-10 bg-[#ebc80c] pl-7 rounded-[2px] w-[194px] h-[48px]">
+                      <Link href={`https://wa.me/${phone}?text=${menssage}`} target="_blank" className="outline-none flex mt-4 mb-3 gap-1 mr-10 bg-[#ebc80c] pl-7 rounded-[2px] w-[194px] h-[48px]">
                           <span className="font-bold sx:text-xs md:text-[14px] text-[#191c1f] sx:mt-4 md:mt-4">COMPRE AGORA</span>
                           <Image
                               src="/set.svg"
