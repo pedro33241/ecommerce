@@ -2,8 +2,7 @@ import Image from "next/image"
 import Link from 'next/link';
 
 export function Footer(){
-
-    const phone = 947032985;
+ 
 
     const menssage = "Olá! Estou interessado(a) em um produto da sua empresa. Poderia me fornecer mais informações sobre ele, como preço, disponibilidade e características? Obrigado(a)!"
     return(
