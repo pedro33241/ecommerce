@@ -20,7 +20,7 @@ const menssage = "Olá! Estou interessado(a) em um dos produtos de sua empresa. 
         <span className="w-[360px] md:text-[16px] sm:text-[14px]">Descubra nossa linha completa de produtos de limpeza e muito mais! Oferecemos tudo o que você precisa para manter sua casa e seu ambiente de trabalho impecáveis. </span>
     </div>
 
-    <Link  href={`https://wa.me/${phone}?text=${menssage}`} className="rounded-[4px]  bg-[#fa8232] py-[12px] px-[32px] text-white md:w-[206px] sm:w-[180px]  sm:text-[14px] flex flex-row gap-3 " > 
+    <Link  href={`https://wa.me/${phone}?text=${menssage}`} target="_blank" className="rounded-[4px]  bg-[#fa8232] py-[12px] px-[32px] text-white md:w-[206px] sm:w-[180px]  sm:text-[14px] flex flex-row gap-3 " > 
     Compre&nbsp;agora 
 <Image
 alt=""

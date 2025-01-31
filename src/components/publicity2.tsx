@@ -27,7 +27,7 @@ export function PublicityProductSecond(){
 
 <label className="font-medium text-[14px] flex flex-row gap-3 text-center justify-center ">Ofertas terminam em: <span className="-mt-2.5 bg-white rounded-sm text-black  font-semibold text-[14px] py-3 px-3 ">Fim do Natal</span></label>
 <br/>
-<Link  href={`https://wa.me/${phone}?text=${menssage}`}className="rounded-[4px]  bg-[#2591d2] py-[12px] px-[32px] text-white w-[80%]  mx-auto   justify-center flex flex-row gap-3 " > Comprar&nbsp;agora 
+                                <Link href={`https://wa.me/${phone}?text=${menssage}`} target="_blank"  className="rounded-[4px]  bg-[#2591d2] py-[12px] px-[32px] text-white w-[80%]  mx-auto   justify-center flex flex-row gap-3 " > Comprar&nbsp;agora 
 <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg" ><path d="M3.625 10h13.75M11.75 4.375 17.375 10l-5.625 5.625" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </Link>
 </div>
