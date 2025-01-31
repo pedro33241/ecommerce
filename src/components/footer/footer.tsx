@@ -81,33 +81,21 @@ export function Footer(){
 
 <aside className="flex flex-col gap-3">
     <h3 className="sx:text-[13px] lg:text-[18px] text-[#191c1e]">Contactos </h3>
-    <Link href="tel:99947032985" className="text-[#2E323A99] flex flex-row gap-3  text-[14px]">   <Image 
+   
+
+                            <Link href="tel:936884337" target="_blank" className=" text-[#2E323A99] flex flex-row gap-3 text-[14px] ">   <Image 
         alt="star"
         src="Phone.svg"
         width={20}
         height={20} 
-    />  (+244)&nbsp;954949449</Link>
-
-                            <Link href={`https://wa.me/${phone}?text=${menssage}`} target="_blank"   className="text-[#2E323A99] flex flex-row gap-3 text-[14px] ">   <Image 
-        alt="star"
-        src="zap.svg"
-        width={20}
-        height={20} 
-    />  (+244)&nbsp;954949449</Link>
-
-                            <Link href="tel:954949449" target="_blank" className=" text-[#2E323A99] flex flex-row gap-3 text-[14px] ">   <Image 
-        alt="star"
-        src="Phone.svg"
-        width={20}
-        height={20} 
-    />  (+244)&nbsp;954949449</Link>
+                            />  (+244)&nbsp;936 884 337</Link>
 
                             <Link href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank" className=" text-[#2E323A99]  flex flex-row gap-3  text-[14px]">   <Image 
         alt="star"
         src="email.svg"
         width={20}
         height={20} 
-    />  dbsd@gmail.com</Link>
+                            /> dbsd.angola@gmail.com</Link>
 </aside>
 </div>
 
