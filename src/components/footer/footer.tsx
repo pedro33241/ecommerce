@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export function Footer(){
  
-
+    const phone = 936884337;
     const menssage = "Olá! Estou interessado(a) em um produto da sua empresa. Poderia me fornecer mais informações sobre ele, como preço, disponibilidade e características? Obrigado(a)!"
     return(
         <>
@@ -82,7 +82,7 @@ export function Footer(){
     <h3 className="sx:text-[13px] lg:text-[18px] text-[#191c1e]">Contactos </h3>
    
 
-                            <Link href="tel:936884337" target="_blank" className=" text-[#2E323A99] flex flex-row gap-3 text-[14px] ">   <Image 
+                            <Link  href={`https://wa.me/${phone}?text=${menssage}`} target="_blank" className=" text-[#2E323A99] flex flex-row gap-3 text-[14px] ">   <Image 
         alt="star"
         src="Phone.svg"
         width={20}
