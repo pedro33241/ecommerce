@@ -73,7 +73,7 @@ export function ModalProductFirst(product: dataType) {
                 src={`${product?.product?.srcImage}`}
                 width={200}
                 height={250}
-                className="mx-auto h-[250px] w-[320px] object-cover"
+                className="mx-auto  object-cover"
               />
             </div>
 

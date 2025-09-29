@@ -218,7 +218,7 @@ export function Product() {
                                 {openProductSecond  && (
                                     <ModalProductFirst product={product} />
                                 )}
-                            </div>  
+                            </div>
                         </div>
                     )}
 
@@ -287,7 +287,7 @@ export function Product() {
                                             src={item.srcImage}
                                             width={250}
                                             height={180}
-                                            className="mx-auto h-[180px] w-[250px] object-cover"
+                                            className="mx-auto object-cover"
                                         />
 
                                         <div className="ml-[18px] flex flex-col gap-1">
