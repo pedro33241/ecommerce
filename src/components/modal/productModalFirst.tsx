@@ -79,8 +79,7 @@ export function ModalProductFirst(product: dataType) {
 
             <div>
               <h2 className="text-lg font-bold">{product?.product?.nameProduct}</h2>
-              <h2 className="text-base font-semibold">Preço {formatCurrency(product?.product?.price)}</h2>
-              <Link
+                <Link
                 href={`https://wa.me/${phone}?text=Olá! Estou interessado(a) no produto ${product?.product?.nameProduct} que esta no valor de ${formatCurrency(product?.product?.price)}. Poderia me fornecer mais informações sobre ele, disponibilidade e características? Obrigado(a)!`}
                 className="flex mt-4 gap-1 bg-[#F3DE6D] p-2 rounded-lg w-full justify-center" target="_blank"
               >

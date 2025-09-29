@@ -218,7 +218,7 @@ export function Product() {
                                 {openProductSecond  && (
                                     <ModalProductFirst product={product} />
                                 )}
-                            </div>
+                            </div>  
                         </div>
                     )}
 
