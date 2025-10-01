@@ -1,7 +1,11 @@
 "use client";
 import Image from "next/image"; 
-import { ModalProductFirst } from "./modal/productModalFirst";
 import { UseSearch } from "@/hook/useSearch";  
+
+import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Plus } from "lucide-react"
+import { useStore } from "@/hook/useZustand";
 
 type ProductType = {
     id: number;
@@ -133,6 +137,12 @@ export function Product() {
 
     const { filterProductLuz, filterProduct, filterManualProducts, filterResistanceProducts, filterCleaningProducts, filterBatteryProducts, filterHygieneSafetyProducts,handleChangeSearch, filterElectricalProduct, filterAccessoryProducts, handleClickModal, handleTabChange, openProductSecond, product, activeTab } = UseSearch();
 
+    const { addData ,data} = useStore()
+
+    const handleAddToCart = (product:any) => {
+        addData(product)
+     
+    }
     return (
         <>
             <div className="mt-36">
@@ -180,31 +190,36 @@ export function Product() {
                         <div>    <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Produtos de Cozinha</h2>
                             <div className="lg:ml-10 sm:ml-0 flex flex-wrap justify-center gap-10 mt-24">
                                 {filterProduct.length > 0 ? filterProduct.map((item: ProductType) => (
-                                    <button 
-                                    key={item.id} 
-                                    onClick={() => handleClickModal(item)} 
-                                        className="card border-[#e4e7e9] sx:w-[250px] md:w-[317px] gap-3 flex flex-col border pb-3 rounded-[8px] pt-3 pr-2  transition-transform duration-300 hover:scale-110"
-                                >
-                                    <Image 
-                                        alt={item.alt}
-                                        src={item.srcImage}
-                                        width={250}
-                                        height={180} 
-                                        className="mx-auto h-[180px] w-[250px] object-cover" 
-                                    />
-                                    
-                                    <div className="ml-[18px] flex flex-col gap-1"> 
-                                        <Image 
-                                            alt="star"
-                                            src="star.svg"
-                                            width={80}
-                                            height={16}
-                                            className="mb-1"
-                                        />     
-                                        <h4 className="font-semibold text-[16px] text-left">{item.nameProduct}</h4>
-                                        <span className="text-[#2da5f3] text-left">Detalhe do Produto</span> 
-                                    </div>
-                                </button>
+                                    <Card className="group overflow-hidden border-border  transition-all hover:shadow-lg">
+                                        <div className="relative overflow-hidden ">
+                                            <Image
+                                                alt={item.alt}
+                                                src={item.srcImage}
+                                                width={250}
+                                                height={180}
+                                                className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                                            />
+                                        </div>
+                                        <CardContent className="p-6">
+                                            <div className="mb-2 flex items-start justify-between gap-2">
+                                                <h3 className="font-serif text-xl leading-tight text-foreground">
+                                                    {item.nameProduct}
+                                                </h3>
+                                                <Button
+                                                    size="icon"
+                                                    variant="outline"
+                                                    onClick={() => handleAddToCart(item)}
+                                                    className="shrink-0 rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+                                                >
+                                                    <Plus className="h-4 w-4" />
+                                                </Button>
+                                            </div>
+                                            <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                                                {item.details}
+                                            </p>
+                                        </CardContent>
+                                    </Card>
+
                                 
                                 )) : (
                                     <div className="mx-auto gap-3 flex flex-col justify-center items-center text-gray-400 text-xl h-full">
@@ -215,9 +230,7 @@ export function Product() {
                                     </div>
                                 )}
 
-                                {openProductSecond  && (
-                                    <ModalProductFirst product={product} />
-                                )}
+                               
                             </div>
                         </div>
                     )}
@@ -229,31 +242,36 @@ export function Product() {
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Lâmpadas</h2>
                             <div className="lg:ml-10 sm:ml-0 flex flex-wrap justify-center gap-10 mt-24">
                                 {filterProductLuz.length > 0 ? filterProductLuz.map((item: ProductType) => (
-                                    <button
-                                        key={item.id}
-                                        onClick={() => handleClickModal(item)}
-                                        className="card border-[#e4e7e9] sx:w-[250px] md:w-[317px]  gap-3 flex flex-col border pb-3 rounded-[8px] pt-3 pr-2  transition-transform duration-300 hover:scale-110"
-                                    >
-                                        <Image
-                                            alt={item.alt}
-                                            src={item.srcImage}
-                                            width={250}
-                                            height={180}
-                                            className="mx-auto h-[180px] w-[250px] object-cover"
-                                        />
-
-                                        <div className="ml-[18px] flex flex-col gap-1">
+                                    <Card className="group overflow-hidden border-border  transition-all hover:shadow-lg">
+                                        <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
                                             <Image
-                                                alt="star"
-                                                src="star.svg"
-                                                width={80}
-                                                height={16}
-                                                className="mb-1"
+                                                alt={item.alt}
+                                                src={item.srcImage}
+                                                width={250}
+                                                height={180}
+                                                className="max-h-full max-w-full object-contain"
                                             />
-                                            <h4 className="font-semibold text-[16px] text-left">{item.nameProduct}</h4>
-                                            <span className="text-[#2da5f3] text-left">Detalhe do Produto</span>
                                         </div>
-                                    </button>
+                                        <CardContent className="p-6">
+                                            <div className="mb-2 flex items-start justify-between gap-2">
+                                                <h3 className="font-serif text-xl leading-tight text-foreground">
+                                                    {item.nameProduct}
+                                                </h3>
+                                                <Button
+                                                    size="icon"
+                                                    variant="outline"
+                                                    onClick={() => handleAddToCart(item)}
+                                                    className="shrink-0 rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+                                                >
+                                                    <Plus className="h-4 w-4" />
+                                                </Button>
+                                            </div>
+                                            <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                                                {item.details}
+                                            </p>
+                                        </CardContent>
+                                    </Card>
+
 
                                 )) : (
                                     <div className="mx-auto gap-3 flex flex-col justify-center items-center text-gray-400 text-xl h-full">
@@ -264,9 +282,7 @@ export function Product() {
                                     </div>
                                 )}
 
-                                {openProductSecond && (
-                                    <ModalProductFirst product={product} />
-                                )}
+                           
                             </div>
                         </div>
                     )}
@@ -275,33 +291,38 @@ export function Product() {
                     {activeTab === 3 && (
                         <div>
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Ferramentas Elétricas</h2>
-                            <div className="lg:ml-10 sm:ml-0 flex flex-wrap justify-center gap-10 mt-24">
+                            <div className="lg:ml-10 sm:ml-0  flex-wrap justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
                                 {filterElectricalProduct.length > 0 ? filterElectricalProduct.map((item: ProductType) => (
-                                    <button
-                                        key={item.id}
-                                        onClick={() => handleClickModal(item)}
-                                        className="card border-[#e4e7e9] sx:w-[250px] md:w-[317px]  gap-3 flex flex-col border pb-3 rounded-[8px] pt-3 pr-2  transition-transform duration-300 hover:scale-110"
-                                    >
-                                        <Image
-                                            alt={item.alt}
-                                            src={item.srcImage}
-                                            width={250}
-                                            height={180}
-                                            className="mx-auto object-cover"
-                                        />
-
-                                        <div className="ml-[18px] flex flex-col gap-1">
+                                    <Card className="group overflow-hidden border-border  transition-all hover:shadow-lg">
+                                        <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
                                             <Image
-                                                alt="star"
-                                                src="star.svg"
-                                                width={80}
-                                                height={16}
-                                                className="mb-1"
+                                                alt={item.alt}
+                                                src={item.srcImage}
+                                                width={250}
+                                                height={180}
+                                                className="max-h-full max-w-full object-contain"
                                             />
-                                            <h4 className="font-semibold text-[16px] text-left">{item.nameProduct}</h4>
-                                            <span className="text-[#2da5f3] text-left">Detalhe do Produto</span>
                                         </div>
-                                    </button>
+                                        <CardContent className="p-6">
+                                            <div className="mb-2 flex items-start justify-between gap-2">
+                                                <h3 className=" text-xl leading-tight text-foreground">
+                                                    {item.nameProduct}
+                                                </h3>
+                                                <Button
+                                                    size="icon"
+                                                    variant="outline"
+                                                    onClick={() => handleAddToCart(item)}
+                                                    className="shrink-0 rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+                                                >
+                                                    <Plus className="h-4 w-4" />
+                                                </Button>
+                                            </div>
+                                            <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                                                {item.details}
+                                            </p>
+                                        </CardContent>
+                                    </Card>
+
 
                                 )) : (
                                     <div className="mx-auto gap-3 flex flex-col justify-center items-center text-gray-400 text-xl h-full">
@@ -312,9 +333,6 @@ export function Product() {
                                     </div>
                                 )}
 
-                                {openProductSecond && (
-                                    <ModalProductFirst product={product} />
-                                )}
                             </div>
                         </div>
                     )}
@@ -323,33 +341,37 @@ export function Product() {
                     {activeTab === 4 && (
                         <div>
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Ferramentas Manuais</h2>
-                            <div className="lg:ml-10 sm:ml-0 flex flex-wrap justify-center gap-10 mt-24">
-                                {filterManualProducts.length > 0 ? filterManualProducts.map((item: ProductType) => (
-                                    <button
-                                        key={item.id}
-                                        onClick={() => handleClickModal(item)}
-                                        className="card border-[#e4e7e9] sx:w-[250px] md:w-[317px]  gap-3 flex flex-col border pb-3 rounded-[8px] pt-3 pr-2  transition-transform duration-300 hover:scale-110"
-                                    >
-                                        <Image
-                                            alt={item.alt}
-                                            src={item.srcImage}
-                                            width={250}
-                                            height={180}
-                                            className="mx-auto h-[180px] w-[250px] object-cover"
-                                        />
-
-                                        <div className="ml-[18px] flex flex-col gap-1">
-                                            <Image
-                                                alt="star"
-                                                src="star.svg"
-                                                width={80}
-                                                height={16}
-                                                className="mb-1"
-                                            />
-                                            <h4 className="font-semibold text-[16px] text-left">{item.nameProduct}</h4>
-                                            <span className="text-[#2da5f3] text-left">Detalhe do Produto</span>
-                                        </div>
-                                    </button>
+                            <div className="lg:ml-10 sm:ml-0  flex-wrap justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
+                               {filterManualProducts.length > 0 ? filterManualProducts.map((item: ProductType) => (
+                                   <Card className="group overflow-hidden border-border  transition-all hover:shadow-lg">
+                                       <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
+                                           <Image
+                                               alt={item.alt}
+                                               src={item.srcImage}
+                                               width={250}
+                                               height={180}
+                                               className="max-h-full max-w-full object-contain"
+                                           />
+                                       </div>
+                                       <CardContent className="p-6">
+                                           <div className="mb-2 flex items-start justify-between gap-2">
+                                               <h3 className=" text-xl leading-tight text-foreground">
+                                                   {item.nameProduct}
+                                               </h3>
+                                               <Button
+                                                   size="icon"
+                                                   variant="outline"
+                                                   onClick={() => handleAddToCart(item)}
+                                                   className="shrink-0 rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+                                               >
+                                                   <Plus className="h-4 w-4" />
+                                               </Button>
+                                           </div>
+                                           <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                                               {item.details}
+                                           </p>
+                                       </CardContent>
+                                   </Card>
 
                                 )) : (
                                     <div className="mx-auto gap-3 flex flex-col justify-center items-center text-gray-400 text-xl h-full">
@@ -360,9 +382,7 @@ export function Product() {
                                     </div>
                                 )}
 
-                                {openProductSecond && (
-                                    <ModalProductFirst product={product} />
-                                )}
+                          
                             </div>
                         </div>
                     )}
@@ -370,33 +390,38 @@ export function Product() {
                     {activeTab === 5 && (
                         <div>
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Acessórios</h2>
-                            <div className="lg:ml-10 sm:ml-0 flex flex-wrap justify-center gap-10 mt-24">
+                            <div className="lg:ml-10 sm:ml-0  flex-wrap justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
                                 {filterAccessoryProducts.length > 0 ? filterAccessoryProducts.map((item: ProductType) => (
-                                    <button
-                                        key={item.id}
-                                        onClick={() => handleClickModal(item)}
-                                        className="card border-[#e4e7e9] sx:w-[250px] md:w-[317px] gap-3 flex flex-col border pb-3 rounded-[8px] pt-3 pr-2  transition-transform duration-300 hover:scale-110"
-                                    >
-                                        <Image
-                                            alt={item.alt}
-                                            src={item.srcImage}
-                                            width={250}
-                                            height={180}
-                                            className="mx-auto h-[180px] w-[250px] object-cover"
-                                        />
-
-                                        <div className="ml-[18px] flex flex-col gap-1">
+                                    <Card className="group overflow-hidden border-border  transition-all hover:shadow-lg">
+                                        <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
                                             <Image
-                                                alt="star"
-                                                src="star.svg"
-                                                width={80}
-                                                height={16}
-                                                className="mb-1"
+                                                alt={item.alt}
+                                                src={item.srcImage}
+                                                width={250}
+                                                height={180}
+                                                className="max-h-full max-w-full object-contain"
                                             />
-                                            <h4 className="font-semibold text-[16px] text-left">{item.nameProduct}</h4>
-                                            <span className="text-[#2da5f3] text-left">Detalhe do Produto</span>
                                         </div>
-                                    </button>
+                                        <CardContent className="p-6">
+                                            <div className="mb-2 flex items-start justify-between gap-2">
+                                                <h3 className=" text-xl leading-tight text-foreground">
+                                                    {item.nameProduct}
+                                                </h3>
+                                                <Button
+                                                    size="icon"
+                                                    variant="outline"
+                                                    onClick={() => handleAddToCart(item)}
+                                                    className="shrink-0 rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+                                                >
+                                                    <Plus className="h-4 w-4" />
+                                                </Button>
+                                            </div>
+                                            <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                                                {item.details}
+                                            </p>
+                                        </CardContent>
+                                    </Card>
+
 
                                 )) : (
                                     <div className="mx-auto gap-3 flex flex-col justify-center items-center text-gray-400 text-xl h-full">
@@ -407,9 +432,6 @@ export function Product() {
                                     </div>
                                 )}
 
-                                {openProductSecond && (
-                                    <ModalProductFirst product={product} />
-                                )}
                             </div>
                         </div>
                     )}
@@ -417,33 +439,37 @@ export function Product() {
                     {activeTab === 6 && ( 
                           <div>
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Higiene e Segurança</h2>
-                            <div className="lg:ml-10 sm:ml-0 flex flex-wrap justify-center gap-10 mt-24">
+                            <div className="lg:ml-10 sm:ml-0  flex-wrap justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
                                 {filterHygieneSafetyProducts.length > 0 ? filterHygieneSafetyProducts.map((item: ProductType) => (
-                                    <button
-                                        key={item.id}
-                                        onClick={() => handleClickModal(item)}
-                                        className="card border-[#e4e7e9] sx:w-[250px] md:w-[317px] gap-3 flex flex-col border pb-3 rounded-[8px] pt-3 pr-2  transition-transform duration-300 hover:scale-110"
-                                    >
-                                        <Image
-                                            alt={item.alt}
-                                            src={item.srcImage}
-                                            width={250}
-                                            height={180}
-                                            className="mx-auto h-[180px] w-[250px] object-cover"
-                                        />
-
-                                        <div className="ml-[18px] flex flex-col gap-1">
+                                    <Card className="group overflow-hidden border-border  transition-all hover:shadow-lg">
+                                        <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
                                             <Image
-                                                alt="star"
-                                                src="star.svg"
-                                                width={80}
-                                                height={16}
-                                                className="mb-1"
+                                                alt={item.alt}
+                                                src={item.srcImage}
+                                                width={250}
+                                                height={180}
+                                                className="max-h-full max-w-full object-contain"
                                             />
-                                            <h4 className="font-semibold text-[16px] text-left">{item.nameProduct}</h4>
-                                            <span className="text-[#2da5f3] text-left">Detalhe do Produto</span>
                                         </div>
-                                    </button>
+                                        <CardContent className="p-6">
+                                            <div className="mb-2 flex items-start justify-between gap-2">
+                                                <h3 className=" text-xl leading-tight text-foreground">
+                                                    {item.nameProduct}
+                                                </h3>
+                                                <Button
+                                                    size="icon"
+                                                    variant="outline"
+                                                    onClick={() => handleAddToCart(item)}
+                                                    className="shrink-0 rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+                                                >
+                                                    <Plus className="h-4 w-4" />
+                                                </Button>
+                                            </div>
+                                            <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                                                {item.details}
+                                            </p>
+                                        </CardContent>
+                                    </Card>
 
                                 )) : (
                                     <div className="mx-auto gap-3 flex flex-col justify-center items-center text-gray-400 text-xl h-full">
@@ -454,9 +480,6 @@ export function Product() {
                                     </div>
                                 )}
 
-                                {openProductSecond && (
-                                    <ModalProductFirst product={product} />
-                                )}
                             </div>
                         </div>
                     )}
@@ -464,33 +487,37 @@ export function Product() {
                     {activeTab === 7 && (
                         <div>
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Batéria</h2>
-                            <div className="lg:ml-10 sm:ml-0 flex flex-wrap justify-center gap-10 mt-24">
+                            <div className="lg:ml-10 sm:ml-0  flex-wrap justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
                                 {filterBatteryProducts.length > 0 ? filterBatteryProducts.map((item: ProductType) => (
-                                    <button
-                                        key={item.id}
-                                        onClick={() => handleClickModal(item)}
-                                        className="card border-[#e4e7e9] sx:w-[250px] md:w-[317px] gap-3 flex flex-col border pb-3 rounded-[8px] pt-3 pr-2  transition-transform duration-300 hover:scale-110"
-                                    >
-                                        <Image
-                                            alt={item.alt}
-                                            src={item.srcImage}
-                                            width={250}
-                                            height={180}
-                                            className="mx-auto h-[180px] w-[250px] object-cover"
-                                        />
-
-                                        <div className="ml-[18px] flex flex-col gap-1">
+                                    <Card className="group overflow-hidden border-border  transition-all hover:shadow-lg">
+                                        <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
                                             <Image
-                                                alt="star"
-                                                src="star.svg"
-                                                width={80}
-                                                height={16}
-                                                className="mb-1"
+                                                alt={item.alt}
+                                                src={item.srcImage}
+                                                width={250}
+                                                height={180}
+                                                className="max-h-full max-w-full object-contain"
                                             />
-                                            <h4 className="font-semibold text-[16px] text-left">{item.nameProduct}</h4>
-                                            <span className="text-[#2da5f3] text-left">Detalhe do Produto</span>
                                         </div>
-                                    </button>
+                                        <CardContent className="p-6">
+                                            <div className="mb-2 flex items-start justify-between gap-2">
+                                                <h3 className=" text-xl leading-tight text-foreground">
+                                                    {item.nameProduct}
+                                                </h3>
+                                                <Button
+                                                    size="icon"
+                                                    variant="outline"
+                                                    onClick={() => handleAddToCart(item)}
+                                                    className="shrink-0 rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+                                                >
+                                                    <Plus className="h-4 w-4" />
+                                                </Button>
+                                            </div>
+                                            <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                                                {item.details}
+                                            </p>
+                                        </CardContent>
+                                    </Card>
 
                                 )) : (
                                     <div className="mx-auto gap-3 flex flex-col justify-center items-center text-gray-400 text-xl h-full">
@@ -501,9 +528,7 @@ export function Product() {
                                     </div>
                                 )}
 
-                                {openProductSecond && (
-                                    <ModalProductFirst product={product} />
-                                )}
+                            
                             </div>
                         </div>
 
@@ -512,33 +537,38 @@ export function Product() {
                     {activeTab === 8 && (
                         <div>
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Cola e Resistente</h2>
-                            <div className="lg:ml-10 sm:ml-0 flex flex-wrap justify-center gap-10 mt-24">
-                                {filterResistanceProducts.length > 0 ? filterResistanceProducts.map((item: ProductType) => (
-                                    <button
-                                        key={item.id}
-                                        onClick={() => handleClickModal(item)}
-                                        className="card border-[#e4e7e9] sx:w-[250px] md:w-[317px] gap-3 flex flex-col border pb-3 rounded-[8px] pt-3 pr-2  transition-transform duration-300 hover:scale-110"
-                                    >
-                                        <Image
-                                            alt={item.alt}
-                                            src={item.srcImage}
-                                            width={250}
-                                            height={180}
-                                            className="mx-auto h-[180px] w-[250px] object-cover"
-                                        />
+                            <div className="lg:ml-10 sm:ml-0  flex-wrap justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
+                                   {filterResistanceProducts.length > 0 ? filterResistanceProducts.map((item: ProductType) => (
+                                       <Card className="group overflow-hidden border-border  transition-all hover:shadow-lg">
+                                           <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
+                                               <Image
+                                                   alt={item.alt}
+                                                   src={item.srcImage}
+                                                   width={250}
+                                                   height={180}
+                                                   className="max-h-full max-w-full object-contain"
+                                               />
+                                           </div>
+                                           <CardContent className="p-6">
+                                               <div className="mb-2 flex items-start justify-between gap-2">
+                                                   <h3 className=" text-xl leading-tight text-foreground">
+                                                       {item.nameProduct}
+                                                   </h3>
+                                                   <Button
+                                                       size="icon"
+                                                       variant="outline"
+                                                       onClick={() => handleAddToCart(item)}
+                                                       className="shrink-0 rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+                                                   >
+                                                       <Plus className="h-4 w-4" />
+                                                   </Button>
+                                               </div>
+                                               <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                                                   {item.details}
+                                               </p>
+                                           </CardContent>
+                                       </Card>
 
-                                        <div className="ml-[18px] flex flex-col gap-1">
-                                            <Image
-                                                alt="star"
-                                                src="star.svg"
-                                                width={80}
-                                                height={16}
-                                                className="mb-1"
-                                            />
-                                            <h4 className="font-semibold text-[16px] text-left">{item.nameProduct}</h4>
-                                            <span className="text-[#2da5f3] text-left">Detalhe do Produto</span>
-                                        </div>
-                                    </button>
 
                                 )) : (
                                     <div className="mx-auto gap-3 flex flex-col justify-center items-center text-gray-400 text-xl h-full">
@@ -549,9 +579,7 @@ export function Product() {
                                     </div>
                                 )}
 
-                                {openProductSecond && (
-                                    <ModalProductFirst product={product} />
-                                )}
+                            
                             </div>
                         </div>
                     )}
@@ -559,33 +587,37 @@ export function Product() {
                     {activeTab === 9 && (
                         <div>
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Aditivo de Limpeza</h2>
-                            <div className="lg:ml-10 sm:ml-0 flex flex-wrap justify-center gap-10 mt-24">
-                                {filterCleaningProducts.length > 0 ? filterCleaningProducts.map((item: ProductType) => (
-                                    <button
-                                        key={item.id}
-                                        onClick={() => handleClickModal(item)}
-                                        className="card border-[#e4e7e9] sx:w-[250px] md:w-[317px] gap-3 flex flex-col border pb-3 rounded-[8px] pt-3 pr-2  transition-transform duration-300 hover:scale-110"
-                                    >
-                                        <Image
-                                            alt={item.alt}
-                                            src={item.srcImage}
-                                            width={250}
-                                            height={180}
-                                            className="mx-auto h-[180px] w-[250px] object-cover"
-                                        />
-
-                                        <div className="ml-[18px] flex flex-col gap-1">
-                                            <Image
-                                                alt="star"
-                                                src="star.svg"
-                                                width={80}
-                                                height={16}
-                                                className="mb-1"
-                                            />
-                                            <h4 className="font-semibold text-[16px] text-left">{item.nameProduct}</h4>
-                                            <span className="text-[#2da5f3] text-left">Detalhe do Produto</span>
-                                        </div>
-                                    </button>
+                            <div className="lg:ml-10 sm:ml-0  flex-wrap justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
+                              {filterCleaningProducts.length > 0 ? filterCleaningProducts.map((item: ProductType) => (
+                                  <Card className="group overflow-hidden border-border  transition-all hover:shadow-lg">
+                                      <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
+                                          <Image
+                                              alt={item.alt}
+                                              src={item.srcImage}
+                                              width={250}
+                                              height={180}
+                                              className="max-h-full max-w-full object-contain"
+                                          />
+                                      </div>
+                                      <CardContent className="p-6">
+                                          <div className="mb-2 flex items-start justify-between gap-2">
+                                              <h3 className=" text-xl leading-tight text-foreground">
+                                                  {item.nameProduct}
+                                              </h3>
+                                              <Button
+                                                  size="icon"
+                                                  variant="outline"
+                                                  onClick={() => handleAddToCart(item)}
+                                                  className="shrink-0 rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+                                              >
+                                                  <Plus className="h-4 w-4" />
+                                              </Button>
+                                          </div>
+                                          <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                                              {item.details}
+                                          </p>
+                                      </CardContent>
+                                  </Card>
 
                                 )) : (
                                     <div className="mx-auto gap-3 flex flex-col justify-center items-center text-gray-400 text-xl h-full">
@@ -596,9 +628,7 @@ export function Product() {
                                     </div>
                                 )}
 
-                                {openProductSecond && (
-                                    <ModalProductFirst product={product} />
-                                )}
+                             
                             </div>
                         </div>
                     )}

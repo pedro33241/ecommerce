@@ -6,6 +6,7 @@ import Link from "next/link"
 import { useState } from "react";
 import { AccountMenu } from "../sidbar/side";
 import style from "./navBar.module.css"
+import { CartDrawer } from "@/components/cart";
 
 export function NavBar() {
     const [isVisible, setIsVisible] = useState(true);
@@ -16,13 +17,13 @@ const handleClick = ()=>{
 const menssage = "Olá! Estou interessado(a) em um produto da sua empresa. Poderia me fornecer mais informações sobre ele, como preço, disponibilidade e características? Obrigado(a)!"
     return(
       <>
-      <div className=" h-[80px] w-full bg-[#fff] flex m-0 justify-between">
+      <div className="shadow fixed z-50 h-[95px] w-full bg-[#fff] flex m-0 justify-between">
           <div className="">
               <Link href="/">
                   <Image
                       src="/logo2.jpeg"
                       alt="logo"
-                      width={152}
+                      width={132}
                       height={62}
                       className="-mt-7"
                   />
@@ -33,7 +34,7 @@ const menssage = "Olá! Estou interessado(a) em um produto da sua empresa. Poder
               <AccountMenu />
           </div>
 
-         <div className={`  ${style.container} mt-2 `}>
+         <div className={`  ${style.container} mt-4 `}>
                     
               <div className="flex  flex-row gap-3 mr-5">
                                
@@ -41,7 +42,7 @@ const menssage = "Olá! Estou interessado(a) em um produto da sua empresa. Poder
               <Link href="/" className="m-3 text-black ">Home</Link>
               <Link href="/product" className="m-3 text- ">Produtos</Link>
               
-                
+                        <CartDrawer />
               
                     
               </div>
@@ -49,7 +50,7 @@ const menssage = "Olá! Estou interessado(a) em um produto da sua empresa. Poder
       </div>
 
       {isVisible && (
-          <div className=" w-full bg-[#191c1f] relative">
+          <div className="absolute  mt-24  w-full bg-[#191c1f] z-30">
               <div className="w-[80%] mx-auto bg-[#191c1f] md:flex-row sx:flex-col flex justify-between">
                   <div className={`mf:ml-24 md:ml-2 mt-4 flex flex-row  `}>
                       <label
