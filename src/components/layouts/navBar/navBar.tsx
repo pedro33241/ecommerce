@@ -53,12 +53,16 @@ export default function NavBar() {
                     ))}
                      <CartDrawer />
                 </nav>
+                <div className="md:hidden flex items-center gap-8">
 
-                <button onClick={() => setIsOpen(!isOpen)} className="md:hidden w-8 h-8 flex flex-col justify-center gap-1">
-                    <span className="w-full h-0.5 bg-black"></span>
-                    <span className="w-full h-0.5 bg-black"></span>
-                    <span className="w-full h-0.5 bg-black"></span>
-                </button>
+                    <button onClick={() => setIsOpen(!isOpen)} className=" w-10 rounded-full p-2  hover:bg-gray-200 h-10 flex flex-col justify-center gap-1">
+                        <span className="w-full h-0.5 bg-gray-700"></span>
+                        <span className="w-full h-0.5 bg-gray-700"></span>
+                        <span className="w-full h-0.5 bg-gray-700"></span>
+                    </button>
+
+                    <CartDrawer />
+</div>
 
                 {isOpen && (
                     <nav className="shadow absolute top-full left-0 right-0 bg-white border-t border-gray-200 md:hidden flex flex-col gap-4 p-6">
@@ -72,7 +76,6 @@ export default function NavBar() {
                             Sobre Nós
                         </Link>
 
-                         <CartDrawer />
                     </nav>
                 )}
 
