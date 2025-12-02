@@ -1,6 +1,5 @@
 "use client"
 
-import { NavBar } from "@/components/layouts/navBar/navBar";
 import "./globals.css"
 import { Product } from "../components/product";
 
@@ -18,6 +17,7 @@ import { motion, useInView } from "framer-motion";
 import {  useRef } from "react";
 import { Carousel } from "@/components/carousel";
 import { slides } from "@/components/constants";
+import NavBar from "@/components/layouts/navBar/navBar";
 export default function Home() {
 
 

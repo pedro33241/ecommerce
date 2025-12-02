@@ -1,15 +1,15 @@
-
-import { NavBar } from "../../components/layouts/navBar/navBar";
+ 
 import Image from "next/image"
 import { Product } from "../../components/product";
 import { Footer } from "../../components/footer/footer"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react";
+import NavBar from "@/components/layouts/navBar/navBar";
 const ProductInfo = () => {
     return (
         <>
             <NavBar />
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br />
             <div className="gap-24 flex justify-between sx:flex-col md:flex-row px-16 ">
 
                 <div className="w-full">

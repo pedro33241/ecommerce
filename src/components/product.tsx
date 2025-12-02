@@ -21,65 +21,65 @@ export function Product() {
 
     const objectMaterial = [
         {
-            id: 1,
-            name: "UTENSÍLIOS DE COZINHA",
-            background: "#DEFADE",
-            color: "#32cd32",
-            description: "",
-            image: "category.svg",
-            svg: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18.5 3.00195L15.0606 6.44129C14.4748 7.02708 14.4748 7.97683 15.0606 8.56261L15.75 9.25195M15.75 9.25195L16.4393 9.94129C17.0251 10.5271 17.9748 10.5271 18.5606 9.94129L22 6.50195M15.75 9.25195L4 21.002" stroke="#32CD32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M20 4.99902L17.5 7.49902" stroke="#32CD32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M7.98914 8.99011C6.79472 10.1845 5.15674 10.4831 3.66377 8.99011C2.17075 7.49709 1.38801 4.77783 2.58243 3.58341C3.77685 2.38899 6.49611 3.17172 7.98914 4.66475C9.48211 6.15772 9.18356 7.79569 7.98914 8.99011ZM7.98914 8.99011L20 21.001" stroke="#32CD32" stroke-width="1.5" stroke-linecap="round" />
-                <path d="M9.20542 2.39669C10.0923 2.13908 11.03 2.00098 12 2.00098C13.1517 2.00098 14.2579 2.19567 15.2876 2.55394M2.04937 11.001C2.01672 11.3299 2 11.6635 2 12.001C2 14.0328 2.60598 15.9231 3.64707 17.501M7.77267 21.0661C9.05671 21.6659 10.4892 22.001 12 22.001C13.5244 22.001 14.9691 21.6599 16.262 21.0499M20.3529 17.501C21.394 15.9231 22 14.0328 22 12.001C22 11.4228 21.9509 10.8561 21.8567 10.3048" stroke="#32CD32" stroke-width="1.5" stroke-linecap="round" />
-            </svg>
-
-        },
-        {
-            id: 2,
-            name: "ILUMINAÇÃO",
-            background: "#FEFFC1",
-            color: "#FFD700",
-            description: "",
-            image: "luz.svg",
-            svg: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6.08938 14.999C5.71097 14.1484 5.5 13.2021 5.5 12.2049C5.5 8.50135 8.41015 5.49902 12 5.49902C15.5899 5.49902 18.5 8.50135 18.5 12.2049C18.5 13.2021 18.289 14.1484 17.9106 14.999" stroke="#FFD700" stroke-width="1.5" stroke-linecap="round" />
-                <path d="M12 1.99902V2.99902" stroke="#FFD700" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M22 11.999H21" stroke="#FFD700" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M3 11.999H2" stroke="#FFD700" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M19.0704 4.92773L18.3633 5.63484" stroke="#FFD700" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M5.6368 5.63582L4.92969 4.92871" stroke="#FFD700" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M14.517 19.3055C15.5274 18.9786 15.9326 18.0538 16.0466 17.1236C16.0806 16.8458 15.852 16.6152 15.572 16.6152L8.47686 16.6154C8.18726 16.6155 7.95468 16.8612 7.98926 17.1488C8.10091 18.0771 8.38271 18.7553 9.45346 19.3055M14.517 19.3055C14.517 19.3055 9.62972 19.3055 9.45346 19.3055M14.517 19.3055C14.3955 21.2505 13.8338 22.0207 12.0068 21.9991C10.0526 22.0352 9.60304 21.0831 9.45346 19.3055" stroke="#FFD700" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-
-        },
-        {
             id: 3,
             name: "FERRAMENTAS ELÉTRICAS",
-            background: "#FFF5C5",
-            color: "#FFA500",
+            background: "#E5E8FF",
+            color: "#00008B",
             description: "",
             image: "electric.svg",
             svg: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 2V5" stroke="#FFA500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M15 2V5" stroke="#FFA500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M12 18V22" stroke="#FFA500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M12.6939 8.5L10.6029 10.6749C10.3788 10.9079 10.5394 11.2433 10.9048 11.3053L13.0952 11.6773C13.4848 11.7434 13.6334 12.1147 13.361 12.3413L10.7666 14.5" stroke="#FFA500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M14.3066 5H9.69342C7.5551 5 6.48594 5 5.89527 5.69774C5.3046 6.39548 5.46717 7.46639 5.79232 9.60823L6.31604 13.0581C6.83606 16.4836 8.28588 18 12 18C15.7141 18 17.1639 16.4836 17.684 13.0581L18.2077 9.60823C18.5328 7.46639 18.6954 6.39548 18.1047 5.69774C17.5141 5 16.4449 5 14.3066 5Z" stroke="#FFA500" stroke-width="1.5" />
+                <path d="M9 2V5" stroke="#00008B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M15 2V5" stroke="#00008B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12 18V22" stroke="#00008B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12.6939 8.5L10.6029 10.6749C10.3788 10.9079 10.5394 11.2433 10.9048 11.3053L13.0952 11.6773C13.4848 11.7434 13.6334 12.1147 13.361 12.3413L10.7666 14.5" stroke="#00008B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M14.3066 5H9.69342C7.5551 5 6.48594 5 5.89527 5.69774C5.3046 6.39548 5.46717 7.46639 5.79232 9.60823L6.31604 13.0581C6.83606 16.4836 8.28588 18 12 18C15.7141 18 17.1639 16.4836 17.684 13.0581L18.2077 9.60823C18.5328 7.46639 18.6954 6.39548 18.1047 5.69774C17.5141 5 16.4449 5 14.3066 5Z" stroke="#00008B" stroke-width="1.5" />
             </svg>
 
         },
         {
             id: 4,
             name: "FERRAMENTAS MANUAIS",
-            background: "#FFF5C5",
-            color: "#FFA500",
+            background: "#D7F1FF",
+            color: "#1E90FF",
             description: "",
             image: "wrench.svg",
             svg: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="#FFA500" stroke-width="1.5" />
-                <path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="#FFA500" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M20.3584 13.3567C19.1689 14.546 16.9308 14.4998 13.4992 14.4998C11.2914 14.4998 9.50138 12.7071 9.50024 10.4993C9.50024 7.07001 9.454 4.83065 10.6435 3.64138C11.8329 2.45212 12.3583 2.50027 17.6274 2.50027C18.1366 2.49809 18.3929 3.11389 18.0329 3.47394L15.3199 6.18714C14.6313 6.87582 14.6294 7.99233 15.3181 8.68092C16.0068 9.36952 17.1234 9.36959 17.8122 8.68109L20.5259 5.96855C20.886 5.60859 21.5019 5.86483 21.4997 6.37395C21.4997 11.6422 21.5479 12.1675 20.3584 13.3567Z" stroke="#1E90FF" stroke-width="1.5" />
+                <path d="M13.5 14.5L7.32842 20.6716C6.22386 21.7761 4.433 21.7761 3.32843 20.6716C2.22386 19.567 2.22386 17.7761 3.32843 16.6716L9.5 10.5" stroke="#1E90FF" stroke-width="1.5" stroke-linecap="round" />
                 <path d="M5.50896 18.5H5.5" stroke="#FFA500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+        },
+        {
+            id: 1,
+            name: "UTENSÍLIOS DE COZINHA",
+            background: "#E5E8FF",
+            color: "#00008B",
+            description: "",
+            image: "category.svg",
+            svg: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.5 3.00195L15.0606 6.44129C14.4748 7.02708 14.4748 7.97683 15.0606 8.56261L15.75 9.25195M15.75 9.25195L16.4393 9.94129C17.0251 10.5271 17.9748 10.5271 18.5606 9.94129L22 6.50195M15.75 9.25195L4 21.002" stroke="#00008B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M20 4.99902L17.5 7.49902" stroke="#00008B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M7.98914 8.99011C6.79472 10.1845 5.15674 10.4831 3.66377 8.99011C2.17075 7.49709 1.38801 4.77783 2.58243 3.58341C3.77685 2.38899 6.49611 3.17172 7.98914 4.66475C9.48211 6.15772 9.18356 7.79569 7.98914 8.99011ZM7.98914 8.99011L20 21.001" stroke="#00008B" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M9.20542 2.39669C10.0923 2.13908 11.03 2.00098 12 2.00098C13.1517 2.00098 14.2579 2.19567 15.2876 2.55394M2.04937 11.001C2.01672 11.3299 2 11.6635 2 12.001C2 14.0328 2.60598 15.9231 3.64707 17.501M7.77267 21.0661C9.05671 21.6659 10.4892 22.001 12 22.001C13.5244 22.001 14.9691 21.6599 16.262 21.0499M20.3529 17.501C21.394 15.9231 22 14.0328 22 12.001C22 11.4228 21.9509 10.8561 21.8567 10.3048" stroke="#00008B" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+
+        },
+        {
+            id: 2,
+            name: "ILUMINAÇÃO",
+            background: "#D7F1FF",
+            color: "#1E90FF",
+            description: "",
+            image: "luz.svg",
+            svg: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.08938 14.999C5.71097 14.1484 5.5 13.2021 5.5 12.2049C5.5 8.50135 8.41015 5.49902 12 5.49902C15.5899 5.49902 18.5 8.50135 18.5 12.2049C18.5 13.2021 18.289 14.1484 17.9106 14.999" stroke="#1E90FF" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M12 1.99902V2.99902" stroke="#1E90FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M22 11.999H21" stroke="#1E90FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M3 11.999H2" stroke="#1E90FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M19.0704 4.92773L18.3633 5.63484" stroke="#1E90FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M5.6368 5.63582L4.92969 4.92871" stroke="#1E90FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M14.517 19.3055C15.5274 18.9786 15.9326 18.0538 16.0466 17.1236C16.0806 16.8458 15.852 16.6152 15.572 16.6152L8.47686 16.6154C8.18726 16.6155 7.95468 16.8612 7.98926 17.1488C8.10091 18.0771 8.38271 18.7553 9.45346 19.3055M14.517 19.3055C14.517 19.3055 9.62972 19.3055 9.45346 19.3055M14.517 19.3055C14.3955 21.2505 13.8338 22.0207 12.0068 21.9991C10.0526 22.0352 9.60304 21.0831 9.45346 19.3055" stroke="#1E90FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
 
         }, {
@@ -104,8 +104,8 @@ export function Product() {
         }, {
             id: 7,
             name: "BATERIA",
-            background: "#FFEAD3",
-            color: "#FF4500",
+            background: "#E5E8FF",
+            color: "#00008B",
             description: "",
             image: "setup.svg",
             svg: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-battery" viewBox="0 0 16 16">
@@ -115,23 +115,23 @@ export function Product() {
         }, {
             id: 8,
             name: "COLA E RESISTENTE",
-            background: "#fffec1",
-            color: "#ffd700",
+            background: "#D7F1FF",
+            color: "#1E90FF",
             description: "",
             image: "luz.svg",
             svg: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3.5 13.678C3.5 9.49387 7.08079 5.35907 9.59413 2.97222C10.9591 1.67593 13.0409 1.67593 14.4059 2.97222C16.9192 5.35907 20.5 9.49387 20.5 13.678C20.5 17.7804 17.2812 22 12 22C6.71878 22 3.5 17.7804 3.5 13.678Z" stroke="#ffd700" stroke-width="1.5" />
-                <path d="M16 14C16 16.2091 14.2091 18 12 18" stroke="#ffd700" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M3.5 13.678C3.5 9.49387 7.08079 5.35907 9.59413 2.97222C10.9591 1.67593 13.0409 1.67593 14.4059 2.97222C16.9192 5.35907 20.5 9.49387 20.5 13.678C20.5 17.7804 17.2812 22 12 22C6.71878 22 3.5 17.7804 3.5 13.678Z" stroke="#1E90FF" stroke-width="1.5" />
+                <path d="M16 14C16 16.2091 14.2091 18 12 18" stroke="#1E90FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
 
         }, {
             id: 9,
             name: "ADITIVO DE LIMPEZA",
-            background: "#F3E9FE",
-            color: "#8A2BE2",
+            background: "#E5E8FF",
+            color: "#00008B",
             description: "",
             image: "backpack.svg",
-            svg: <svg viewBox="0 0 64 64" width={24} xmlns="http://www.w3.org/2000/svg"> <g data-name="11" id="_11"> <path d="M38,21.07s0,0,0-.07V19h1a1,1,0,0,0,1-1V15h5a1,1,0,0,0,.86-.49,1,1,0,0,0,0-1L42.11,6.74A5.33,5.33,0,0,0,37.45,4H21a1,1,0,0,0-1,1H16a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1h.1A21.33,21.33,0,0,1,16,17.86a21.77,21.77,0,0,1-3.83,9.56,1,1,0,0,0,.1,1.28A1,1,0,0,0,13,29a1,1,0,0,0,.56-.17A17.5,17.5,0,0,0,21,18.2,15.58,15.58,0,0,0,21.3,15H24v3a1,1,0,0,0,1,1h1v2a.88.88,0,0,0,.06.28,1,1,0,0,0-.16.2l-6,9.93A13.38,13.38,0,0,0,18,38.34v16.9A5.6,5.6,0,0,0,23.42,61H40.58A5.6,5.6,0,0,0,46,55.24V30.71A9.52,9.52,0,0,0,38,21.07ZM17,7h3v4H17Zm2,10.8a13.83,13.83,0,0,1-2.22,5.1A22.73,22.73,0,0,0,18,18.14,23.24,23.24,0,0,0,18.12,13h1A13.8,13.8,0,0,1,19,17.8ZM22,12V6H37.45a3.33,3.33,0,0,1,2.91,1.71L43.3,13H22Zm16,3v2H26V15Zm-2,4v1H28V19Zm-8.68,4h9.59C40.82,23,44,26.46,44,30.71V38H20a11.47,11.47,0,0,1,.84-4A.7.7,0,0,0,21,34h5a1,1,0,0,0,0-2H21.89l.67-1.11A1.06,1.06,0,0,0,23,31h5a1,1,0,0,0,0-2H23.7l.6-1H29a1,1,0,0,0,0-2H25.51ZM44,48H20V40H44ZM40.58,59H23.42A3.61,3.61,0,0,1,20,55.24V50H44v5.24A3.61,3.61,0,0,1,40.58,59Z" fill="#8A2BE2"  />  <path d="M42,37a1,1,0,0,0,1-1V31a1,1,0,0,0-2,0v5A1,1,0,0,0,42,37Z" fill="#8A2BE2" /> <path d="M42,51a1,1,0,0,0-1,1v2.34A1.67,1.67,0,0,1,39.34,56H38a1,1,0,0,0,0,2h1.34A3.66,3.66,0,0,0,43,54.34V52A1,1,0,0,0,42,51Z" fill="#8A2BE2"/> </g></svg>
+            svg: <svg viewBox="0 0 64 64" width={24} xmlns="http://www.w3.org/2000/svg"> <g data-name="11" id="_11"> <path d="M38,21.07s0,0,0-.07V19h1a1,1,0,0,0,1-1V15h5a1,1,0,0,0,.86-.49,1,1,0,0,0,0-1L42.11,6.74A5.33,5.33,0,0,0,37.45,4H21a1,1,0,0,0-1,1H16a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1h.1A21.33,21.33,0,0,1,16,17.86a21.77,21.77,0,0,1-3.83,9.56,1,1,0,0,0,.1,1.28A1,1,0,0,0,13,29a1,1,0,0,0,.56-.17A17.5,17.5,0,0,0,21,18.2,15.58,15.58,0,0,0,21.3,15H24v3a1,1,0,0,0,1,1h1v2a.88.88,0,0,0,.06.28,1,1,0,0,0-.16.2l-6,9.93A13.38,13.38,0,0,0,18,38.34v16.9A5.6,5.6,0,0,0,23.42,61H40.58A5.6,5.6,0,0,0,46,55.24V30.71A9.52,9.52,0,0,0,38,21.07ZM17,7h3v4H17Zm2,10.8a13.83,13.83,0,0,1-2.22,5.1A22.73,22.73,0,0,0,18,18.14,23.24,23.24,0,0,0,18.12,13h1A13.8,13.8,0,0,1,19,17.8ZM22,12V6H37.45a3.33,3.33,0,0,1,2.91,1.71L43.3,13H22Zm16,3v2H26V15Zm-2,4v1H28V19Zm-8.68,4h9.59C40.82,23,44,26.46,44,30.71V38H20a11.47,11.47,0,0,1,.84-4A.7.7,0,0,0,21,34h5a1,1,0,0,0,0-2H21.89l.67-1.11A1.06,1.06,0,0,0,23,31h5a1,1,0,0,0,0-2H23.7l.6-1H29a1,1,0,0,0,0-2H25.51ZM44,48H20V40H44ZM40.58,59H23.42A3.61,3.61,0,0,1,20,55.24V50H44v5.24A3.61,3.61,0,0,1,40.58,59Z" fill="#00008B" />  <path d="M42,37a1,1,0,0,0,1-1V31a1,1,0,0,0-2,0v5A1,1,0,0,0,42,37Z" fill="#8A2BE2" /> <path d="M42,51a1,1,0,0,0-1,1v2.34A1.67,1.67,0,0,1,39.34,56H38a1,1,0,0,0,0,2h1.34A3.66,3.66,0,0,0,43,54.34V52A1,1,0,0,0,42,51Z" fill="#00008B"/> </g></svg>
         }
     ]
 
