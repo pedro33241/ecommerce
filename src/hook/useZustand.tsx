@@ -1,16 +1,21 @@
 import { create } from "zustand";
 
-type MyObject = {
-    id: number;
-    nanameProducte: string;
-};
+ 
 
+type ProductType = {
+    id: number;
+    nameProduct: string;
+    details: string;
+    srcImage: string;
+    alt: string;
+    price: number;
+};
 type ZustandType = {
     open: boolean;
-    data: MyObject[];
+    data: ProductType[];
     handleOpen: () => void;
-    setData: (newData: MyObject[]) => void;
-    addData: (newItem: MyObject) => void;
+    setData: (newData: ProductType[]) => void;
+    addData: (newItem: ProductType) => void;
     removeData: (removeId: number) => void;
 };
 

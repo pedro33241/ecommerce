@@ -18,7 +18,7 @@ type ProductType = {
 export function Product2() {
     const { addData } = useStore()
         
-        const handleAddToCart = (product:any) => {
+    const handleAddToCart = (product: ProductType) => {
             addData(product)
          
         }

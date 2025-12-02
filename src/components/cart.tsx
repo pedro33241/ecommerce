@@ -15,8 +15,18 @@ export function CartDrawer() {
     type FilteredItem = {
         nome: string;
     };
+    type ProductType = {
+        id: number;
+        nameProduct: string;
+        details: string;
+        srcImage: string;
+        alt: string;
+        price: number;
+        quantity?: number;
+    };
 
-    const filterData: FilteredItem[] = data.map((item:any) => ({
+
+    const filterData: FilteredItem[] = data.map((item: ProductType) => ({
         nome: item.nameProduct,
     }));
 
@@ -49,7 +59,7 @@ export function CartDrawer() {
                         </div>
                     ) : (
                         <div className="space-y-4">
-                                {data?.map((item:any) => (
+                               {data?.map((item: ProductType) => (
                                 <div key={item.id} className="flex gap-4 rounded-lg border border-border bg-card p-4">
                                     <div className="h-20 w-20 shrink-0 overflow-hidden rounded-md bg-secondary">
                                         <Image

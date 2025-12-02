@@ -139,7 +139,7 @@ export function Product() {
 
     const { addData } = useStore()
 
-    const handleAddToCart = (product:any) => {
+    const handleAddToCart = (product: ProductType) => {
         addData(product)
      
     }
