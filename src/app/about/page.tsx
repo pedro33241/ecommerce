@@ -1,6 +1,5 @@
 
-import Image from "next/image"
-import { Product } from "../../components/product";
+import Image from "next/image" 
 import { Footer } from "../../components/footer/footer"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react";
