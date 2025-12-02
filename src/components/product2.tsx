@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useState } from "react";
 import Link from 'next/link'; 
 import { kitchenProduct } from "./mook/kitchenProduct"
 
@@ -17,10 +16,8 @@ type ProductType = {
 };
 
 export function Product2() {
-
-
-        const { addData ,data} = useStore()
-    
+    const { addData } = useStore()
+        
         const handleAddToCart = (product:any) => {
             addData(product)
          
@@ -39,7 +36,7 @@ export function Product2() {
                 <div className="tab-content mb-12">
                     <div className="lg:ml-10 sm:ml-0  flex-wrap justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
                                    {kitchenProduct?.map((item: ProductType) => (
-                              <Card className="group overflow-hidden border-border  transition-all hover:shadow-lg">
+                                       <Card key={item.id} className="group overflow-hidden border-border  transition-all hover:shadow-lg">
                                                                    <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
                                                                        <Image
                                                                            alt={item.alt}

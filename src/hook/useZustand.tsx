@@ -2,7 +2,7 @@ import { create } from "zustand";
 
 type MyObject = {
     id: number;
-    name: string;
+    nanameProducte: string;
 };
 
 type ZustandType = {
@@ -11,7 +11,7 @@ type ZustandType = {
     handleOpen: () => void;
     setData: (newData: MyObject[]) => void;
     addData: (newItem: MyObject) => void;
-    removeData: (removeId: string) => void;
+    removeData: (removeId: number) => void;
 };
 
 export const useStore = create<ZustandType>((set) => ({
@@ -27,8 +27,8 @@ export const useStore = create<ZustandType>((set) => ({
             data: [...state.data, newItem], 
         })),
 
-    removeData: (removeId) =>
+    removeData: (removeId:number) =>
         set((state) => ({
-            data: state.data.filter((item:any) => item.id !== removeId),
+            data: state.data.filter((item:{id:number}) => item.id !== removeId),
         }))
 }));

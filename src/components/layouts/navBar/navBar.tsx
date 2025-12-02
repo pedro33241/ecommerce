@@ -7,6 +7,7 @@ import { useState } from "react";
 import { AccountMenu } from "../sidbar/side";
 import style from "./navBar.module.css"
 import { CartDrawer } from "@/components/cart";
+import { usePathname } from "next/navigation";
 
 export function NavBar() {
     const [isVisible, setIsVisible] = useState(true);
@@ -15,7 +16,18 @@ const handleClick = ()=>{
 }
     const phone = 936884337;
 const menssage = "Olá! Estou interessado(a) em um produto da sua empresa. Poderia me fornecer mais informações sobre ele, como preço, disponibilidade e características? Obrigado(a)!"
-    return(
+  const pathName = usePathname();
+    
+    const itensMenu = [{
+        name: "Home",
+        link: "/"
+    }, {
+        name: "Produtos",
+        link: "/product"
+    }]
+    
+    console.log(pathName)
+    return (
       <>
       <div className="shadow fixed z-50 h-[95px] w-full bg-[#fff] flex m-0 justify-between">
           <div className="">
@@ -30,20 +42,25 @@ const menssage = "Olá! Estou interessado(a) em um produto da sua empresa. Poder
               </Link>
           </div>
 
-          <div className="h:flex absolute right-1 mf:hidden mt-4 float-right focus:outline-none">
-              <AccountMenu />
+          <div className="flex absolute gap-4  items-center right-6 mf:hidden mt-4 float-right focus:outline-none">
+                    <AccountMenu />
+                    <CartDrawer />
+
           </div>
 
          <div className={`  ${style.container} mt-4 `}>
                     
-              <div className="flex  flex-row gap-3 mr-5">
+              <div className="flex items-center  mt-3 flex-row gap-4 mr-5">
                                
-             
-              <Link href="/" className="m-3 text-black ">Home</Link>
-              <Link href="/product" className="m-3 text- ">Produtos</Link>
+             {itensMenu.map((item, index) => (
+                <div key={index} >
+                    <Link href={item.link} className={`mf:text-[16px] sx:text-sm font-medium  ${pathName === item.link ? "text-black border-b rounded-sm pb-1 border-yellow-400" : "text-gray-800 hover:text-black "} `}>
+                        {item.name}
+                    </Link>
+                </div>
+             ))}
               
                         <CartDrawer />
-              
                     
               </div>
           </div>

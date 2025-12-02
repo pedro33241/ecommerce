@@ -11,9 +11,13 @@ import Link from "next/link"
 export function CartDrawer() {
     const { data, removeData} = useStore();
     const phone = 936884337
+  
+    type FilteredItem = {
+        nome: string;
+    };
 
-    const filterData = data?.map((item: any) => ({
-        nome: item.nameProduct
+    const filterData: FilteredItem[] = data.map((item:any) => ({
+        nome: item.nameProduct,
     }));
 
     const product = filterData?.map(item => item.nome).join(", ");

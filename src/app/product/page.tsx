@@ -9,8 +9,8 @@ const ProductInfo = () => {
     return (
         <>
             <NavBar />
-
-            <div className="gap-24 flex justify-between sx:flex-col md:flex-row px-16 mt-16">
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            <div className="gap-24 flex justify-between sx:flex-col md:flex-row px-16 ">
 
                 <div className="w-full">
                     <h1 className="md:text-[30px] sx:text-[22px] mf:text-[40px] text-[#191c1e]">Suas compras na DBSD é nossa prioridade. Entregas realizadas menos de 24hr sobre confirmação de pagamento.</h1>

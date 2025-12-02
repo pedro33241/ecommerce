@@ -16,6 +16,8 @@ import Image from "next/image"
 
 import { motion, useInView } from "framer-motion";
 import {  useRef } from "react";
+import { Carousel } from "@/components/carousel";
+import { slides } from "@/components/constants";
 export default function Home() {
 
 
@@ -47,18 +49,9 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      <div className="cover">
-        <div className="back">
-          <div className="back2">
-            <h1 className=" text-white font-bold xl:text-5xl  mf:text-4xl text-2xl">
-              Suas compras na DBSD é nossa prioridade. Entregas realizadas menos de 24hr sobre confirmação de pagamento.
-            </h1>
-            <div className=" text-white mf:text-lg xl:text-xl font-normal md:base">
-              Sua compra te esperando em um ponto de coleta conveniente.
-            </div>
-          </div>
-        </div>
-      </div>
+    
+     <Carousel slides={slides} autoPlay interval={5000} />
+
       <motion.div
         ref={ref0}
         initial="initial"

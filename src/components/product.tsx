@@ -135,9 +135,9 @@ export function Product() {
         }
     ]
 
-    const { filterProductLuz, filterProduct, filterManualProducts, filterResistanceProducts, filterCleaningProducts, filterBatteryProducts, filterHygieneSafetyProducts,handleChangeSearch, filterElectricalProduct, filterAccessoryProducts, handleClickModal, handleTabChange, openProductSecond, product, activeTab } = UseSearch();
+    const { filterProductLuz, filterProduct, filterManualProducts, filterResistanceProducts, filterCleaningProducts, filterBatteryProducts, filterHygieneSafetyProducts,handleChangeSearch, filterElectricalProduct, filterAccessoryProducts, handleTabChange, activeTab } = UseSearch();
 
-    const { addData ,data} = useStore()
+    const { addData } = useStore()
 
     const handleAddToCart = (product:any) => {
         addData(product)
@@ -190,7 +190,7 @@ export function Product() {
                         <div>    <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Produtos de Cozinha</h2>
                             <div className="lg:ml-10 sm:ml-0 flex flex-wrap justify-center gap-10 mt-24">
                                 {filterProduct.length > 0 ? filterProduct.map((item: ProductType) => (
-                                    <Card className="group overflow-hidden border-border  transition-all hover:shadow-lg">
+                                    <Card key={item.id} className="group overflow-hidden border-border  transition-all hover:shadow-lg">
                                         <div className="relative overflow-hidden ">
                                             <Image
                                                 alt={item.alt}
@@ -242,7 +242,7 @@ export function Product() {
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Lâmpadas</h2>
                             <div className="lg:ml-10 sm:ml-0 flex flex-wrap justify-center gap-10 mt-24">
                                 {filterProductLuz.length > 0 ? filterProductLuz.map((item: ProductType) => (
-                                    <Card className="group overflow-hidden border-border  transition-all hover:shadow-lg">
+                                    <Card key={item.id} className="group overflow-hidden border-border  transition-all hover:shadow-lg">
                                         <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
                                             <Image
                                                 alt={item.alt}
@@ -293,7 +293,7 @@ export function Product() {
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Ferramentas Elétricas</h2>
                             <div className="lg:ml-10 sm:ml-0  flex-wrap justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
                                 {filterElectricalProduct.length > 0 ? filterElectricalProduct.map((item: ProductType) => (
-                                    <Card className="group overflow-hidden border-border  transition-all hover:shadow-lg">
+                                    <Card key={item.id} className="group overflow-hidden border-border  transition-all hover:shadow-lg">
                                         <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
                                             <Image
                                                 alt={item.alt}
@@ -343,7 +343,7 @@ export function Product() {
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Ferramentas Manuais</h2>
                             <div className="lg:ml-10 sm:ml-0  flex-wrap justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
                                {filterManualProducts.length > 0 ? filterManualProducts.map((item: ProductType) => (
-                                   <Card className="group overflow-hidden border-border  transition-all hover:shadow-lg">
+                                   <Card key={item.id} className="group overflow-hidden border-border  transition-all hover:shadow-lg">
                                        <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
                                            <Image
                                                alt={item.alt}
@@ -392,7 +392,7 @@ export function Product() {
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Acessórios</h2>
                             <div className="lg:ml-10 sm:ml-0  flex-wrap justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
                                 {filterAccessoryProducts.length > 0 ? filterAccessoryProducts.map((item: ProductType) => (
-                                    <Card className="group overflow-hidden border-border  transition-all hover:shadow-lg">
+                                    <Card key={item.id} className="group overflow-hidden border-border  transition-all hover:shadow-lg">
                                         <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
                                             <Image
                                                 alt={item.alt}
@@ -441,7 +441,7 @@ export function Product() {
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Higiene e Segurança</h2>
                             <div className="lg:ml-10 sm:ml-0  flex-wrap justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
                                 {filterHygieneSafetyProducts.length > 0 ? filterHygieneSafetyProducts.map((item: ProductType) => (
-                                    <Card className="group overflow-hidden border-border  transition-all hover:shadow-lg">
+                                    <Card key={item.id}  className="group overflow-hidden border-border  transition-all hover:shadow-lg">
                                         <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
                                             <Image
                                                 alt={item.alt}
@@ -489,7 +489,7 @@ export function Product() {
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Batéria</h2>
                             <div className="lg:ml-10 sm:ml-0  flex-wrap justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
                                 {filterBatteryProducts.length > 0 ? filterBatteryProducts.map((item: ProductType) => (
-                                    <Card className="group overflow-hidden border-border  transition-all hover:shadow-lg">
+                                    <Card key={item.id}  className="group overflow-hidden border-border  transition-all hover:shadow-lg">
                                         <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
                                             <Image
                                                 alt={item.alt}
@@ -539,7 +539,7 @@ export function Product() {
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Cola e Resistente</h2>
                             <div className="lg:ml-10 sm:ml-0  flex-wrap justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
                                    {filterResistanceProducts.length > 0 ? filterResistanceProducts.map((item: ProductType) => (
-                                       <Card className="group overflow-hidden border-border  transition-all hover:shadow-lg">
+                                       <Card key={item.id}  className="group overflow-hidden border-border  transition-all hover:shadow-lg">
                                            <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
                                                <Image
                                                    alt={item.alt}
@@ -589,7 +589,7 @@ export function Product() {
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Aditivo de Limpeza</h2>
                             <div className="lg:ml-10 sm:ml-0  flex-wrap justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
                               {filterCleaningProducts.length > 0 ? filterCleaningProducts.map((item: ProductType) => (
-                                  <Card className="group overflow-hidden border-border  transition-all hover:shadow-lg">
+                                  <Card key={item.id}  className="group overflow-hidden border-border  transition-all hover:shadow-lg">
                                       <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
                                           <Image
                                               alt={item.alt}
