@@ -61,14 +61,14 @@ export default function NavBar() {
                 </button>
 
                 {isOpen && (
-                    <nav className="absolute top-full left-0 right-0 bg-white border-t border-gray-200 md:hidden flex flex-col gap-4 p-6">
+                    <nav className="shadow absolute top-full left-0 right-0 bg-white border-t border-gray-200 md:hidden flex flex-col gap-4 p-6">
                         <Link href="/" className="text-gray-600 hover:text-black transition-colors">
                             Home
                         </Link>
-                        <Link href="/products" className="text-gray-600 hover:text-black transition-colors">
+                        <Link href="/product" className="text-gray-600 hover:text-black transition-colors">
                             Produtos
                         </Link>
-                        <Link href="/about" className="text-black font-semibold">
+                        <Link href="/about" className="text-gray-600 hover:text-black transition-colors">
                             Sobre Nós
                         </Link>
 
