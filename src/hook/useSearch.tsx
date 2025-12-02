@@ -61,9 +61,7 @@ export function UseSearch() {
         item.nameProduct.toLowerCase().includes(data.toLowerCase())
     );
 
-    const filterElectricalProduct = electricalProduct.filter((item: { nameProduct :string}) =>
-        item.nameProduct.toLowerCase().includes(data.toLowerCase())
-    );
+
     const filterAccessoryProducts = accessoryProducts.filter(item =>
         item.nameProduct.toLowerCase().includes(data.toLowerCase())
     );
