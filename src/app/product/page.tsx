@@ -25,7 +25,7 @@ const ProductInfo = () => {
                     src="/about.png"
                     width={501}
                     height={304}
-                    className="-mt-2 rounded-md"
+                    className="-mt-2 shadow-xl rounded-md"
                 /> </div>
             </div>
             <Product />
