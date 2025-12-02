@@ -1,6 +1,5 @@
  
 import {  lightingProduct } from "@/components/mook/lightingProduct";
-import { kitchenProduct } from "@/components/mook/kitchenProduct";
 import { useZustand } from "@/context/zustand";
 import { useState } from "react";
 import { electricalProduct } from "@/components/mook/electricalProduct";
@@ -10,6 +9,7 @@ import { hygieneSafety } from "@/components/mook/hygieneSafety";
 import { resistanceProduct } from "@/components/mook/resistanceProduct";
 import { batteryProducts } from "@/components/mook/battery";
 import { cleaningProducts } from "@/components/mook/cleaning";
+import { kitchenProduct } from "@/components/mook/kitchenProduct";
 
 type ProductType = {
     id: number;
@@ -21,7 +21,7 @@ type ProductType = {
 };
 
 export function UseSearch() {
-    const [activeTab, setActiveTab] = useState<number>(1);
+    const [activeTab, setActiveTab] = useState<number>(3);
 
 
     const { openProductSecond, handleClickSecond } = useZustand();
@@ -50,10 +50,13 @@ export function UseSearch() {
         setData(value);
     };
 
-    const filterProduct = kitchenProduct.filter(item =>
+    const filterProduct = electricalProduct.filter(item =>
         item.nameProduct.toLowerCase().includes(data.toLowerCase())
     );
 
+    const kitchenProductFiltered = kitchenProduct.filter(item =>
+        item.nameProduct.toLowerCase().includes(data.toLowerCase())
+    );
     const filterProductLuz = lightingProduct.filter(item =>
         item.nameProduct.toLowerCase().includes(data.toLowerCase())
     );
@@ -81,6 +84,6 @@ export function UseSearch() {
     const filterCleaningProducts = cleaningProducts.filter(item =>
         item.nameProduct.toLowerCase().includes(data.toLowerCase())
     );
-    return { filterProductLuz, filterCleaningProducts, filterAccessoryProducts, filterBatteryProducts, filterResistanceProducts, filterElectricalProduct, filterHygieneSafetyProducts,filterManualProducts,filterProduct, handleChangeSearch, handleClickModal, handleTabChange, openProductSecond, product, activeTab }
+    return { filterProductLuz, kitchenProductFiltered,filterCleaningProducts, filterAccessoryProducts, filterBatteryProducts, filterResistanceProducts, filterHygieneSafetyProducts,filterManualProducts,filterProduct, handleChangeSearch, handleClickModal, handleTabChange, openProductSecond, product, activeTab }
 }
 

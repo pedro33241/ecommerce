@@ -135,7 +135,7 @@ export function Product() {
         }
     ]
 
-    const { filterProductLuz, filterProduct, filterManualProducts, filterResistanceProducts, filterCleaningProducts, filterBatteryProducts, filterHygieneSafetyProducts,handleChangeSearch, filterElectricalProduct, filterAccessoryProducts, handleTabChange, activeTab } = UseSearch();
+    const { filterProductLuz, filterProduct, kitchenProductFiltered,filterManualProducts, filterResistanceProducts, filterCleaningProducts, filterBatteryProducts, filterHygieneSafetyProducts,handleChangeSearch, filterAccessoryProducts, handleTabChange, activeTab } = UseSearch();
 
     const { addData } = useStore()
 
@@ -187,22 +187,22 @@ export function Product() {
 
                 <div className="tab-content mb-12 mt-10">
                 {activeTab === 1 && (
-                        <div>    <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Produtos de Cozinha</h2>
-                            <div className="lg:ml-10 sm:ml-0 flex flex-wrap justify-center gap-10 mt-24">
-                                {filterProduct.length > 0 ? filterProduct.map((item: ProductType) => (
+                        <div>    <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Produtos Elétricos</h2>
+                            <div className="lg:ml-10 sm:ml-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 mt-24">
+                                {kitchenProductFiltered?.length > 0 ? kitchenProductFiltered?.map((item: ProductType) => (
                                     <Card key={item.id} className="group overflow-hidden border-border  transition-all hover:shadow-lg">
                                         <div className="relative overflow-hidden ">
                                             <Image
                                                 alt={item.alt}
                                                 src={item.srcImage}
-                                                width={250}
-                                                height={180}
-                                                className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                                                width={110}
+                                                height={110}
+                                                className="h-full w-[180px]  flex justify-between text-center mx-auto object-contain transition-transform duration-300 group-hover:scale-105"
                                             />
                                         </div>
                                         <CardContent className="p-6">
                                             <div className="mb-2 flex items-start justify-between gap-2">
-                                                <h3 className="font-serif text-xl leading-tight text-foreground">
+                                                <h3 className="font-serif text-[12px] leading-tight text-foreground">
                                                     {item.nameProduct}
                                                 </h3>
                                                 <Button
@@ -214,7 +214,7 @@ export function Product() {
                                                     <Plus className="h-4 w-4" />
                                                 </Button>
                                             </div>
-                                            <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                                            <p className="mb-4 text-[12px] leading-relaxed text-muted-foreground">
                                                 {item.details}
                                             </p>
                                         </CardContent>
@@ -222,7 +222,7 @@ export function Product() {
 
                                 
                                 )) : (
-                                    <div className="mx-auto gap-3 flex flex-col justify-center items-center text-gray-400 text-xl h-full">
+                                    <div className="mx-auto gap-3 flex text-center flex-col justify-center items-center text-gray-400 text-xl w-full h-full">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
                                             <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
                                         </svg>
@@ -240,36 +240,36 @@ export function Product() {
                     {activeTab === 2 && (
                         <div>
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Lâmpadas</h2>
-                            <div className="lg:ml-10 sm:ml-0 flex flex-wrap justify-center gap-10 mt-24">
-                                {filterProductLuz.length > 0 ? filterProductLuz.map((item: ProductType) => (
+                            <div className="lg:ml-10 sm:ml-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mt-24">
+                          {filterProductLuz.length > 0 ? filterProductLuz.map((item: ProductType) => (
                                     <Card key={item.id} className="group overflow-hidden border-border  transition-all hover:shadow-lg">
                                         <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
-                                            <Image
-                                                alt={item.alt}
-                                                src={item.srcImage}
-                                                width={250}
-                                                height={180}
-                                                className="max-h-full max-w-full object-contain"
-                                            />
+                                      <Image
+                                          alt={item.alt}
+                                          src={item.srcImage}
+                                          width={110}
+                                          height={110}
+                                          className="h-full w-[180px]  flex justify-between text-center mx-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                                      />
                                         </div>
-                                        <CardContent className="p-6">
-                                            <div className="mb-2 flex items-start justify-between gap-2">
-                                                <h3 className="font-serif text-xl leading-tight text-foreground">
-                                                    {item.nameProduct}
-                                                </h3>
-                                                <Button
-                                                    size="icon"
-                                                    variant="outline"
-                                                    onClick={() => handleAddToCart(item)}
-                                                    className="shrink-0 rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-                                                >
-                                                    <Plus className="h-4 w-4" />
-                                                </Button>
-                                            </div>
-                                            <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-                                                {item.details}
-                                            </p>
-                                        </CardContent>
+                                  <CardContent className="p-6">
+                                      <div className="mb-2 flex items-start justify-between gap-2">
+                                          <h3 className="font-serif text-[12px] leading-tight text-foreground">
+                                              {item.nameProduct}
+                                          </h3>
+                                          <Button
+                                              size="icon"
+                                              variant="outline"
+                                              onClick={() => handleAddToCart(item)}
+                                              className="shrink-0 rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+                                          >
+                                              <Plus className="h-4 w-4" />
+                                          </Button>
+                                      </div>
+                                      <p className="mb-4 text-[12px] leading-relaxed text-muted-foreground">
+                                          {item.details}
+                                      </p>
+                                  </CardContent>
                                     </Card>
 
 
@@ -292,20 +292,20 @@ export function Product() {
                         <div>
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Ferramentas Elétricas</h2>
                             <div className="lg:ml-10 sm:ml-0  flex-wrap justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
-                                {filterElectricalProduct.length > 0 ? filterElectricalProduct.map((item: ProductType) => (
+                                {filterProduct?.length > 0 ? filterProduct?.map((item: ProductType) => (
                                     <Card key={item.id} className="group overflow-hidden border-border  transition-all hover:shadow-lg">
                                         <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
                                             <Image
                                                 alt={item.alt}
                                                 src={item.srcImage}
-                                                width={250}
-                                                height={180}
-                                                className="max-h-full max-w-full object-contain"
+                                                width={110}
+                                                height={110}
+                                                className="h-full w-[180px]  flex justify-between text-center mx-auto object-contain transition-transform duration-300 group-hover:scale-105"
                                             />
                                         </div>
                                         <CardContent className="p-6">
                                             <div className="mb-2 flex items-start justify-between gap-2">
-                                                <h3 className=" text-xl leading-tight text-foreground">
+                                                <h3 className="font-serif text-[12px] leading-tight text-foreground">
                                                     {item.nameProduct}
                                                 </h3>
                                                 <Button
@@ -317,7 +317,7 @@ export function Product() {
                                                     <Plus className="h-4 w-4" />
                                                 </Button>
                                             </div>
-                                            <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                                            <p className="mb-4 text-[12px] leading-relaxed text-muted-foreground">
                                                 {item.details}
                                             </p>
                                         </CardContent>
@@ -348,14 +348,14 @@ export function Product() {
                                            <Image
                                                alt={item.alt}
                                                src={item.srcImage}
-                                               width={250}
-                                               height={180}
-                                               className="max-h-full max-w-full object-contain"
+                                               width={110}
+                                               height={110}
+                                               className="h-full w-[180px]  flex justify-between text-center mx-auto object-contain transition-transform duration-300 group-hover:scale-105"
                                            />
                                        </div>
                                        <CardContent className="p-6">
                                            <div className="mb-2 flex items-start justify-between gap-2">
-                                               <h3 className=" text-xl leading-tight text-foreground">
+                                               <h3 className="font-serif text-[12px] leading-tight text-foreground">
                                                    {item.nameProduct}
                                                </h3>
                                                <Button
@@ -367,7 +367,7 @@ export function Product() {
                                                    <Plus className="h-4 w-4" />
                                                </Button>
                                            </div>
-                                           <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                                           <p className="mb-4 text-[12px] leading-relaxed text-muted-foreground">
                                                {item.details}
                                            </p>
                                        </CardContent>
@@ -397,9 +397,9 @@ export function Product() {
                                             <Image
                                                 alt={item.alt}
                                                 src={item.srcImage}
-                                                width={250}
-                                                height={180}
-                                                className="max-h-full max-w-full object-contain"
+                                                width={110}
+                                                height={110}
+                                                className="h-full w-[180px]  flex justify-between text-center mx-auto object-contain transition-transform duration-300 group-hover:scale-105"
                                             />
                                         </div>
                                         <CardContent className="p-6">
@@ -446,14 +446,14 @@ export function Product() {
                                             <Image
                                                 alt={item.alt}
                                                 src={item.srcImage}
-                                                width={250}
-                                                height={180}
-                                                className="max-h-full max-w-full object-contain"
+                                                width={110}
+                                                height={110}
+                                                className="h-full w-[180px]  flex justify-between text-center mx-auto object-contain transition-transform duration-300 group-hover:scale-105"
                                             />
                                         </div>
                                         <CardContent className="p-6">
                                             <div className="mb-2 flex items-start justify-between gap-2">
-                                                <h3 className=" text-xl leading-tight text-foreground">
+                                                <h3 className="font-serif text-[12px] leading-tight text-foreground">
                                                     {item.nameProduct}
                                                 </h3>
                                                 <Button
@@ -465,7 +465,7 @@ export function Product() {
                                                     <Plus className="h-4 w-4" />
                                                 </Button>
                                             </div>
-                                            <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                                            <p className="mb-4 text-[12px] leading-relaxed text-muted-foreground">
                                                 {item.details}
                                             </p>
                                         </CardContent>
@@ -494,14 +494,14 @@ export function Product() {
                                             <Image
                                                 alt={item.alt}
                                                 src={item.srcImage}
-                                                width={250}
-                                                height={180}
-                                                className="max-h-full max-w-full object-contain"
+                                                width={110}
+                                                height={110}
+                                                className="h-full w-[180px]  flex justify-between text-center mx-auto object-contain transition-transform duration-300 group-hover:scale-105"
                                             />
                                         </div>
                                         <CardContent className="p-6">
                                             <div className="mb-2 flex items-start justify-between gap-2">
-                                                <h3 className=" text-xl leading-tight text-foreground">
+                                                <h3 className="font-serif text-[12px] leading-tight text-foreground">
                                                     {item.nameProduct}
                                                 </h3>
                                                 <Button
@@ -513,7 +513,7 @@ export function Product() {
                                                     <Plus className="h-4 w-4" />
                                                 </Button>
                                             </div>
-                                            <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                                            <p className="mb-4 text-[12px] leading-relaxed text-muted-foreground">
                                                 {item.details}
                                             </p>
                                         </CardContent>
@@ -544,14 +544,14 @@ export function Product() {
                                                <Image
                                                    alt={item.alt}
                                                    src={item.srcImage}
-                                                   width={250}
-                                                   height={180}
-                                                   className="max-h-full max-w-full object-contain"
+                                                   width={110}
+                                                   height={110}
+                                                   className="h-full w-[180px]  flex justify-between text-center mx-auto object-contain transition-transform duration-300 group-hover:scale-105"
                                                />
                                            </div>
                                            <CardContent className="p-6">
                                                <div className="mb-2 flex items-start justify-between gap-2">
-                                                   <h3 className=" text-xl leading-tight text-foreground">
+                                                   <h3 className="font-serif text-[12px] leading-tight text-foreground">
                                                        {item.nameProduct}
                                                    </h3>
                                                    <Button
@@ -563,7 +563,7 @@ export function Product() {
                                                        <Plus className="h-4 w-4" />
                                                    </Button>
                                                </div>
-                                               <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                                               <p className="mb-4 text-[12px] leading-relaxed text-muted-foreground">
                                                    {item.details}
                                                </p>
                                            </CardContent>
@@ -594,14 +594,14 @@ export function Product() {
                                           <Image
                                               alt={item.alt}
                                               src={item.srcImage}
-                                              width={250}
-                                              height={180}
-                                              className="max-h-full max-w-full object-contain"
+                                              width={110}
+                                              height={110}
+                                              className="h-full w-[180px]  flex justify-between text-center mx-auto object-contain transition-transform duration-300 group-hover:scale-105"
                                           />
                                       </div>
                                       <CardContent className="p-6">
                                           <div className="mb-2 flex items-start justify-between gap-2">
-                                              <h3 className=" text-xl leading-tight text-foreground">
+                                              <h3 className="font-serif text-[12px] leading-tight text-foreground">
                                                   {item.nameProduct}
                                               </h3>
                                               <Button
@@ -613,7 +613,7 @@ export function Product() {
                                                   <Plus className="h-4 w-4" />
                                               </Button>
                                           </div>
-                                          <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                                          <p className="mb-4 text-[12px] leading-relaxed text-muted-foreground">
                                               {item.details}
                                           </p>
                                       </CardContent>
