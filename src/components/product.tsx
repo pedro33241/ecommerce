@@ -14,7 +14,7 @@ type ProductType = {
     srcImage: string;
     alt: string;
     price: number;
-};
+}
 
 
 export function Product() {
@@ -400,7 +400,7 @@ export function Product() {
                         <div>
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Acessórios</h2>
                             <div className="lg:ml-10 sm:ml-0  flex-wrap justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
-                                {filterAccessoryProducts.length > 0 ? filterAccessoryProducts.map((item: ProductType) => (
+                                {filterAccessoryProducts?.length > 0 ? filterAccessoryProducts?.map((item: ProductType) => (
                                     <Card key={item.id} className="group overflow-hidden border-border  transition-all hover:shadow-lg">
                                         <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
                                             <Image

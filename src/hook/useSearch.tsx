@@ -62,7 +62,7 @@ export function UseSearch() {
     );
 
 
-    const filterAccessoryProducts = accessoryProducts.filter(item =>
+    const filterAccessoryProducts = accessoryProducts.filter((item) =>
         item.nameProduct.toLowerCase().includes(data.toLowerCase())
     );
     const filterManualProducts = manualProducts.filter(item =>
