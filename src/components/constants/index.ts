@@ -4,12 +4,7 @@ export const slides = [
         subtitle: "Equipamentos de solda de alto desempenho",
         description: "Aparelhos Flux garantem potência, durabilidade e um acabamento impecável para qualquer trabalho.",
         image: "/slide1.jpg",
-    }, {
-        title: "Suas compras na DBSD é nossa prioridade.",
-        subtitle: "Entregas realizadas menos de 24hr sobre confirmação de pagamento.",
-        description: "Sua compra te esperando em um ponto de coleta conveniente.",
-        image: "/image1.png",
-    },
+    }, 
     {
         title: "Ferramentas Bosch Originais",
         subtitle: "Qualidade reconhecida mundialmente",
