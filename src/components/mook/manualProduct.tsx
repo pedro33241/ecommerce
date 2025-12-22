@@ -440,7 +440,7 @@ export const manualProducts = [
         price: 0
     },
     {
-        id: 1,
+        id: 56,
         nameProduct: "JOGO DE ALICATES 4 PCS YATO",
         details: "Conjunto de alicates profissionais YATO, ideal para trabalhos mecânicos, elétricos e de manutenção geral. Fabricados com material resistente para maior durabilidade e precisão. Para mais detalhe, ponha no carrinho e solicite cotação e ficha técnica.",
         srcImage: "/ferramentaManual/56.jpg",
@@ -448,7 +448,7 @@ export const manualProducts = [
         price: 0
     },
     {
-        id: 2,
+        id: 57,
         nameProduct: "JOGO DE ALICATE DE CIRCLIP 4 PCS 180 MM YATO",
         details: "Jogo de alicates para circlip interno e externo, com 180 mm, indicado para montagem e desmontagem de anéis de retenção com segurança e eficiência. Para mais detalhe, ponha no carrinho e solicite cotação e ficha técnica.",
         srcImage: "/ferramentaManual/57.jpg",
@@ -456,7 +456,7 @@ export const manualProducts = [
         price: 0
     },
     {
-        id: 3,
+        id: 58,
         nameProduct: "MALA DE TARRAXA PARA TUBO METÁLICO 7 PCS YATO",
         details: "Conjunto completo de tarraxas para roscagem de tubos metálicos, com medidas de 1/4’’ a 5/4’’. Acompanha mala resistente para transporte e organização. Para mais detalhe, ponha no carrinho e solicite cotação e ficha técnica.",
         srcImage: "/ferramentaManual/58.jpg",
@@ -464,7 +464,7 @@ export const manualProducts = [
         price: 0
     },
     {
-        id: 4,
+        id: 59,
         nameProduct: "JOGO DE CHAVES 6 PCS (3 FENDA + 3 ESTRELA) YATO",
         details: "Conjunto de chaves de fenda e estrela, ideal para uso profissional e doméstico, oferecendo conforto, resistência e precisão no aperto e desaperto. Para mais detalhe, ponha no carrinho e solicite cotação e ficha técnica.",
         srcImage: "/ferramentaManual/59.jpg",
@@ -472,7 +472,7 @@ export const manualProducts = [
         price: 0
     },
     {
-        id: 5,
+        id: 60,
         nameProduct: "JOGO DE LIMA PARA FERRO 250 MM 5 PCS YATO",
         details: "Jogo de limas para ferro com diferentes perfis, indicado para desbaste, acabamento e ajuste de peças metálicas. Alta durabilidade e eficiência. Para mais detalhe, ponha no carrinho e solicite cotação e ficha técnica.",
         srcImage: "/ferramentaManual/60.jpg",
@@ -480,7 +480,7 @@ export const manualProducts = [
         price: 0
     },
     {
-        id: 6,
+        id: 61,
         nameProduct: "SERRA CRANEANA 8 PCS (22–73 MM) YATO",
         details: "Conjunto de serras craneanas com diâmetros variados, ideal para perfuração em madeira, metal e outros materiais, garantindo cortes precisos. Para mais detalhe, ponha no carrinho e solicite cotação e ficha técnica.",
         srcImage: "/ferramentaManual/61.jpg",
@@ -488,7 +488,7 @@ export const manualProducts = [
         price: 0
     },
     {
-        id: 7,
+        id: 62,
         nameProduct: "PAQUÍMETRO UNIVERSAL 300 MM YATO",
         details: "Paquímetro universal de alta precisão, indicado para medições internas, externas e de profundidade em aplicações industriais e técnicas. Para mais detalhe, ponha no carrinho e solicite cotação e ficha técnica.",
         srcImage: "/ferramentaManual/62.jpg",
@@ -496,7 +496,7 @@ export const manualProducts = [
         price: 0
     },
     {
-        id: 8,
+        id: 63,
         nameProduct: "JOGO BATE CHAPA 7 PCS YATO",
         details: "Conjunto de ferramentas para reparação e alinhamento de chapas metálicas, ideal para funilaria e trabalhos automotivos. Para mais detalhe, ponha no carrinho e solicite cotação e ficha técnica.",
         srcImage: "/ferramentaManual/63.jpg",
@@ -504,7 +504,7 @@ export const manualProducts = [
         price: 0
     },
     {
-        id: 9,
+        id: 64,
         nameProduct: "JOGO DE CHAVES BOCA–LUNETA 8–24 MM 12 PCS CRV YATO",
         details: "Jogo de chaves combinadas em aço cromo-vanádio (CRV), oferecendo resistência, durabilidade e excelente desempenho profissional. Para mais detalhe, ponha no carrinho e solicite cotação e ficha técnica.",
         srcImage: "/ferramentaManual/64.jpg",
@@ -512,7 +512,7 @@ export const manualProducts = [
         price: 0
     },
     {
-        id: 10,
+        id: 65,
         nameProduct: "JOGO DE CHAVES BOCA–LUNETA 8–32 MM 17 PCS CRV YATO",
         details: "Conjunto completo de chaves combinadas para aplicações mecânicas e industriais, com acabamento de alta qualidade. Para mais detalhe, ponha no carrinho e solicite cotação e ficha técnica.",
         srcImage: "/ferramentaManual/65.jpg",
@@ -520,7 +520,7 @@ export const manualProducts = [
         price: 0
     },
     {
-        id: 11,
+        id: 66,
         nameProduct: "JOGO DE CHAVES BOCA–LUNETA 6–32 MM 25 PCS YATO",
         details: "Jogo profissional de chaves combinadas, ideal para oficinas e manutenção pesada, garantindo eficiência e organização. Para mais detalhe, ponha no carrinho e solicite cotação e ficha técnica.",
         srcImage: "/ferramentaManual/66.jpg",
@@ -528,7 +528,7 @@ export const manualProducts = [
         price: 0
     },
     {
-        id: 12,
+        id: 67,
         nameProduct: "JOGO DE CHAVES LUNETA 6–32 MM 25 PCS YATO",
         details: "Conjunto de chaves luneta indicado para trabalhos que exigem maior torque e segurança no aperto de parafusos e porcas. Para mais detalhe, ponha no carrinho e solicite cotação e ficha técnica.",
         srcImage: "/ferramentaManual/67.jpg",
@@ -536,7 +536,7 @@ export const manualProducts = [
         price: 0
     },
     {
-        id: 13,
+        id: 68,
         nameProduct: "JOGO DE SOQUETES 215 PCS 1/4” 3/8” 1/2” YATO",
         details: "Kit completo de soquetes e acessórios, ideal para uso profissional, com ampla variedade de peças para diversas aplicações. Para mais detalhe, ponha no carrinho e solicite cotação e ficha técnica.",
         srcImage: "/ferramentaManual/68.jpg",
@@ -544,7 +544,7 @@ export const manualProducts = [
         price: 0
     },
     {
-        id: 14,
+        id: 69,
         nameProduct: "JOGO DE SOQUETES 215 PCS 1/4” 3/8” 1/2” YATO",
         details: "Conjunto robusto e versátil de soquetes YATO, indicado para oficinas, manutenção industrial e automotiva. Para mais detalhe, ponha no carrinho e solicite cotação e ficha técnica.",
         srcImage: "/ferramentaManual/69.jpg",
@@ -552,7 +552,7 @@ export const manualProducts = [
         price: 0
     },
     {
-        id: 15,
+        id: 70,
         nameProduct: "JOGO DE SOQUETES 108 PCS 1/2” 1/4” YATO",
         details: "Jogo de soquetes compacto e eficiente, ideal para trabalhos mecânicos e técnicos, com excelente organização em estojo. Para mais detalhe, ponha no carrinho e solicite cotação e ficha técnica.",
         srcImage: "/ferramentaManual/70.jpg",
@@ -560,7 +560,7 @@ export const manualProducts = [
         price: 0
     },
     {
-        id: 16,
+        id: 71,
         nameProduct: "MALA COM FERRAMENTAS 125 PCS YATO",
         details: "Mala completa com ferramentas essenciais para manutenção geral, ideal para profissionais e uso técnico intensivo. Para mais detalhe, ponha no carrinho e solicite cotação e ficha técnica.",
         srcImage: "/ferramentaManual/71.jpg",
@@ -568,7 +568,7 @@ export const manualProducts = [
         price: 0
     },
     {
-        id: 17,
+        id: 72,
         nameProduct: "MALA COM FERRAMENTAS 63 PCS YATO",
         details: "Conjunto prático de ferramentas básicas, ideal para uso doméstico, técnico e pequenas manutenções, com mala resistente. Para mais detalhe, ponha no carrinho e solicite cotação e ficha técnica.",
         srcImage: "/ferramentaManual/72.jpg",
