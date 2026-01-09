@@ -1,53 +1,88 @@
 export const kitchenProduct = [
-    {
-        id: 1,
-        nameProduct:"Frigideira Antiaderente",
-        details:"Produto de compras",
-        srcImage:"frigideira.svg",
-        alt:"imagem de frigideira",
-        price:10000
-    },  {
-        id:2,
-        nameProduct:"Panela de Pressão",
-        details:"Produto de compras",
-        srcImage:"panela.svg",
-        alt:"imagem de panela",
-        price:7000
-    } , {
-        id:3,
-        nameProduct:"Pratos",
-        details:"Produto de compras",
-        srcImage:"pratos.svg",
-        alt:"imagem de pratos",
-        price:11000
-    } , {
-        id:4,
-        nameProduct:"Copos",
-        details:"Produto de compras",
-        srcImage:"copos.svg",
-        alt:"imagem de copos",
-        price:5000
-    }, {
-        id:5,
-        nameProduct:"Tábua de Corte de Carne",
-        details:"Produto de compras",
-        srcImage:"tabua.svg",
-        alt:"imagem de tabua",
-        price:5000
-    },{
-        id:6,
-        nameProduct:"Faqueiro",
-        details:"Produto de compras",
-        srcImage:"faqueiro.svg",
-        alt:"imagem de facas",
-        price:5000
-    },{
-        id:7,
-        nameProduct:"Talheres",
-        details:"Produto de compras",
-        srcImage:"talher.svg",
-        alt:"imagem de talher",
-        price:5000
-    }
-  
-]
+    { id: 1, nameProduct: "ASSADEIRA C/GRELHA ANTIADERENTE RECT. 34CM GRAFITE", details: "Assadeira retangular com grelha antiaderente, ideal para assar carnes e legumes de forma prática e saudável. Acabamento em grafite proporciona durabilidade e fácil limpeza.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/1.jpg", alt: "produto cozinha", price: 0 },
+    { id: 2, nameProduct: "ASSADEIRA FUNDA ANTIADERENTE RECT. 40CM GRAFITE", details: "Assadeira funda com revestimento antiaderente, perfeita para assados grandes, tortas e gratinados. Grafite de alta resistência garante uso contínuo sem desgaste.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/2.jpg", alt: "produto cozinha", price: 0 },
+    { id: 3, nameProduct: "ASSADEIRA PIZZA ALUM. 30CM BRASIL", details: "Assadeira em alumínio ideal para pizzas e tortas, distribuindo o calor uniformemente e garantindo resultados perfeitos.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/3.jpg", alt: "produto cozinha", price: 0 },
+    { id: 4, nameProduct: "FORMA P/PIZZA 35CM BRASIL", details: "Forma redonda em alumínio para pizzas, proporcionando assados uniformes e prática utilização no dia a dia.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/4.jpg", alt: "produto cozinha", price: 0 },
+    { id: 5, nameProduct: "FORMA P/ BOLO ANTIADERENTE 24CM GRAFITE BRASIL", details: "Forma antiaderente para bolos, facilita a retirada das receitas sem grudar, com acabamento durável em grafite.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/5.jpg", alt: "produto cozinha", price: 0 },
+    { id: 6, nameProduct: "FORMA PARA BOLO ALUM. 20CM BRASIL", details: "Forma em alumínio ideal para bolos pequenos, distribuindo o calor de forma uniforme para assados perfeitos.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/6.jpg", alt: "produto cozinha", price: 0 },
+    { id: 7, nameProduct: "FORMA P/ BOL E PUD ANTIADERENTE 24CM GRAFITE BRASIL", details: "Forma versátil para bolos e pudins, revestida com antiaderente que garante fácil desmoldagem e limpeza prática.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/7.jpg", alt: "produto cozinha", price: 0 },
+    { id: 8, nameProduct: "FORMA C/FUNDO MÓVEL Alum c/ Revestimento Antiaderente 26 cm", details: "Forma com fundo removível, ideal para cheesecakes e tortas delicadas. Alumínio com revestimento antiaderente facilita o uso e a limpeza.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/8.jpg", alt: "produto cozinha", price: 0 },
+    { id: 9, nameProduct: "FORMA P/PAO E BOLO Alum c/Revestimento Antiaderente 26 CM BRASIL", details: "Forma em alumínio com revestimento antiaderente, ideal para bolos e pães caseiros, garantindo assados uniformes e fácil desmoldagem.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/9.jpg", alt: "produto cozinha", price: 0 },
+    { id: 10, nameProduct: "FORMA P/PAO E BOLO Alum c/Revestimento Antiaderente 30CM BRASIL", details: "Forma maior em alumínio com antiaderente, perfeita para bolos e pães grandes, proporcionando cozimento uniforme e fácil manutenção.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/10.jpg", alt: "produto cozinha", price: 0 },
+
+    { id: 11, nameProduct: "JOGO DE ASSADEIRAS ALUM.Antiaderente (34,28 & 22 CM) 3 PCS BRASIL", details: "Conjunto de assadeiras em alumínio com revestimento antiaderente, perfeito para diversas receitas e tamanhos, garantindo praticidade e resistência.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/11.jpg", alt: "produto cozinha", price: 0 },
+    { id: 12, nameProduct: "OMELETEIRA ANTIADERENTE 20CM C/ CABO GRAFITE LORET", details: "Omeleteira de 20cm com revestimento antiaderente e cabo ergonômico em grafite, ideal para omeletes, panquecas e receitas rápidas.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/12.jpg", alt: "produto cozinha", price: 0 },
+    { id: 13, nameProduct: "FRIGIDEIRA ALUM Antiaderent 28CM Cabo Baquelite", details: "Frigideira de 28cm com revestimento antiaderente e cabo em baquelite, garantindo praticidade e segurança ao cozinhar.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/13.jpg", alt: "produto cozinha", price: 0 },
+    { id: 14, nameProduct: "FRIGIDEIRA ALUM Antiaderent 30CM Cabo Baquelite", details: "Frigideira grande de 30cm em alumínio com antiaderente, perfeita para frituras e refogados, com cabo confortável e resistente.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/14.jpg", alt: "produto cozinha", price: 0 },
+
+    { id: 15, nameProduct: "JG PANELAS ALUM Antiaderent 5PCS Cabo Baquelite", details: "Conjunto de 5 panelas em alumínio com revestimento antiaderente e cabos em baquelite, ideal para uso diário com alta durabilidade.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/15.jpg", alt: "produto cozinha", price: 0 },
+    { id: 16, nameProduct: "JG PANELAS ALUM Antiaderent 7PCS Cabo Baquelite", details: "Completo conjunto de 7 panelas antiaderentes em alumínio, com cabos resistentes e design funcional para facilitar seu dia na cozinha.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/16.jpg", alt: "produto cozinha", price: 0 },
+
+    { id: 17, nameProduct: "Panela de Pressão 24 cm 10 L", details: "Panela de pressão de 10L, ideal para preparar alimentos de forma rápida e segura, fabricada com material resistente e durável.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/17.jpg", alt: "produto cozinha", price: 0 },
+    { id: 18, nameProduct: "PANELA PRESSÃO 24CM, VALENCIA BLACK", details: "Panela de pressão Valencia Black, 24cm, perfeita para cozimentos rápidos, com acabamento elegante e alta resistência.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/18.jpg", alt: "produto cozinha", price: 0 },
+    { id: 19, nameProduct: "PANELA PRESSÃO 4,5 L, 20CM VANCOUVER", details: "Panela de pressão compacta Vancouver, 4,5L, ideal para famílias pequenas, combinando segurança e praticidade no preparo de alimentos.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/19.jpg", alt: "produto cozinha", price: 0 },
+    { id: 20, nameProduct: "PANELA DE PRESSÃO 24CM, 6 L, VANCOUVER", details: "Panela de pressão 6L, resistente e segura, perfeita para cozinhar grandes quantidades com rapidez e eficiência.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/20.jpg", alt: "produto cozinha", price: 0 },
+
+    { id: 21, nameProduct: "GRELLA RECTANGULAR FURADA 28 CM, CHURRASCO", details: "Grelha retangular para churrasco, ideal para assar carnes e vegetais de forma uniforme, proporcionando sabor autêntico.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/21.jpg", alt: "produto cozinha", price: 0 },
+
+    { id: 22, nameProduct: "CAÇAROLA 26 CM LYON", details: "Caçarola de 26cm em alumínio, perfeita para cozimentos lentos, ensopados e sopas, garantindo distribuição uniforme do calor.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/22.jpg", alt: "produto cozinha", price: 0 },
+    { id: 23, nameProduct: "FRIGIDEIRA 32 CM LYON", details: "Frigideira grande de 32cm Lyon, ideal para frituras, refogados e pratos variados, com revestimento resistente e durável.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/23.jpg", alt: "produto cozinha", price: 0 },
+    { id: 24, nameProduct: "CAÇAROLA 26 CM LYON", details: "Caçarola versátil de 26cm, perfeita para preparar receitas do dia a dia com praticidade e durabilidade.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/24.jpg", alt: "produto cozinha", price: 0 },
+    { id: 25, nameProduct: "CAÇAROLA 30 CM LYON", details: "Caçarola ampla de 30cm, ideal para grandes receitas e preparos variados, garantindo cozimento uniforme.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/25.jpg", alt: "produto cozinha", price: 0 },
+    { id: 26, nameProduct: "PANELA 20 CM LYON", details: "Panela de 20cm, compacta e eficiente, ideal para pequenas porções e uso diário.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/26.jpg", alt: "produto cozinha", price: 0 },
+    { id: 27, nameProduct: "PANELA QUADRADA 28 CM LYON", details: "Panela quadrada de 28cm, perfeita para pratos variados e cozimento uniforme, com design moderno e funcional.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/27.jpg", alt: "produto cozinha", price: 0 },
+    { id: 28, nameProduct: "CONJUNTO DE PANELAS DE 6 PÇS LYON", details: "Jogo completo de 6 panelas Lyon, oferecendo versatilidade e resistência para todas as suas receitas.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/28.jpg", alt: "produto cozinha", price: 0 },
+
+    { id: 29, nameProduct: "CONJUNTO FACAS PARA CARNE 6 PCS", details: "Conjunto com 6 facas para carne, afiadas e resistentes, garantindo cortes precisos e segurança na cozinha.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/29.jpg", alt: "produto cozinha", price: 0 },
+    { id: 30, nameProduct: "CONJUNTO GARFOS 6 PCS", details: "Conjunto de 6 garfos resistentes, ideais para churrasco, assados e refeições do dia a dia.\nPara mais informações, adicione ao carrinho e solicite.", srcImage: "/cozinha/30.jpg", alt: "produto cozinha", price: 0 },
+
+    { id: 31, nameProduct: "CONJUNTO COLHERES SOPA 6 PCS", details: "Conjunto com 6 colheres de sopa Tramontina, ideais para o dia a dia ou ocasiões especiais. Fabricadas em aço inox de alta qualidade, garantindo durabilidade e higiene. Design moderno e acabamento elegante que combina com qualquer louça.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/31.jpg", alt: "produto cozinha", price: 0 },
+    { id: 32, nameProduct: "CONJ. COLHERES INOX 6 PCS para chá", details: "Conjunto com 6 colheres para chá, perfeitas para servir com estilo. Produzidas em aço inox resistente, proporcionam conforto e praticidade no uso diário. Acabamento polido que valoriza sua mesa.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/32.jpg", alt: "produto cozinha", price: 0 },
+
+    { id: 33, nameProduct: "Faca para Legumes e Frutas POLYWOOD 3”", details: "Faca de precisão para cortar legumes e frutas com facilidade. Cabo em Polywood proporciona firmeza e conforto, enquanto a lâmina de aço inox garante cortes precisos. Ideal para uso doméstico e profissional.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/33.jpg", alt: "produto cozinha", price: 0 },
+    { id: 34, nameProduct: "FACA PARA CARNE POLYWOOD 5\"", details: "Faca robusta para carnes, com lâmina de aço inox resistente e cabo Polywood ergonômico. Garante cortes uniformes e maior segurança ao manusear. Essencial em qualquer cozinha.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/34.jpg", alt: "produto cozinha", price: 0 },
+    { id: 35, nameProduct: "FACA PARA PÃO POLYWOOD 7\"", details: "Faca serrilhada perfeita para cortar pães sem amassar. Cabo Polywood confortável e lâmina de aço inox durável, ideal para uso diário ou em ocasiões especiais.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/35.jpg", alt: "produto cozinha", price: 0 },
+    { id: 36, nameProduct: "FACA DE TALHANTE POLYWOOD 6”", details: "Faca profissional para talhar carnes com precisão. Lâmina afiada de aço inox e cabo Polywood resistente, garantindo durabilidade e segurança.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/36.jpg", alt: "produto cozinha", price: 0 },
+    { id: 37, nameProduct: "FACA DE TALHANTE POLYWOOD 7”", details: "Faca maior para cortes de carne mais pesados. A lâmina de aço inox proporciona desempenho superior e o cabo Polywood conforto e estabilidade no manuseio.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/37.jpg", alt: "produto cozinha", price: 0 },
+    { id: 38, nameProduct: "FACA DE TALHANTE POLYWOOD 8”", details: "Faca profissional de grande porte, perfeita para cortes pesados e uso intensivo. Cabo Polywood ergonômico e lâmina de aço inox resistente a desgaste.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/38.jpg", alt: "produto cozinha", price: 0 },
+
+    { id: 39, nameProduct: "Faca Chef. POLYWOOD 6”", details: "Faca versátil para todas as tarefas da cozinha. Lâmina em aço inox de alta qualidade e cabo Polywood proporcionam precisão e conforto no corte.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/39.jpg", alt: "produto cozinha", price: 0 },
+    { id: 40, nameProduct: "Faca Chef. POLYWOOD 7”", details: "Faca de chef maior, ideal para cortar, fatiar e picar com facilidade. Design ergonômico do cabo Polywood e lâmina afiada em aço inox garantem eficiência e durabilidade.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/40.jpg", alt: "produto cozinha", price: 0 },
+    { id: 41, nameProduct: "Faca Chef. POLYWOOD 8”", details: "Faca de chef de grande tamanho, indicada para profissionais e cozinhas exigentes. Lâmina resistente em aço inox e cabo Polywood firme e confortável.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/41.jpg", alt: "produto cozinha", price: 0 },
+
+    { id: 42, nameProduct: "FACA CUTELO POLYWOOD 6\"", details: "Cutelo robusto, ideal para cortar carnes e ossos com facilidade. Lâmina de aço inox durável e cabo Polywood ergonômico proporcionam segurança e conforto.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/42.jpg", alt: "produto cozinha", price: 0 },
+    { id: 43, nameProduct: "FACA P/CARNE INOX 8\" POLYWOOD", details: "Faca de lâmina longa, perfeita para cortes precisos de carne. Cabo Polywood resistente e lâmina em aço inox afiada e durável.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/43.jpg", alt: "produto cozinha", price: 0 },
+    { id: 44, nameProduct: "GARFO BIFURCADO POLYWOOD", details: "Garfo ideal para segurar carnes ao cortar. Cabo Polywood confortável e lâminas de aço inox resistentes. Essencial para churrascos e preparos culinários.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/44.jpg", alt: "produto cozinha", price: 0 },
+    { id: 45, nameProduct: "MEZZALUNA INOX POLYWOOD", details: "Faca curva dupla para picar ervas, vegetais e temperos com rapidez e segurança. Cabo Polywood firme e lâmina de aço inox durável.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/45.jpg", alt: "produto cozinha", price: 0 },
+
+    { id: 46, nameProduct: "CONJUNTO DE CHURRASCO INOX 3 PCS POLYWOOD", details: "Conjunto composto por utensílios essenciais para churrasco: garfo, faca e pegador. Lâminas em aço inox e cabos Polywood resistentes e elegantes.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/46.jpg", alt: "produto cozinha", price: 0 },
+    { id: 47, nameProduct: "KIT P/ CHURRASCO 3 PCS. POLYWOOD", details: "Kit prático para churrasqueiros, com faca, garfo e espátula. Acabamento em aço inox e cabos Polywood de alta durabilidade.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/47.jpg", alt: "produto cozinha", price: 0 },
+    { id: 48, nameProduct: "CONJUNTO P/ CHURRASCO INOX 4 PCS. POLYWOOD", details: "Completo para o churrasco: faca, garfo, espátula e pegador. Lâminas em aço inox e cabos Polywood confortáveis e resistentes.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/48.jpg", alt: "produto cozinha", price: 0 },
+    { id: 49, nameProduct: "CONJUNTO P/ CHURRASCO INOX 8 PCS. POLYWOOD", details: "Conjunto completo para churrasco com utensílios essenciais. Lâminas em aço inox e cabos Polywood resistentes, ideais para uso doméstico ou profissional.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/49.jpg", alt: "produto cozinha", price: 0 },
+    { id: 50, nameProduct: "CONJUNTO P/ CHURRASCO INOX 17 PCS. POLYWOOD", details: "Kit completo para churrasco com 17 peças: facas, garfos, espátulas, pegadores e outros utensílios. Lâminas de aço inox e cabos Polywood de alta qualidade.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/50.jpg", alt: "produto cozinha", price: 0 },
+
+    { id: 51, nameProduct: "KIT CHURRASCO 15 PCS. POLYWOOD", details: "Conjunto completo com 15 peças para churrasco, garantindo praticidade e estilo. Lâminas em aço inox e cabos Polywood duráveis.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/51.jpg", alt: "produto cozinha", price: 0 },
+    { id: 52, nameProduct: "JOGO P/ CHURRASCO 5 PCS. POLYWOOD", details: "Kit básico para churrasqueiros iniciantes, com 5 utensílios essenciais. Lâminas de aço inox resistentes e cabos Polywood confortáveis.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/52.jpg", alt: "produto cozinha", price: 0 },
+    { id: 53, nameProduct: "JOGO CHURRASCO INOX 12 PCS", details: "Conjunto completo com 12 peças em aço inox, ideal para churrascos em família ou eventos. Cabo Polywood resistente e design ergonômico.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/53.jpg", alt: "produto cozinha", price: 0 },
+    { id: 54, nameProduct: "CONJ DE TALHERES DE MESA 24 PCS POLYWOOD", details: "Talheres para 6 pessoas com acabamento elegante em aço inox e cabos Polywood duráveis. Ideal para o dia a dia ou ocasiões especiais.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/54.jpg", alt: "produto cozinha", price: 0 },
+    { id: 55, nameProduct: "CONJ. CHURRASCO INOX 12 PCS POLYWOOD", details: "Kit completo com 12 utensílios em aço inox, cabos Polywood ergonômicos. Perfeito para churrascos domésticos ou profissionais.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/55.jpg", alt: "produto cozinha", price: 0 },
+    { id: 56, nameProduct: "KIT P/ CHURRASCO BLACK 5 PCS", details: "Kit moderno com lâminas de aço inox escurecido e cabos de madeira. Conjunto de 5 peças, ideal para churrasqueiros exigentes.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/56.jpg", alt: "produto cozinha", price: 0 },
+
+    { id: 57, nameProduct: "JOGO DE TALHERES INFANTIL 3 PÇS. LIRO", details: "Talheres especialmente desenvolvidos para crianças, com design seguro e divertido. Acabamento em aço inox resistente.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/57.jpg", alt: "produto cozinha", price: 0 },
+    { id: 58, nameProduct: "PEDRA P/ AFIAR PROFISSIONAL", details: "Pedra de alta qualidade para afiar facas com precisão. Ideal para uso profissional e doméstico.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/58.jpg", alt: "produto cozinha", price: 0 },
+    { id: 59, nameProduct: "CONJUNTO DE FACAS INOX 6 PÇS. CENTURY", details: "Conjunto versátil com 6 facas em aço inox, perfeitas para todas as tarefas da cozinha. Cabos confortáveis e design moderno.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/59.jpg", alt: "produto cozinha", price: 0 },
+    { id: 60, nameProduct: "KIT CHEFE INOX 10 PCS. CENTURY", details: "Kit completo com 10 facas e utensílios essenciais para chefs e cozinheiros exigentes. Lâminas de aço inox resistentes e cabos ergonômicos.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/60.jpg", alt: "produto cozinha", price: 0 },
+    { id: 61, nameProduct: "KIT CHEF INOX 20 PCS. CENTURY", details: "Conjunto profissional com 20 peças em aço inox, ideal para cozinhas exigentes. Inclui facas de diferentes tipos e tamanhos.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/61.jpg", alt: "produto cozinha", price: 0 },
+    { id: 62, nameProduct: "JOGO FACAS 8 PÇS. CENTURY", details: "Conjunto de 8 facas de aço inox, projetadas para uso doméstico e profissional. Cabos confortáveis e lâminas duráveis.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/62.jpg", alt: "produto cozinha", price: 0 },
+    { id: 63, nameProduct: "JOGO FACAS 6 PÇS. CENTURY", details: "Conjunto funcional com 6 facas de aço inox, ideais para tarefas diárias na cozinha.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/63.jpg", alt: "produto cozinha", price: 0 },
+    { id: 64, nameProduct: "JOGO FACAS 3 PÇS. CENTURY", details: "Kit compacto com 3 facas essenciais para uso doméstico, com lâminas de aço inox resistentes.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/64.jpg", alt: "produto cozinha", price: 0 },
+    { id: 65, nameProduct: "CONJ. FACAS INOX 3 PCS PREMIUM", details: "Conjunto premium com 3 facas de alto desempenho em aço inox. Design elegante e cabos ergonômicos para cortes precisos.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/65.jpg", alt: "produto cozinha", price: 0 },
+    { id: 66, nameProduct: "KIT CHEF INOX 6 PÇS. PROFISSIONAL", details: "Kit profissional com 6 facas em aço inox, cabos ergonômicos e lâminas duráveis. Ideal para chefs e cozinheiros exigentes.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/66.jpg", alt: "produto cozinha", price: 0 },
+    { id: 67, nameProduct: "JOGO DE MOINHOS P/ SAL E PIMENTA 2PÇS", details: "Conjunto prático com dois moinhos para temperar seus pratos com precisão. Design moderno e materiais resistentes.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/67.jpg", alt: "produto cozinha", price: 0 },
+    { id: 68, nameProduct: "CHURRASQUEIRA A CARVÃO", details: "Churrasqueira tradicional a carvão, ideal para encontros familiares. Estrutura resistente e design funcional.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/68.jpg", alt: "produto cozinha", price: 0 },
+    { id: 69, nameProduct: "CHURRASQUEIRA A CARVÃO TCP 450L", details: "Churrasqueira de grande capacidade para uso doméstico ou eventos. Construção robusta e eficiente para preparo de carnes.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/69.jpg", alt: "produto cozinha", price: 0 },
+    { id: 70, nameProduct: "CHURRASQUEIRA A CARVÃO C/ ANEL P/ESPETOS TCP -560L", details: "Churrasqueira profissional com capacidade e anel para espetos. Ideal para eventos maiores. Estrutura resistente e acabamento de qualidade.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/70.jpg", alt: "produto cozinha", price: 0 },
+    { id: 71, nameProduct: "CAÇAROLA 20 CM PARIS", details: "Caçarola prática para cozinhar diversos pratos. Fabricada em aço inox de alta qualidade, garantindo durabilidade e fácil limpeza.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/71.jpg", alt: "produto cozinha", price: 0 },
+    { id: 72, nameProduct: "CAÇAROLA 22 CM PARIS", details: "Versão maior da caçarola Paris, ideal para preparos maiores. Durável, resistente e fácil de limpar.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/72.jpg", alt: "produto cozinha", price: 0 },
+    { id: 73, nameProduct: "ESPARGUETEIRA 24 CM PARIS", details: "Espagueteira de 24 cm, ideal para cozinhar massas com praticidade. Aço inox de alta qualidade e design funcional.\nPara mais informações, coloque no carrinho e solicite.", srcImage: "/cozinha/73.jpg", alt: "produto cozinha", price: 0 }
+];
