@@ -19,7 +19,7 @@ type ProductCardProps = {
 export function ProductCard({ id, nameProduct, details, srcImage, alt, price, inStock = true }: ProductCardProps) {
     const [quantity, setQuantity] = useState(1);
     const { addData } = useStore();
-
+    inStock = true;
     const handleIncrement = () => {
         setQuantity(prev => prev + 1);
     };

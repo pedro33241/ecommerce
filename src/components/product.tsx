@@ -1,10 +1,6 @@
 "use client";
 import Image from "next/image";
 import { UseSearch } from "@/hook/useSearch";
-
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Plus } from "lucide-react"
 import { useStore } from "@/hook/useZustand";
 import { ProductCard } from "@/components/ProductCard";
 

@@ -6,8 +6,6 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { Badge } from "@/components/ui/badge"
 import { useStore } from "@/hook/useZustand"
 import Image from "next/image"
-import Link from "next/link"
-
 export function CartDrawer() {
     const { data, removeData, incrementQuantity, decrementQuantity } = useStore();
     const phone = 936884337
