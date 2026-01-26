@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import { UseSearch } from "@/hook/useSearch";
-import { useStore } from "@/hook/useZustand";
 import { ProductCard } from "@/components/ProductCard";
 
 type ProductType = {
@@ -134,12 +133,7 @@ export function Product() {
 
     const { filterProductLuz, filterProduct, kitchenProductFiltered, filterManualProducts, filterResistanceProducts, filterCleaningProducts, filterBatteryProducts, filterHygieneSafetyProducts, handleChangeSearch, filterAccessoryProducts, handleTabChange, activeTab } = UseSearch();
 
-    const { addData } = useStore()
 
-    const handleAddToCart = (product: ProductType) => {
-        addData(product)
-
-    }
     return (
         <>
             <div className="mt-20 md:mt-36 px-4 md:px-0">
@@ -195,7 +189,7 @@ export function Product() {
                                         srcImage={item.srcImage}
                                         alt={item.alt}
                                         price={item.price}
-                                        inStock={false}
+
                                     />
                                 )) : (
                                     <div className="w-[90vw] h-full flex justify-center items-center">
@@ -229,7 +223,6 @@ export function Product() {
                                         srcImage={item.srcImage}
                                         alt={item.alt}
                                         price={item.price}
-                                        inStock={false}
                                     />
                                 )) : (
                                     <div className="w-[90vw] h-full flex justify-center items-center">
@@ -261,7 +254,6 @@ export function Product() {
                                         srcImage={item.srcImage}
                                         alt={item.alt}
                                         price={item.price}
-                                        inStock={false}
                                     />
                                 )) : (
                                     <div className="w-[90vw] h-full flex justify-center items-center">
@@ -292,7 +284,6 @@ export function Product() {
                                         srcImage={item.srcImage}
                                         alt={item.alt}
                                         price={item.price}
-                                        inStock={false}
                                     />
                                 )) : (
                                     <div className="w-[90vw] h-full flex justify-center items-center">
@@ -323,7 +314,6 @@ export function Product() {
                                         srcImage={item.srcImage}
                                         alt={item.alt}
                                         price={item.price}
-                                        inStock={false}
                                     />
                                 )) : (
                                     <div className="w-[90vw] h-full flex justify-center items-center">
@@ -353,7 +343,6 @@ export function Product() {
                                         srcImage={item.srcImage}
                                         alt={item.alt}
                                         price={item.price}
-                                        inStock={false}
                                     />
                                 )) : (
                                     <div className="w-[90vw] h-full flex justify-center items-center">
@@ -383,7 +372,7 @@ export function Product() {
                                         srcImage={item.srcImage}
                                         alt={item.alt}
                                         price={item.price}
-                                        inStock={false}
+
                                     />
                                 )) : (
                                     <div className="w-[90vw] h-full flex justify-center items-center">
@@ -415,7 +404,6 @@ export function Product() {
                                         srcImage={item.srcImage}
                                         alt={item.alt}
                                         price={item.price}
-                                        inStock={false}
                                     />
                                 )) : (
                                     <div className="w-[90vw] h-full flex justify-center items-center">
@@ -446,7 +434,6 @@ export function Product() {
                                         srcImage={item.srcImage}
                                         alt={item.alt}
                                         price={item.price}
-                                        inStock={false}
                                     />
                                 )) : (
                                     <div className="w-[90vw] h-full flex justify-center items-center">

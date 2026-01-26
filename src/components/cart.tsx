@@ -8,8 +8,7 @@ import { useStore } from "@/hook/useZustand"
 import Image from "next/image"
 export function CartDrawer() {
     const { data, removeData, incrementQuantity, decrementQuantity } = useStore();
-    const phone = 936884337
-
+ 
     type ProductType = {
         id: number;
         nameProduct: string;
@@ -23,14 +22,7 @@ export function CartDrawer() {
     // Calcular total de itens considerando quantidade
     const totalItems = data.reduce((sum: number, item: ProductType) => sum + (item.quantity || 1), 0);
 
-    // Formatar mensagem com quantidade
-    const formatMessageWithQuantities = (): string => {
-        const productsList = data
-            .map((item: ProductType) => `${item.nameProduct} (Quantidade: ${item.quantity || 1})`)
-            .join(", ");
-        return `Olá! Estou interessado(a) no(s) produto(s): ${productsList}. Poderia me fornecer mais informações sobre disponibilidade e características? Obrigado(a)!`;
-    };
-
+  
     return (
         <Sheet>
             <SheetTrigger asChild>
