@@ -4,7 +4,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useState } from "react"; 
+import { useState } from "react";
 import { CartDrawer } from "@/components/cart";
 import { usePathname } from "next/navigation";
 
@@ -31,48 +31,48 @@ export default function NavBar() {
 
     return (
         <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
-            <div className=" mx-auto px-6 sm:px-8 lg:px-12 py-4 flex items-center justify-between">
-                <Link href="/" className="h-[20px]">
+            <div className="mx-auto px-3 sm:px-4 md:px-6 lg:px-12 py-3 md:py-4 flex items-center justify-between h-auto md:h-20">
+                <Link href="/" className="h-full flex items-center justify-center flex-shrink-0">
                     <Image
                         src="/logo2.png"
                         alt="logo"
-                        width={132}
-                        height={62}
-                        className="-mt-12"
+                        width={100}
+                        height={50}
+                        className="-mt-8 md:-mt-12 w-24 md:w-32"
                     />
                 </Link>
 
-                <nav className="hidden md:flex items-center gap-8">
-               
+                <nav className="hidden md:flex items-center gap-6 md:gap-8">
+
                     {itensMenu.map((item, index) => (
                         <div key={index} >
-                            <Link href={item.link} className={`text-gray-600 hover:text-black   transition-colors  ${pathName === item.link ? "text-black text-bold border-b rounded-sm pb-1 border-yellow-400" : "text-gray-900 hover:text-black "} `}>
+                            <Link href={item.link} className={`text-sm md:text-base text-gray-600 hover:text-black transition-colors ${pathName === item.link ? "text-black font-bold border-b rounded-sm pb-1 border-yellow-400" : "text-gray-900 hover:text-black"}`}>
                                 {item.name}
                             </Link>
                         </div>
                     ))}
-                     <CartDrawer />
+                    <CartDrawer />
                 </nav>
-                <div className="md:hidden flex items-center gap-8">
+                <div className="md:hidden flex items-center gap-3 md:gap-4">
 
-                    <button onClick={() => setIsOpen(!isOpen)} className=" w-10 rounded-full p-2  hover:bg-gray-200 h-10 flex flex-col justify-center gap-1">
+                    <button onClick={() => setIsOpen(!isOpen)} className="w-9 md:w-10 rounded-full p-1.5 md:p-2 hover:bg-gray-200 h-9 md:h-10 flex flex-col justify-center gap-1">
                         <span className="w-full h-0.5 bg-gray-700"></span>
                         <span className="w-full h-0.5 bg-gray-700"></span>
                         <span className="w-full h-0.5 bg-gray-700"></span>
                     </button>
 
                     <CartDrawer />
-</div>
+                </div>
 
                 {isOpen && (
-                    <nav className="shadow absolute top-full left-0 right-0 bg-white border-t border-gray-200 md:hidden flex flex-col gap-4 p-6">
-                        <Link href="/" className="text-gray-600 hover:text-black transition-colors">
+                    <nav className="shadow absolute top-full left-0 right-0 bg-white border-t border-gray-200 md:hidden flex flex-col gap-3 p-4">
+                        <Link href="/" className="text-sm text-gray-600 hover:text-black transition-colors">
                             Home
                         </Link>
-                        <Link href="/product" className="text-gray-600 hover:text-black transition-colors">
+                        <Link href="/product" className="text-sm text-gray-600 hover:text-black transition-colors">
                             Produtos
                         </Link>
-                        <Link href="/about" className="text-gray-600 hover:text-black transition-colors">
+                        <Link href="/about" className="text-sm text-gray-600 hover:text-black transition-colors">
                             Sobre Nós
                         </Link>
 
@@ -80,7 +80,7 @@ export default function NavBar() {
                 )}
 
 
-                
+
             </div>
 
 

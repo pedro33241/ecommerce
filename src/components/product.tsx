@@ -1,11 +1,12 @@
 "use client";
-import Image from "next/image"; 
-import { UseSearch } from "@/hook/useSearch";  
+import Image from "next/image";
+import { UseSearch } from "@/hook/useSearch";
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Plus } from "lucide-react"
 import { useStore } from "@/hook/useZustand";
+import { ProductCard } from "@/components/ProductCard";
 
 type ProductType = {
     id: number;
@@ -131,109 +132,88 @@ export function Product() {
             color: "#00008B",
             description: "",
             image: "backpack.svg",
-            svg: <svg viewBox="0 0 64 64" width={24} xmlns="http://www.w3.org/2000/svg"> <g data-name="11" id="_11"> <path d="M38,21.07s0,0,0-.07V19h1a1,1,0,0,0,1-1V15h5a1,1,0,0,0,.86-.49,1,1,0,0,0,0-1L42.11,6.74A5.33,5.33,0,0,0,37.45,4H21a1,1,0,0,0-1,1H16a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1h.1A21.33,21.33,0,0,1,16,17.86a21.77,21.77,0,0,1-3.83,9.56,1,1,0,0,0,.1,1.28A1,1,0,0,0,13,29a1,1,0,0,0,.56-.17A17.5,17.5,0,0,0,21,18.2,15.58,15.58,0,0,0,21.3,15H24v3a1,1,0,0,0,1,1h1v2a.88.88,0,0,0,.06.28,1,1,0,0,0-.16.2l-6,9.93A13.38,13.38,0,0,0,18,38.34v16.9A5.6,5.6,0,0,0,23.42,61H40.58A5.6,5.6,0,0,0,46,55.24V30.71A9.52,9.52,0,0,0,38,21.07ZM17,7h3v4H17Zm2,10.8a13.83,13.83,0,0,1-2.22,5.1A22.73,22.73,0,0,0,18,18.14,23.24,23.24,0,0,0,18.12,13h1A13.8,13.8,0,0,1,19,17.8ZM22,12V6H37.45a3.33,3.33,0,0,1,2.91,1.71L43.3,13H22Zm16,3v2H26V15Zm-2,4v1H28V19Zm-8.68,4h9.59C40.82,23,44,26.46,44,30.71V38H20a11.47,11.47,0,0,1,.84-4A.7.7,0,0,0,21,34h5a1,1,0,0,0,0-2H21.89l.67-1.11A1.06,1.06,0,0,0,23,31h5a1,1,0,0,0,0-2H23.7l.6-1H29a1,1,0,0,0,0-2H25.51ZM44,48H20V40H44ZM40.58,59H23.42A3.61,3.61,0,0,1,20,55.24V50H44v5.24A3.61,3.61,0,0,1,40.58,59Z" fill="#00008B" />  <path d="M42,37a1,1,0,0,0,1-1V31a1,1,0,0,0-2,0v5A1,1,0,0,0,42,37Z" fill="#8A2BE2" /> <path d="M42,51a1,1,0,0,0-1,1v2.34A1.67,1.67,0,0,1,39.34,56H38a1,1,0,0,0,0,2h1.34A3.66,3.66,0,0,0,43,54.34V52A1,1,0,0,0,42,51Z" fill="#00008B"/> </g></svg>
+            svg: <svg viewBox="0 0 64 64" width={24} xmlns="http://www.w3.org/2000/svg"> <g data-name="11" id="_11"> <path d="M38,21.07s0,0,0-.07V19h1a1,1,0,0,0,1-1V15h5a1,1,0,0,0,.86-.49,1,1,0,0,0,0-1L42.11,6.74A5.33,5.33,0,0,0,37.45,4H21a1,1,0,0,0-1,1H16a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1h.1A21.33,21.33,0,0,1,16,17.86a21.77,21.77,0,0,1-3.83,9.56,1,1,0,0,0,.1,1.28A1,1,0,0,0,13,29a1,1,0,0,0,.56-.17A17.5,17.5,0,0,0,21,18.2,15.58,15.58,0,0,0,21.3,15H24v3a1,1,0,0,0,1,1h1v2a.88.88,0,0,0,.06.28,1,1,0,0,0-.16.2l-6,9.93A13.38,13.38,0,0,0,18,38.34v16.9A5.6,5.6,0,0,0,23.42,61H40.58A5.6,5.6,0,0,0,46,55.24V30.71A9.52,9.52,0,0,0,38,21.07ZM17,7h3v4H17Zm2,10.8a13.83,13.83,0,0,1-2.22,5.1A22.73,22.73,0,0,0,18,18.14,23.24,23.24,0,0,0,18.12,13h1A13.8,13.8,0,0,1,19,17.8ZM22,12V6H37.45a3.33,3.33,0,0,1,2.91,1.71L43.3,13H22Zm16,3v2H26V15Zm-2,4v1H28V19Zm-8.68,4h9.59C40.82,23,44,26.46,44,30.71V38H20a11.47,11.47,0,0,1,.84-4A.7.7,0,0,0,21,34h5a1,1,0,0,0,0-2H21.89l.67-1.11A1.06,1.06,0,0,0,23,31h5a1,1,0,0,0,0-2H23.7l.6-1H29a1,1,0,0,0,0-2H25.51ZM44,48H20V40H44ZM40.58,59H23.42A3.61,3.61,0,0,1,20,55.24V50H44v5.24A3.61,3.61,0,0,1,40.58,59Z" fill="#00008B" />  <path d="M42,37a1,1,0,0,0,1-1V31a1,1,0,0,0-2,0v5A1,1,0,0,0,42,37Z" fill="#8A2BE2" /> <path d="M42,51a1,1,0,0,0-1,1v2.34A1.67,1.67,0,0,1,39.34,56H38a1,1,0,0,0,0,2h1.34A3.66,3.66,0,0,0,43,54.34V52A1,1,0,0,0,42,51Z" fill="#00008B" /> </g></svg>
         }
     ]
 
-    const { filterProductLuz, filterProduct, kitchenProductFiltered,filterManualProducts, filterResistanceProducts, filterCleaningProducts, filterBatteryProducts, filterHygieneSafetyProducts,handleChangeSearch, filterAccessoryProducts, handleTabChange, activeTab } = UseSearch();
+    const { filterProductLuz, filterProduct, kitchenProductFiltered, filterManualProducts, filterResistanceProducts, filterCleaningProducts, filterBatteryProducts, filterHygieneSafetyProducts, handleChangeSearch, filterAccessoryProducts, handleTabChange, activeTab } = UseSearch();
 
     const { addData } = useStore()
 
     const handleAddToCart = (product: ProductType) => {
         addData(product)
-     
+
     }
     return (
         <>
-            <div className="mt-36">
-                <h1 className="font-semibold ml-10 lg:text-[22px] sm:text-[19px] text-black">Categorias De Produtos</h1>
+            <div className="mt-20 md:mt-36 px-4 md:px-0">
+                <h1 className="font-semibold ml-4 md:ml-10 lg:text-[22px] md:text-[19px] text-sm text-black">Categorias De Produtos</h1>
 
-                <div className="tabs mt-7 ml-10 flex flex-wrap gap-4 justify-between">
-             
-                    <div className="flex flex-wrap gap-5 w-full">
-            
+                <div className="tabs mt-7 ml-4 md:ml-10 flex flex-wrap gap-2 md:gap-4 justify-start md:justify-between">
+
+                    <div className="flex flex-wrap gap-3 md:gap-5 w-full">
+
                         {objectMaterial.map((item) => (
                             <button
                                 key={item.id}
-                                className={` flex flex-row gap-4 pt-4 rounded-[15px] h-[60px] justify-center px-4 py-auto text-[14px] font-medium ${activeTab === item?.id ? "active" : ""}`}
-                                style={{ background: `${item?.background}`, color:`${ item?.color}`}}
+                                className={` flex flex-row gap-2 md:gap-4 pt-3 md:pt-4 rounded-[15px] h-12 md:h-[60px] justify-center px-2 md:px-4 py-auto text-xs md:text-[14px] font-medium ${activeTab === item?.id ? "active" : ""}`}
+                                style={{ background: `${item?.background}`, color: `${item?.color}` }}
                                 onClick={() => handleTabChange(item?.id)}
                             >
-                              {item.svg}
+                                {item.svg}
                                 <span className="mt-1">{item?.name}</span>
                             </button>
 
                         ))}
                     </div>
-                    
 
 
-                <div className="flex border-gray-400 border h-[48px] w-[330px] mr-4 rounded-lg bg-white flex-row gap-1">
-                        <input 
-                            type="text" 
-                            placeholder="Pesquisar Produto..." 
-                            onChange={handleChangeSearch} 
-                            className="w-full pl-3 outline-none rounded-sm" 
+
+                    <div className="flex border-gray-400 border h-10 md:h-12 w-full md:w-[330px] mr-4 rounded-lg bg-white flex-row gap-1 mt-4 md:mt-0">
+                        <input
+                            type="text"
+                            placeholder="Pesquisar..."
+                            onChange={handleChangeSearch}
+                            className="w-full pl-3 text-xs md:text-base outline-none rounded-sm"
                         />
                         <Image
                             src="/search.svg"
                             alt="search"
-                            width={20}
-                            height={20}
-                            className="m-3"
+                            width={16}
+                            height={16}
+                            className="m-2 md:m-3"
                         />
                     </div>
                 </div>
 
                 <div className="tab-content mb-12 mt-10">
-                {activeTab === 1 && (
-                        <div>    <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Produtos Elétricos</h2>
-                            <div className="lg:ml-10 sm:ml-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 mt-24">
+                    {activeTab === 1 && (
+                        <div>    <h2 className="ml-4 md:ml-10 font-semibold lg:text-[24px] md:text-[19px] text-base mt-6 md:mt-0">Produtos Elétricos</h2>
+                            <div className="ml-4 md:ml-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 lg:gap-10 mt-8 md:mt-24">
                                 {kitchenProductFiltered?.length > 0 ? kitchenProductFiltered?.map((item: ProductType) => (
-                                    <Card key={item.id} className="group overflow-hidden border-border  transition-all hover:shadow-lg">
-                                        <div className="relative overflow-hidden ">
-                                            <Image
-                                                alt={item.alt}
-                                                src={item.srcImage}
-                                                width={110}
-                                                height={110}
-                                                className="h-full w-[180px]  flex justify-between text-center mx-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                                            />
-                                        </div>
-                                        <CardContent className="p-6">
-                                            <div className="mb-2 flex items-start justify-between gap-2">
-                                                <h3 className="font-serif text-[12px] leading-tight text-foreground">
-                                                    {item.nameProduct}
-                                                </h3>
-                                                <Button
-                                                    size="icon"
-                                                    variant="outline"
-                                                    onClick={() => handleAddToCart(item)}
-                                                    className="shrink-0 rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-                                                >
-                                                    <Plus className="h-4 w-4" />
-                                                </Button>
-                                            </div>
-                                            <p className="mb-4 text-[12px] leading-relaxed text-muted-foreground">
-                                                {item.details}
-                                            </p>
-                                        </CardContent>
-                                    </Card>
-
-                                
+                                    <ProductCard
+                                        key={item.id}
+                                        id={item.id}
+                                        nameProduct={item.nameProduct}
+                                        details={item.details}
+                                        srcImage={item.srcImage}
+                                        alt={item.alt}
+                                        price={item.price}
+                                        inStock={false}
+                                    />
                                 )) : (
-                                        <div className="w-[90vw] h-full flex justify-center items-center">
-                                            <div className="mx-auto gap-3 flex flex-col justify-center items-center text-center text-gray-400 text-xl">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
-                                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                                                </svg>
-                                                <span>Nenhum produto encontrado</span>
-                                            </div>
+                                    <div className="w-[90vw] h-full flex justify-center items-center">
+                                        <div className="mx-auto gap-3 flex flex-col justify-center items-center text-center text-gray-400 text-xl">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
+                                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                            </svg>
+                                            <span>Nenhum produto encontrado</span>
                                         </div>
+                                    </div>
 
                                 )}
 
-                               
+
                             </div>
                         </div>
                     )}
@@ -242,52 +222,31 @@ export function Product() {
 
                     {activeTab === 2 && (
                         <div>
-                            <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Lâmpadas</h2>
-                            <div className="lg:ml-10 sm:ml-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mt-24">
-                          {filterProductLuz.length > 0 ? filterProductLuz.map((item: ProductType) => (
-                                    <Card key={item.id} className="group overflow-hidden border-border  transition-all hover:shadow-lg">
-                                        <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
-                                      <Image
-                                          alt={item.alt}
-                                          src={item.srcImage}
-                                          width={110}
-                                          height={110}
-                                          className="h-full w-[180px]  flex justify-between text-center mx-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                                      />
-                                        </div>
-                                  <CardContent className="p-6">
-                                      <div className="mb-2 flex items-start justify-between gap-2">
-                                          <h3 className="font-serif text-[12px] leading-tight text-foreground">
-                                              {item.nameProduct}
-                                          </h3>
-                                          <Button
-                                              size="icon"
-                                              variant="outline"
-                                              onClick={() => handleAddToCart(item)}
-                                              className="shrink-0 rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-                                          >
-                                              <Plus className="h-4 w-4" />
-                                          </Button>
-                                      </div>
-                                      <p className="mb-4 text-[12px] leading-relaxed text-muted-foreground">
-                                          {item.details}
-                                      </p>
-                                  </CardContent>
-                                    </Card>
-
-
+                            <h2 className="ml-4 md:ml-10 font-semibold lg:text-[24px] md:text-[19px] text-base mt-6 md:mt-0">Melhores Produtos de Lâmpadas</h2>
+                            <div className="ml-4 md:ml-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6 lg:gap-10 mt-8 md:mt-24">
+                                {filterProductLuz.length > 0 ? filterProductLuz.map((item: ProductType) => (
+                                    <ProductCard
+                                        key={item.id}
+                                        id={item.id}
+                                        nameProduct={item.nameProduct}
+                                        details={item.details}
+                                        srcImage={item.srcImage}
+                                        alt={item.alt}
+                                        price={item.price}
+                                        inStock={false}
+                                    />
                                 )) : (
-                                        <div className="w-[90vw] h-full flex justify-center items-center">
-                                            <div className="mx-auto gap-3 flex flex-col justify-center items-center text-center text-gray-400 text-xl">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
-                                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                                                </svg>
-                                                <span>Nenhum produto encontrado</span>
-                                            </div>
+                                    <div className="w-[90vw] h-full flex justify-center items-center">
+                                        <div className="mx-auto gap-3 flex flex-col justify-center items-center text-center text-gray-400 text-xl">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
+                                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                            </svg>
+                                            <span>Nenhum produto encontrado</span>
                                         </div>
+                                    </div>
                                 )}
 
-                           
+
                             </div>
                         </div>
                     )}
@@ -295,49 +254,28 @@ export function Product() {
 
                     {activeTab === 3 && (
                         <div>
-                            <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Ferramentas Elétricas</h2>
-                            <div className="lg:ml-10 sm:ml-0  flex-wrap justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
+                            <h2 className="ml-4 md:ml-10 font-semibold lg:text-[24px] md:text-[19px] text-base mt-6 md:mt-0">Melhores Ferramentas Elétricas</h2>
+                            <div className="ml-4 md:ml-10 flex-wrap justify-center grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6 mt-8 md:mt-24">
                                 {filterProduct?.length > 0 ? filterProduct?.map((item: ProductType) => (
-                                    <Card key={item.id} className="group overflow-hidden border-border  transition-all hover:shadow-lg">
-                                        <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
-                                            <Image
-                                                alt={item.alt}
-                                                src={item.srcImage}
-                                                width={110}
-                                                height={110}
-                                                className="h-full w-[180px]  flex justify-between text-center mx-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                                            />
-                                        </div>
-                                        <CardContent className="p-6">
-                                            <div className="mb-2 flex items-start justify-between gap-2">
-                                                <h3 className="font-serif text-[12px] leading-tight text-foreground">
-                                                    {item.nameProduct}
-                                                </h3>
-                                                <Button
-                                                    size="icon"
-                                                    variant="outline"
-                                                    onClick={() => handleAddToCart(item)}
-                                                    className="shrink-0 rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-                                                >
-                                                    <Plus className="h-4 w-4" />
-                                                </Button>
-                                            </div>
-                                            <p className="mb-4 text-[12px] leading-relaxed text-muted-foreground">
-                                                {item.details}
-                                            </p>
-                                        </CardContent>
-                                    </Card>
-
-
+                                    <ProductCard
+                                        key={item.id}
+                                        id={item.id}
+                                        nameProduct={item.nameProduct}
+                                        details={item.details}
+                                        srcImage={item.srcImage}
+                                        alt={item.alt}
+                                        price={item.price}
+                                        inStock={false}
+                                    />
                                 )) : (
-                                        <div className="w-[90vw] h-full flex justify-center items-center">
-                                            <div className="mx-auto gap-3 flex flex-col justify-center items-center text-center text-gray-400 text-xl">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
-                                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                                                </svg>
-                                                <span>Nenhum produto encontrado</span>
-                                            </div>
+                                    <div className="w-[90vw] h-full flex justify-center items-center">
+                                        <div className="mx-auto gap-3 flex flex-col justify-center items-center text-center text-gray-400 text-xl">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
+                                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                            </svg>
+                                            <span>Nenhum produto encontrado</span>
                                         </div>
+                                    </div>
                                 )}
 
                             </div>
@@ -349,49 +287,29 @@ export function Product() {
                         <div>
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Ferramentas Manuais</h2>
                             <div className="lg:ml-10 sm:ml-0  flex-wrap justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
-                               {filterManualProducts.length > 0 ? filterManualProducts.map((item: ProductType) => (
-                                   <Card key={item.id} className="group overflow-hidden border-border  transition-all hover:shadow-lg">
-                                       <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
-                                           <Image
-                                               alt={item.alt}
-                                               src={item.srcImage}
-                                               width={110}
-                                               height={110}
-                                               className="h-full w-[180px]  flex justify-between text-center mx-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                                           />
-                                       </div>
-                                       <CardContent className="p-6">
-                                           <div className="mb-2 flex items-start justify-between gap-2">
-                                               <h3 className="font-serif text-[12px] leading-tight text-foreground">
-                                                   {item.nameProduct}
-                                               </h3>
-                                               <Button
-                                                   size="icon"
-                                                   variant="outline"
-                                                   onClick={() => handleAddToCart(item)}
-                                                   className="shrink-0 rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-                                               >
-                                                   <Plus className="h-4 w-4" />
-                                               </Button>
-                                           </div>
-                                           <p className="mb-4 text-[12px] leading-relaxed text-muted-foreground">
-                                               {item.details}
-                                           </p>
-                                       </CardContent>
-                                   </Card>
-
+                                {filterManualProducts.length > 0 ? filterManualProducts.map((item: ProductType) => (
+                                    <ProductCard
+                                        key={item.id}
+                                        id={item.id}
+                                        nameProduct={item.nameProduct}
+                                        details={item.details}
+                                        srcImage={item.srcImage}
+                                        alt={item.alt}
+                                        price={item.price}
+                                        inStock={false}
+                                    />
                                 )) : (
-                                        <div className="w-[90vw] h-full flex justify-center items-center">
-                                            <div className="mx-auto gap-3 flex flex-col justify-center items-center text-center text-gray-400 text-xl">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
-                                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                                                </svg>
-                                                <span>Nenhum produto encontrado</span>
-                                            </div>
+                                    <div className="w-[90vw] h-full flex justify-center items-center">
+                                        <div className="mx-auto gap-3 flex flex-col justify-center items-center text-center text-gray-400 text-xl">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
+                                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                            </svg>
+                                            <span>Nenhum produto encontrado</span>
                                         </div>
+                                    </div>
                                 )}
 
-                          
+
                             </div>
                         </div>
                     )}
@@ -401,96 +319,55 @@ export function Product() {
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Acessórios</h2>
                             <div className="lg:ml-10 sm:ml-0  flex-wrap justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
                                 {filterAccessoryProducts?.length > 0 ? filterAccessoryProducts?.map((item: ProductType) => (
-                                    <Card key={item.id} className="group overflow-hidden border-border  transition-all hover:shadow-lg">
-                                        <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
-                                            <Image
-                                                alt={item.alt}
-                                                src={item.srcImage}
-                                                width={110}
-                                                height={110}
-                                                className="h-full w-[180px]  flex justify-between text-center mx-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                                            />
-                                        </div>
-                                        <CardContent className="p-6">
-                                            <div className="mb-2 flex items-start justify-between gap-2">
-                                                <h3 className=" text-xl leading-tight text-foreground">
-                                                    {item.nameProduct}
-                                                </h3>
-                                                <Button
-                                                    size="icon"
-                                                    variant="outline"
-                                                    onClick={() => handleAddToCart(item)}
-                                                    className="shrink-0 rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-                                                >
-                                                    <Plus className="h-4 w-4" />
-                                                </Button>
-                                            </div>
-                                            <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-                                                {item.details}
-                                            </p>
-                                        </CardContent>
-                                    </Card>
-
-
+                                    <ProductCard
+                                        key={item.id}
+                                        id={item.id}
+                                        nameProduct={item.nameProduct}
+                                        details={item.details}
+                                        srcImage={item.srcImage}
+                                        alt={item.alt}
+                                        price={item.price}
+                                        inStock={false}
+                                    />
                                 )) : (
-                                        <div className="w-[90vw] h-full flex justify-center items-center">
-                                            <div className="mx-auto gap-3 flex flex-col justify-center items-center text-center text-gray-400 text-xl">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
-                                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                                                </svg>
-                                                <span>Nenhum produto encontrado</span>
-                                            </div>
+                                    <div className="w-[90vw] h-full flex justify-center items-center">
+                                        <div className="mx-auto gap-3 flex flex-col justify-center items-center text-center text-gray-400 text-xl">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
+                                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                            </svg>
+                                            <span>Nenhum produto encontrado</span>
                                         </div>
+                                    </div>
                                 )}
 
                             </div>
                         </div>
                     )}
 
-                    {activeTab === 6 && ( 
-                          <div>
+                    {activeTab === 6 && (
+                        <div>
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Higiene e Segurança</h2>
                             <div className="lg:ml-10 sm:ml-0  flex-wrap justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
                                 {filterHygieneSafetyProducts.length > 0 ? filterHygieneSafetyProducts.map((item: ProductType) => (
-                                    <Card key={item.id}  className="group overflow-hidden border-border  transition-all hover:shadow-lg">
-                                        <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
-                                            <Image
-                                                alt={item.alt}
-                                                src={item.srcImage}
-                                                width={110}
-                                                height={110}
-                                                className="h-full w-[180px]  flex justify-between text-center mx-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                                            />
-                                        </div>
-                                        <CardContent className="p-6">
-                                            <div className="mb-2 flex items-start justify-between gap-2">
-                                                <h3 className="font-serif text-[12px] leading-tight text-foreground">
-                                                    {item.nameProduct}
-                                                </h3>
-                                                <Button
-                                                    size="icon"
-                                                    variant="outline"
-                                                    onClick={() => handleAddToCart(item)}
-                                                    className="shrink-0 rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-                                                >
-                                                    <Plus className="h-4 w-4" />
-                                                </Button>
-                                            </div>
-                                            <p className="mb-4 text-[12px] leading-relaxed text-muted-foreground">
-                                                {item.details}
-                                            </p>
-                                        </CardContent>
-                                    </Card>
-
+                                    <ProductCard
+                                        key={item.id}
+                                        id={item.id}
+                                        nameProduct={item.nameProduct}
+                                        details={item.details}
+                                        srcImage={item.srcImage}
+                                        alt={item.alt}
+                                        price={item.price}
+                                        inStock={false}
+                                    />
                                 )) : (
-                                        <div className="w-[90vw] h-full flex justify-center items-center">
-                                            <div className="mx-auto gap-3 flex flex-col justify-center items-center text-center text-gray-400 text-xl">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
-                                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                                                </svg>
-                                                <span>Nenhum produto encontrado</span>
-                                            </div>
+                                    <div className="w-[90vw] h-full flex justify-center items-center">
+                                        <div className="mx-auto gap-3 flex flex-col justify-center items-center text-center text-gray-400 text-xl">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
+                                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                            </svg>
+                                            <span>Nenhum produto encontrado</span>
                                         </div>
+                                    </div>
                                 )}
 
                             </div>
@@ -502,48 +379,28 @@ export function Product() {
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Batéria</h2>
                             <div className="lg:ml-10 sm:ml-0  flex-wrap justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
                                 {filterBatteryProducts.length > 0 ? filterBatteryProducts.map((item: ProductType) => (
-                                    <Card key={item.id}  className="group overflow-hidden border-border  transition-all hover:shadow-lg">
-                                        <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
-                                            <Image
-                                                alt={item.alt}
-                                                src={item.srcImage}
-                                                width={110}
-                                                height={110}
-                                                className="h-full w-[180px]  flex justify-between text-center mx-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                                            />
-                                        </div>
-                                        <CardContent className="p-6">
-                                            <div className="mb-2 flex items-start justify-between gap-2">
-                                                <h3 className="font-serif text-[12px] leading-tight text-foreground">
-                                                    {item.nameProduct}
-                                                </h3>
-                                                <Button
-                                                    size="icon"
-                                                    variant="outline"
-                                                    onClick={() => handleAddToCart(item)}
-                                                    className="shrink-0 rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-                                                >
-                                                    <Plus className="h-4 w-4" />
-                                                </Button>
-                                            </div>
-                                            <p className="mb-4 text-[12px] leading-relaxed text-muted-foreground">
-                                                {item.details}
-                                            </p>
-                                        </CardContent>
-                                    </Card>
-
+                                    <ProductCard
+                                        key={item.id}
+                                        id={item.id}
+                                        nameProduct={item.nameProduct}
+                                        details={item.details}
+                                        srcImage={item.srcImage}
+                                        alt={item.alt}
+                                        price={item.price}
+                                        inStock={false}
+                                    />
                                 )) : (
-                                        <div className="w-[90vw] h-full flex justify-center items-center">
-                                            <div className="mx-auto gap-3 flex flex-col justify-center items-center text-center text-gray-400 text-xl">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
-                                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                                                </svg>
-                                                <span>Nenhum produto encontrado</span>
-                                            </div>
+                                    <div className="w-[90vw] h-full flex justify-center items-center">
+                                        <div className="mx-auto gap-3 flex flex-col justify-center items-center text-center text-gray-400 text-xl">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
+                                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                            </svg>
+                                            <span>Nenhum produto encontrado</span>
                                         </div>
+                                    </div>
                                 )}
 
-                            
+
                             </div>
                         </div>
 
@@ -553,50 +410,29 @@ export function Product() {
                         <div>
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Cola e Resistente</h2>
                             <div className="lg:ml-10 sm:ml-0  flex-wrap justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
-                                   {filterResistanceProducts.length > 0 ? filterResistanceProducts.map((item: ProductType) => (
-                                       <Card key={item.id}  className="group overflow-hidden border-border  transition-all hover:shadow-lg">
-                                           <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
-                                               <Image
-                                                   alt={item.alt}
-                                                   src={item.srcImage}
-                                                   width={110}
-                                                   height={110}
-                                                   className="h-full w-[180px]  flex justify-between text-center mx-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                                               />
-                                           </div>
-                                           <CardContent className="p-6">
-                                               <div className="mb-2 flex items-start justify-between gap-2">
-                                                   <h3 className="font-serif text-[12px] leading-tight text-foreground">
-                                                       {item.nameProduct}
-                                                   </h3>
-                                                   <Button
-                                                       size="icon"
-                                                       variant="outline"
-                                                       onClick={() => handleAddToCart(item)}
-                                                       className="shrink-0 rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-                                                   >
-                                                       <Plus className="h-4 w-4" />
-                                                   </Button>
-                                               </div>
-                                               <p className="mb-4 text-[12px] leading-relaxed text-muted-foreground">
-                                                   {item.details}
-                                               </p>
-                                           </CardContent>
-                                       </Card>
-
-
+                                {filterResistanceProducts.length > 0 ? filterResistanceProducts.map((item: ProductType) => (
+                                    <ProductCard
+                                        key={item.id}
+                                        id={item.id}
+                                        nameProduct={item.nameProduct}
+                                        details={item.details}
+                                        srcImage={item.srcImage}
+                                        alt={item.alt}
+                                        price={item.price}
+                                        inStock={false}
+                                    />
                                 )) : (
-                                        <div className="w-[90vw] h-full flex justify-center items-center">
-                                            <div className="mx-auto gap-3 flex flex-col justify-center items-center text-center text-gray-400 text-xl">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
-                                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                                                </svg>
-                                                <span>Nenhum produto encontrado</span>
-                                            </div>
+                                    <div className="w-[90vw] h-full flex justify-center items-center">
+                                        <div className="mx-auto gap-3 flex flex-col justify-center items-center text-center text-gray-400 text-xl">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
+                                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                            </svg>
+                                            <span>Nenhum produto encontrado</span>
                                         </div>
+                                    </div>
                                 )}
 
-                            
+
                             </div>
                         </div>
                     )}
@@ -605,49 +441,29 @@ export function Product() {
                         <div>
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Aditivo de Limpeza</h2>
                             <div className="lg:ml-10 sm:ml-0  flex-wrap justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
-                              {filterCleaningProducts.length > 0 ? filterCleaningProducts.map((item: ProductType) => (
-                                  <Card key={item.id}  className="group overflow-hidden border-border  transition-all hover:shadow-lg">
-                                      <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
-                                          <Image
-                                              alt={item.alt}
-                                              src={item.srcImage}
-                                              width={110}
-                                              height={110}
-                                              className="h-full w-[180px]  flex justify-between text-center mx-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                                          />
-                                      </div>
-                                      <CardContent className="p-6">
-                                          <div className="mb-2 flex items-start justify-between gap-2">
-                                              <h3 className="font-serif text-[12px] leading-tight text-foreground">
-                                                  {item.nameProduct}
-                                              </h3>
-                                              <Button
-                                                  size="icon"
-                                                  variant="outline"
-                                                  onClick={() => handleAddToCart(item)}
-                                                  className="shrink-0 rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-                                              >
-                                                  <Plus className="h-4 w-4" />
-                                              </Button>
-                                          </div>
-                                          <p className="mb-4 text-[12px] leading-relaxed text-muted-foreground">
-                                              {item.details}
-                                          </p>
-                                      </CardContent>
-                                  </Card>
-
+                                {filterCleaningProducts.length > 0 ? filterCleaningProducts.map((item: ProductType) => (
+                                    <ProductCard
+                                        key={item.id}
+                                        id={item.id}
+                                        nameProduct={item.nameProduct}
+                                        details={item.details}
+                                        srcImage={item.srcImage}
+                                        alt={item.alt}
+                                        price={item.price}
+                                        inStock={false}
+                                    />
                                 )) : (
-                                        <div className="w-[90vw] h-full flex justify-center items-center">
-                                            <div className="mx-auto gap-3 flex flex-col justify-center items-center text-center text-gray-400 text-xl">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
-                                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                                                </svg>
-                                                <span>Nenhum produto encontrado</span>
-                                            </div>
+                                    <div className="w-[90vw] h-full flex justify-center items-center">
+                                        <div className="mx-auto gap-3 flex flex-col justify-center items-center text-center text-gray-400 text-xl">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
+                                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                            </svg>
+                                            <span>Nenhum produto encontrado</span>
                                         </div>
+                                    </div>
                                 )}
 
-                             
+
                             </div>
                         </div>
                     )}
@@ -656,3 +472,4 @@ export function Product() {
         </>
     );
 }
+

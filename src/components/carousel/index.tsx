@@ -11,6 +11,7 @@ interface CarouselProps {
         subtitle: string
         description: string
         image: string
+        bgColor?: string
     }[]
     autoPlay?: boolean
     interval?: number
@@ -46,6 +47,7 @@ export function Carousel({ slides, autoPlay = true, interval = 5000 }: CarouselP
                             backgroundImage: `url(${slide.image || "/placeholder.svg"})`,
                             backgroundSize: "cover",
                             backgroundPosition: "center 30%",
+                            backgroundColor: slide.bgColor || "#000000"
                         }}
                     >
                         {/* Overlay escuro */}

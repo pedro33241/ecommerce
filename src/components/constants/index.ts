@@ -52,5 +52,5 @@ export const slides = [
         subtitle: "Estamos aqui para ajudar você",
         description: "Suporte dedicado para todas as suas necessidades.",
         image: "/image4.jpg",
-    },
+    }
 ];
