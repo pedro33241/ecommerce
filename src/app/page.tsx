@@ -19,8 +19,7 @@ import { Carousel } from "@/components/carousel";
 import { slides } from "@/components/constants";
 import NavBar from "@/components/layouts/navBar/navBar";
 import { Partners } from "@/components/partners";
-import { DecorativeElements } from "@/components/DecorativeElements";
-import { FloatingBalls } from "@/components/FloatingBalls";
+import { DecorativeElements } from "@/components/DecorativeElements"; 
 import { SplashAnimation } from "@/components/SplashAnimation";
 export default function Home() {
 
