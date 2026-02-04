@@ -131,7 +131,7 @@ export function Product() {
         }
     ]
 
-    const { filterProductLuz, filterProduct, kitchenProductFiltered, filterManualProducts, filterResistanceProducts, filterCleaningProducts, filterBatteryProducts, filterHygieneSafetyProducts, handleChangeSearch, filterAccessoryProducts, handleTabChange, activeTab } = UseSearch();
+    const { filterProductLuz, filterProduct, kitchenProductFiltered, filterManualProducts, filterBatteryProducts, filterHygieneSafetyProducts, handleChangeSearch, filterAccessoryProducts, handleTabChange, activeTab } = UseSearch();
 
 
     return (
