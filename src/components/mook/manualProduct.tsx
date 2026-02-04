@@ -574,6 +574,222 @@ export const manualProducts = [
         srcImage: "/ferramentaManual/72.jpg",
         alt: "imagem do produto",
         price: 0
+    },
+    {
+        id: 73,
+        nameProduct: "CHAVES DE PANCADA FENDA C/6UND SL/PH/PZ/TX - BOSCH",
+        details: "Conjunto de chaves de pancada Bosch Professional com 6 peças, indicado para trabalhos intensivos. Fabricadas em aço de alta resistência, oferecem excelente durabilidade e desempenho em aplicações industriais e mecânicas. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/73.jpg",
+        alt: "imagem do produto",
+        price: 0
+    },
+    {
+        id: 74,
+        nameProduct: "CHAVE PZ2X125 PROFESSIONAL BOSCH",
+        details: "Chave de parafusos PZ2 com haste de 125 mm, ideal para trabalhos profissionais. Possui cabo ergonómico e ponta de elevada precisão, garantindo maior controlo e resistência ao desgaste. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/74.jpg",
+        alt: "imagem do produto",
+        price: 0
+    },
+    {
+        id: 75,
+        nameProduct: "CHAVES DE TORX 6UND BOSCH",
+        details: "Conjunto de chaves Torx Bosch Professional, desenvolvido para fixações precisas e seguras. Ideal para manutenção técnica, mecânica e industrial. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/75.jpg",
+        alt: "imagem do produto",
+        price: 0
+    },
+    {
+        id: 76,
+        nameProduct: "FITA MÉTRICA DE 5 MTS PROFESSIONAL BOSCH",
+        details: "Fita métrica profissional de 5 metros com caixa resistente a impactos. Oferece leitura clara, mecanismo de travamento seguro e elevada durabilidade para uso diário em obra. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/76.jpg",
+        alt: "imagem do produto",
+        price: 0
+    },
+    {
+        id: 77,
+        nameProduct: "FITA MÉTRICA DE 8 MTS PROFESSIONAL BOSCH",
+        details: "Fita métrica Bosch Professional de 8 metros, indicada para medições precisas em ambientes profissionais. Estrutura robusta e fita resistente ao desgaste. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/77.jpg",
+        alt: "imagem do produto",
+        price: 0
+    },
+    {
+        id: 78,
+        nameProduct: "NÍVEL MAGNÉTICO DE 25 CM PROFESSIONAL - BOSCH",
+        details: "Nível magnético compacto de 25 cm, ideal para alinhamentos rápidos e precisos. Possui base magnética forte e bolhas de alta visibilidade. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/78.jpg",
+        alt: "imagem do produto",
+        price: 0
+    },
+    {
+        id: 79,
+        nameProduct: "CHAVE TORX ALLEN 9UND PROFESSIONAL - BOSCH",
+        details: "Chave Torx em formato 90°, projetada para acesso facilitado a parafusos em áreas de difícil alcance. Fabricada em aço resistente para uso profissional. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/79.jpg",
+        alt: "imagem do produto",
+        price: 0
+    },
+    {
+        id: 80,
+        nameProduct: "X-ACTO UNIVERSAL PROFESSIONAL - BOSCH",
+        details: "Estilete universal Bosch Professional, com corpo robusto e lâmina afiada de alta precisão. Ideal para cortes limpos em diversos materiais. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/80.jpg",
+        alt: "imagem do produto",
+        price: 0
+    },
+    {
+        id: 81,
+        nameProduct: "ALICATE UNIVERSAL 180 MM PROFESSIONAL - BOSCH",
+        details: "Alicate universal de 180 mm para aplicações gerais. Oferece excelente capacidade de corte, pega confortável e elevada resistência mecânica. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/81.jpg",
+        alt: "imagem do produto",
+        price: 0
+    },
+    {
+        id: 82,
+        nameProduct: "ALICATE DESCARNADOR DE 160 MM PROFESSIONAL - BOSCH",
+        details: "Alicate descarnador profissional de 160 mm, ideal para trabalhos elétricos. Permite remover isolamento de fios com precisão e segurança. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/82.jpg",
+        alt: "imagem do produto",
+        price: 0
+    },
+    {
+        id: 83,
+        nameProduct: "CONJUNTO DE ALICATES 3 PÇS PROFESSIONAL - BOSCH",
+        details: "Conjunto profissional com 3 alicates Bosch, indicado para eletricistas e técnicos. Ferramentas robustas, ergonómicas e duráveis. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/83.jpg",
+        alt: "imagem do produto",
+        price: 0
+    },
+    {
+        id: 84,
+        nameProduct: "ALICATE PARA EXTENSÍVEL DE 250 MM PROFESSIONAL - BOSCH",
+        details: "Alicate ajustável de 250 mm com abertura variável, ideal para tubos e peças de diferentes dimensões. Alta força de aperto e durabilidade. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/84.jpg",
+        alt: "imagem do produto",
+        price: 0
+    },
+    {
+        id: 85,
+        nameProduct: "CANIVETE DOBRÁVEL X-ACTO UNIVERSAL PROFESSIONAL- BOSCH",
+        details: "Canivete profissional dobrável com lâmina substituível. Design compacto, seguro e prático para uso contínuo. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/85.jpg",
+        alt: "imagem do produto",
+        price: 0
+    },
+    {
+        id: 86,
+        nameProduct: "CONJUNTO DE CANIVETES, 3 PÇS PROFESSIONAL- BOSCH",
+        details: "Conjunto de 3 canivetes profissionais Bosch, ideal para diferentes aplicações de corte em ambiente profissional. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/86.jpg",
+        alt: "imagem do produto",
+        price: 0
+    },
+    {
+        id: 87,
+        nameProduct: "CHAVE VDE DE 8 MM, PROFESSIONAL - BOSCH",
+        details: "Chave isolada VDE de 8 mm, certificada para trabalhos elétricos até 1000V. Garante máxima segurança e conforto. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/87.jpg",
+        alt: "imagem do produto",
+        price: 0
+    },
+    {
+        id: 88,
+        nameProduct: "CHAVE VDE DE 8,10,13 E 17 MM, PROFESSIONAL- BOSCH",
+        details: "Conjunto de chaves VDE isoladas, ideal para trabalhos elétricos profissionais. Proteção total e elevada resistência. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/88.jpg",
+        alt: "imagem do produto",
+        price: 0
+    },
+    {
+        id: 89,
+        nameProduct: "CHAVE DE FENDAS VDE SL6.5X125 MM PROFESSIONAL- BOSCH",
+        details: "Chave de fendas isolada VDE, indicada para trabalhos elétricos com segurança. Cabo ergonómico e ponta precisa. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/89.jpg",
+        alt: "imagem do produto",
+        price: 0
+    },
+    {
+        id: 90,
+        nameProduct: "CONJUNTO DE CHAVES DE FENDAS VDE TX, 7 PÇS PROFESSIONAL- BOSCH",
+        details: "Conjunto profissional com 7 chaves VDE Torx, ideal para eletricistas. Isolamento certificado e longa vida útil. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/90.jpg",
+        alt: "imagem do produto",
+        price: 0
+    },
+    {
+        id: 91,
+        nameProduct: "ALICATE DE CORTE LATERAL DIAGONAL VDE DE 160 MM PROFESSIONAL- BOSCH",
+        details: "Alicate de corte isolado VDE de 160 mm, ideal para corte preciso de fios e cabos com segurança elétrica. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/91.jpg",
+        alt: "imagem do produto",
+        price: 0
+    },
+    {
+        id: 92,
+        nameProduct: "ALICATE UNIVERSAL VDE DE 180 MM PROFESSIONAL- BOSCH",
+        details: "Alicate universal isolado VDE para trabalhos elétricos profissionais. Combina robustez, segurança e conforto. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/92.jpg",
+        alt: "imagem do produto",
+        price: 0
+    },
+    {
+        id: 93,
+        nameProduct: "ALICATE DE CORTE LATERAL DE ALTA ALAVANCAGEM VDE DE 200 MM PROFESSIONAL- BOSCH",
+        details: "Alicate de corte com efeito de alavanca, proporcionando maior força com menor esforço. Ideal para uso intensivo. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/93.jpg",
+        alt: "imagem do produto",
+        price: 0
+    },
+    {
+        id: 94,
+        nameProduct: "ALICATE DE PONTAS DIREITAS VDE DE 200 MM PROFESSIONAL- BOSCH",
+        details: "Alicate de pontas direitas isolado VDE, indicado para trabalhos de precisão em instalações elétricas. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/94.jpg",
+        alt: "imagem do produto",
+        price: 0
+    },
+    {
+        id: 95,
+        nameProduct: "ALICATE DE CRAVAR VDE DE 180 MM PROFESSIONAL- BOSCH",
+        details: "Alicate de cravar profissional com isolamento VDE, ideal para terminais elétricos e conexões seguras. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/95.jpg",
+        alt: "imagem do produto",
+        price: 0
+    },
+    {
+        id: 96,
+        nameProduct: "ALICATE DESCARNADOR UNIVERSAL VDE DE 160 MM PROFESSIONAL- BOSCH",
+        details: "Alicate descarnador isolado VDE, projetado para remover isolamento de fios com precisão e segurança. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/96.jpg",
+        alt: "imagem do produto",
+        price: 0
+    },
+    {
+        id: 97,
+        nameProduct: "CORTA-CABOS VDE DE 200 MM PROFESSIONAL- BOSCH",
+        details: "Corta-cabos profissional isolado VDE, ideal para corte limpo de cabos elétricos com segurança máxima. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/97.jpg",
+        alt: "imagem do produto",
+        price: 0
+    },
+    {
+        id: 98,
+        nameProduct: "CONJUNTO DE ALICATES VDE, 3 PÇS PROFESSIONAL- BOSCH",
+        details: "Conjunto de alicates isolados VDE com 3 peças, essencial para eletricistas profissionais. Segurança, ergonomia e resistência. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/98.jpg",
+        alt: "imagem do produto",
+        price: 0
+    },
+    {
+        id: 99,
+        nameProduct: "CONJUNTO DE ALICATES VDE, 4 PÇS PROFESSIONAL- BOSCH",
+        details: "Conjunto profissional com 4 alicates VDE Bosch, ideal para trabalhos elétricos completos. Alta qualidade e proteção certificada. Adicione ao carrinho para receber cotação e especificações técnicas.",
+        srcImage: "/ferramentaManual/99.jpg",
+        alt: "imagem do produto",
+        price: 0
     }
 
 
