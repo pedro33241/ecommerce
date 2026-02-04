@@ -18,6 +18,8 @@ type ProductType = {
 export function Product2() {
     const { addData } = useStore()
     const [quantities, setQuantities] = useState<{ [key: number]: number }>({});
+    const [modalImage, setModalImage] = useState<string | null>(null);
+    const [modalAlt, setModalAlt] = useState<string>("");
 
     const getQuantity = (id: number) => quantities[id] || 1;
 
@@ -62,13 +64,19 @@ export function Product2() {
                         {accessoryProducts?.map((item: ProductType) => (
                             <Card key={item.id} className="group overflow-hidden border-border  transition-all hover:shadow-lg">
                                 <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
-                                    <Image
-                                        alt={item.alt}
-                                        src={item.srcImage}
-                                        width={250}
-                                        height={180}
-                                        className="max-h-full max-w-full object-contain"
-                                    />
+                                    <button
+                                        onClick={() => { setModalImage(item.srcImage); setModalAlt(item.alt); }}
+                                        className="block w-full h-full p-0 m-0 bg-transparent border-0"
+                                        aria-label={`Ver imagem de ${item.nameProduct}`}
+                                    >
+                                        <Image
+                                            alt={item.alt}
+                                            src={item.srcImage}
+                                            width={250}
+                                            height={180}
+                                            className="max-h-full max-w-full object-contain block m-auto"
+                                        />
+                                    </button>
                                 </div>
                                 <CardContent className="p-6">
                                     <h3 className="mb-2 text-[12px] leading-tight text-foreground">
@@ -116,6 +124,26 @@ export function Product2() {
                 </div>
 
             </div>
+            {modalImage && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70" onClick={() => setModalImage(null)}>
+                    <div className="relative max-w-[90vw] max-h-[90vh]" onClick={(e) => e.stopPropagation()}>
+                        <button
+                            className="absolute top-2 right-2 z-50 text-white bg-black/40 rounded-full p-2"
+                            onClick={() => setModalImage(null)}
+                            aria-label="Fechar imagem"
+                        >
+                            ✕
+                        </button>
+                        <Image
+                            alt={modalAlt}
+                            src={modalImage}
+                            width={900}
+                            height={900}
+                            className="object-contain max-h-[90vh] max-w-[90vw] block m-auto"
+                        />
+                    </div>
+                </div>
+            )}
         </>
     );
 }

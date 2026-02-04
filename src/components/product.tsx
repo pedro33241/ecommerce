@@ -389,34 +389,15 @@ export function Product() {
                             </div>
                         </div>
 
-                    )}
-
-                    {activeTab === 8 && (
+                        )}
+                        {activeTab === 8 && (
                         <div>
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Cola e Resistente</h2>
-                            <div className="lg:ml-10 sm:ml-0  flex-wrap justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
-                                {filterResistanceProducts.length > 0 ? filterResistanceProducts.map((item: ProductType) => (
-                                    <ProductCard
-                                        key={item.id}
-                                        id={item.id}
-                                        nameProduct={item.nameProduct}
-                                        details={item.details}
-                                        srcImage={item.srcImage}
-                                        alt={item.alt}
-                                        price={item.price}
-                                    />
-                                )) : (
-                                    <div className="w-[90vw] h-full flex justify-center items-center">
-                                        <div className="mx-auto gap-3 flex flex-col justify-center items-center text-center text-gray-400 text-xl">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
-                                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                                            </svg>
-                                            <span>Nenhum produto encontrado</span>
-                                        </div>
-                                    </div>
-                                )}
-
-
+                            <div className="lg:ml-10 sm:ml-0 flex items-center justify-center mt-24">
+                                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 text-center">
+                                    <h3 className="text-lg font-semibold text-yellow-700">Sessão em atualização</h3>
+                                    <p className="text-sm text-yellow-600 mt-2">Estamos atualizando os produtos desta categoria. Retornaremos em breve.</p>
+                                </div>
                             </div>
                         </div>
                     )}
@@ -424,29 +405,11 @@ export function Product() {
                     {activeTab === 9 && (
                         <div>
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Aditivo de Limpeza</h2>
-                            <div className="lg:ml-10 sm:ml-0  flex-wrap justify-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
-                                {filterCleaningProducts.length > 0 ? filterCleaningProducts.map((item: ProductType) => (
-                                    <ProductCard
-                                        key={item.id}
-                                        id={item.id}
-                                        nameProduct={item.nameProduct}
-                                        details={item.details}
-                                        srcImage={item.srcImage}
-                                        alt={item.alt}
-                                        price={item.price}
-                                    />
-                                )) : (
-                                    <div className="w-[90vw] h-full flex justify-center items-center">
-                                        <div className="mx-auto gap-3 flex flex-col justify-center items-center text-center text-gray-400 text-xl">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
-                                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                                            </svg>
-                                            <span>Nenhum produto encontrado</span>
-                                        </div>
-                                    </div>
-                                )}
-
-
+                            <div className="lg:ml-10 sm:ml-0 flex items-center justify-center mt-24">
+                                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 text-center">
+                                    <h3 className="text-lg font-semibold text-yellow-700">Sessão em atualização</h3>
+                                    <p className="text-sm text-yellow-600 mt-2">Estamos atualizando os produtos desta categoria. Retornaremos em breve.</p>
+                                </div>
                             </div>
                         </div>
                     )}

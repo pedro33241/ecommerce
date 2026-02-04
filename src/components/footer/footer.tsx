@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from 'next/link';
+import { MessageCircle, Phone, Mail } from "lucide-react";
 
 export function Footer() {
 
@@ -7,7 +8,7 @@ export function Footer() {
     const menssage = "Olá! Estou interessado(a) em um produto da sua empresa. Poderia me fornecer mais informações sobre ele, como preço, disponibilidade e características? Obrigado(a)!"
     return (
         <>
-            <div id="contact" className=" relative w-full bg-[#f9fbfc] mt-36" style={{
+            <div id="contact" className=" relative w-full bg-[#f9fbfc] mt-36 pt-16 md:pt-0" style={{
                 borderTop: '1px solid',
                 borderImageSource: 'linear-gradient(90deg, rgba(1, 2, 2, 0.16) 0%, rgba(255, 255, 255, 0.16) 50%, rgba(1, 2, 2, 0.16) 100%)',
                 borderImageSlice: 1
@@ -18,7 +19,7 @@ export function Footer() {
                     alt="star"
                     src="img.svg"
                     width={116}
-                    className=" top-0 absolute left-0"
+                    className=" top-0 absolute left-0 hidden md:block"
                     height={124}
                 />
 
@@ -26,7 +27,7 @@ export function Footer() {
                     alt="star"
                     src="img.svg"
                     width={116}
-                    className=" top-0 absolute right-0"
+                    className=" top-0 absolute right-0 hidden md:block"
                     height={124}
                 />
 
@@ -34,7 +35,7 @@ export function Footer() {
                     alt="star"
                     src="img.svg"
                     width={116}
-                    className="-mt-2 left-0 absolute bottom-4"
+                    className="-mt-2 left-0 absolute bottom-4 hidden md:block"
                     height={124}
                 />
 
@@ -42,7 +43,7 @@ export function Footer() {
                     alt="star"
                     src="img.svg"
                     width={116}
-                    className="-mt-2 right-0 sx:hidden md:absolute bottom-4"
+                    className="-mt-2 right-0 absolute bottom-4 hidden lg:block"
                     height={124}
                 />
 
@@ -50,15 +51,15 @@ export function Footer() {
 
 
 
-                <div className="flex gap-4 md:gap-10 border border-t-gray-100 shadow-lg flex-col md:flex-row justify-between mx-auto px-4 md:px-12 lg:px-24 py-12 md:py-32">
+                <div className="flex gap-4 md:gap-10 border border-t-gray-100 shadow-lg flex-col md:flex-row justify-between mx-auto px-4 md:px-12 lg:px-24 py-12 md:py-32 relative z-10">
 
-                    <aside className="w-full text-[#2E323A99] flex flex-col">
+                    <aside className="w-full text-[#2E323A99] flex flex-col items-center md:items-start">
                         <Image
                             alt="logo"
                             src="/logo.jpg"
                             width={280}
                             height={8}
-                            className="-mt-20 md:-mt-24 w-48 md:w-80"
+                            className="w-48 md:w-80 md:-mt-20 lg:-mt-24"
                         />
                     </aside>
                     <div className="flex flex-col md:flex-row w-full gap-6 md:gap-24 lg:gap-36">
@@ -82,19 +83,26 @@ export function Footer() {
                             <h3 className="sx:text-[13px] lg:text-[18px] text-[#191c1e]">Contactos </h3>
 
 
-                            <Link href={`https://wa.me/${phone}?text=${menssage}`} target="_blank" className=" text-[#2E323A99] flex flex-row gap-3 text-[14px] ">   <Image
-                                alt="star"
-                                src="Phone.svg"
-                                width={20}
-                                height={20}
-                            />  (+244)&nbsp;933 103 913</Link>
+                            <Link href={`https://wa.me/${phone}?text=${menssage}`} target="_blank" className=" text-[#2E323A99] flex flex-row gap-3 text-[14px] ">   
+                                <MessageCircle size={20} className="text-green-500" />
+                                (+244)&nbsp;933 103 913</Link>
 
-                            <Link href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank" className=" text-[#2E323A99]  flex flex-row gap-3  text-[14px]">   <Image
-                                alt="star"
-                                src="email.svg"
-                                width={20}
-                                height={20}
-                            /> dbsd.angola@gmail.com</Link>
+
+
+                            <Link href={`https://wa.me/936884447?text=${menssage}`} target="_blank" className=" text-[#2E323A99] flex flex-row gap-3 text-[14px] ">   
+                                <MessageCircle size={20} className="text-green-500" />
+                                (+244)&nbsp;936 884 447</Link>
+
+
+
+                            <Link href={`tel:${phone}`} target="_blank" className=" text-[#2E323A99] flex flex-row gap-3 text-[14px] ">   
+                                <Phone size={20} className="text-blue-500" />
+                                (+244)&nbsp;933 103 904</Link>
+
+
+                            <Link href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank" className=" text-[#2E323A99]  flex flex-row gap-3  text-[14px]">   
+                                <Mail size={20} className="text-red-500" />
+                                dbsd.angola@gmail.com</Link>
                         </aside>
                     </div>
 

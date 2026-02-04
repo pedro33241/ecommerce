@@ -17,6 +17,7 @@ type ProductCardProps = {
 
 export function ProductCard({ id, nameProduct, details, srcImage, alt, price }: ProductCardProps) {
     const [quantity, setQuantity] = useState(1);
+    const [showModal, setShowModal] = useState(false);
     const { addData } = useStore();
     const handleIncrement = () => {
         setQuantity(prev => prev + 1);
@@ -42,17 +43,24 @@ export function ProductCard({ id, nameProduct, details, srcImage, alt, price }: 
     };
 
     return (
-        <Card className="group overflow-hidden border-border transition-all hover:shadow-lg">
-            <div className="relative overflow-hidden h-40 w-full flex items-center justify-center">
-                <Image
-                    alt={alt}
-                    src={srcImage}
-                    width={180}
-                    height={160}
-                    className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
-                />
-            </div>
-            <CardContent className="p-4">
+        <>
+            <Card className="group overflow-hidden border-border transition-all hover:shadow-lg">
+                <div className="relative overflow-hidden h-40 w-full flex items-center justify-center">
+                    <button
+                        onClick={() => setShowModal(true)}
+                        className="block w-full h-full p-0 m-0 bg-transparent border-0"
+                        aria-label={`Ver imagem de ${nameProduct}`}
+                    >
+                        <Image
+                            alt={alt}
+                            src={srcImage}
+                            width={180}
+                            height={160}
+                            className="max-h-full max-w-full object-contain block m-auto transition-transform duration-300 group-hover:scale-105"
+                        />
+                    </button>
+                </div>
+                <CardContent className="p-4">
                 <h3 className="font-serif text-[12px] leading-tight text-foreground mb-2">
                     {nameProduct}
                 </h3>
@@ -94,7 +102,28 @@ export function ProductCard({ id, nameProduct, details, srcImage, alt, price }: 
                         <span className="inline text-xs">Adicionar</span>
                     </Button>
                 </div>
-            </CardContent>
-        </Card>
+                </CardContent>
+            </Card>
+            {showModal && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70" onClick={() => setShowModal(false)}>
+                    <div className="relative max-w-[90vw] max-h-[90vh]" onClick={(e) => e.stopPropagation()}>
+                        <button
+                            className="absolute top-2 right-2 z-50 text-white bg-black/40 rounded-full p-2"
+                            onClick={() => setShowModal(false)}
+                            aria-label="Fechar imagem"
+                        >
+                            ✕
+                        </button>
+                        <Image
+                            alt={alt}
+                            src={srcImage}
+                            width={900}
+                            height={900}
+                            className="object-contain max-h-[90vh] max-w-[90vw]"
+                        />
+                    </div>
+                </div>
+            )}
+        </>
     );
 }
