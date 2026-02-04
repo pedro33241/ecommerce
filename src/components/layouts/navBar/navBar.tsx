@@ -32,7 +32,7 @@ export default function NavBar() {
     return (
         <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
             <div className="mx-auto px-3 sm:px-4 md:px-6 lg:px-12 py-3 md:py-4 flex items-center justify-between h-auto md:h-20">
-                <Link href="/" className="h-full flex items-center justify-center flex-shrink-0">
+                <Link href="/" className="h-full flex items-center justify-center flex-shrink-0 mt-12">
                     <Image
                         src="/logo2.png"
                         alt="logo"
