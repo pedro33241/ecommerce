@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export function Footer() {
 
-    const phone = 936884337;
+    const phone = 933103913;
     const menssage = "Olá! Estou interessado(a) em um produto da sua empresa. Poderia me fornecer mais informações sobre ele, como preço, disponibilidade e características? Obrigado(a)!"
     return (
         <>
@@ -87,7 +87,7 @@ export function Footer() {
                                 src="Phone.svg"
                                 width={20}
                                 height={20}
-                            />  (+244)&nbsp;936 884 337</Link>
+                            />  (+244)&nbsp;933 103 913</Link>
 
                             <Link href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank" className=" text-[#2E323A99]  flex flex-row gap-3  text-[14px]">   <Image
                                 alt="star"

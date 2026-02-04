@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from 'next/link';
 
 export function PublicityProductSecond(){
-    const phone = 936884337;
+    const phone = 933103913;
     const menssage = "Olá! Estou interessado(a) em dos produtos de sua empresa. Poderia me fornecer mais informações sobre ele, como preço, disponibilidade e características? Obrigado(a)!"
    
     return(

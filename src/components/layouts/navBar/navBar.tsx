@@ -14,7 +14,7 @@ export default function NavBar() {
     const handleClick = () => {
         setIsVisible(false)
     }
-    const phone = 936884337;
+    const phone = 933103913;
     const menssage = "Olá! Estou interessado(a) em um produto da sua empresa. Poderia me fornecer mais informações sobre ele, como preço, disponibilidade e características? Obrigado(a)!"
     const pathName = usePathname();
 
