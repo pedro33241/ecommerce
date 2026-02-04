@@ -12,19 +12,29 @@ export function CartDrawer() {
     const whatsappPhone = "933103913"; // número usado no projeto
     const emailTo = "dbsd.angola@gmail.com";
 
+    type ProductType = {
+        id: number;
+        nameProduct: string;
+        details: string;
+        srcImage: string;
+        alt: string;
+        price: number;
+        quantity?: number;
+    };
+
     const buildMessage = () => {
         if (!data || data.length === 0) return "";
-        let lines: string[] = [];
+        const lines: string[] = [];
         lines.push("Olá! Gostaria de comprar os seguintes produtos:");
         lines.push("");
        
 
-        data.forEach((item: any, idx: number) => {
+        data.forEach((item: ProductType, idx: number) => {
             const qty = item.quantity || 1; 
             lines.push(`${idx + 1}. ${item.nameProduct} (x${qty})`);
         });
         lines.push("");
-        lines.push(`Total de itens: ${data.reduce((s:any, it:any) => s + (it.quantity||1), 0)}`);
+        lines.push(`Total de itens: ${data.reduce((s: number, it: ProductType) => s + (it.quantity||1), 0)}`);
         lines.push("");
         lines.push("Por favor, confirme disponibilidade e formas de pagamento.");
         return lines.join("\n");
@@ -47,16 +57,6 @@ export function CartDrawer() {
         const gmailLink = `https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${encodeURIComponent(emailTo)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
         
         window.open(gmailLink, "_blank");
-    };
- 
-    type ProductType = {
-        id: number;
-        nameProduct: string;
-        details: string;
-        srcImage: string;
-        alt: string;
-        price: number;
-        quantity?: number;
     };
 
     // Calcular total de itens considerando quantidade
