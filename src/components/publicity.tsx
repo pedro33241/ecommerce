@@ -14,7 +14,7 @@ export function Publicity() {
                 <div className="text-white flex flex-col gap-9">
                     <label htmlFor="" className="font-normal md:text-[18px] sm:text-[14px] md:w-[195px] sm:w-[165px] bg-[#2591d2] py-[6px] px-[12px] ">Economizar até 20%</label>
                     <div>
-                        <h2 className="font-semibold md:text-[36px]  sm:text-[24px]">Produtos de Limpeza</h2>
+                        <h2 className="font-semibold md:text-[36px]  sm:text-[24px]">Bem-Estar & Cuidados</h2>
                         <span className="w-[360px] md:text-[16px] sm:text-[14px]">Descubra nossa linha completa de produtos de limpeza e muito mais! Oferecemos tudo o que você precisa para manter sua casa e seu ambiente de trabalho impecáveis. </span>
                     </div>
 
