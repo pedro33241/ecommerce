@@ -96,7 +96,7 @@ export function Footer() {
                             </Link>
                         </div>
                         <div className="flex flex-col gap-3">
-                            <h3 className="text-sm md:text-lg text-[#191c1e] font-semibold">Redes Sociais</h3>
+                            <h3 className="text-sm md:text-lg text-[#191c1e] font-semibold">Siga-nos</h3>
                             <div className="flex flex-row gap-4 mt-1">
                                 <Link href="https://www.facebook.com/profile.php?id=61572482675101" className="text-blue-600 hover:opacity-80" target="_blank" aria-label="Facebook">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
