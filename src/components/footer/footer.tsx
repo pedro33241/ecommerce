@@ -1,4 +1,3 @@
-import { Facebook } from "lucide-react";
 import Image from "next/image"
 import Link from 'next/link';
 import { MessageCircle, Phone, Mail } from "lucide-react";
@@ -71,29 +70,30 @@ export function Footer() {
 
                         <div className="flex flex-col gap-3">
                             <h3 className="text-sm md:text-lg text-[#191c1e] font-semibold">Serviços</h3>
-                            <Link href="/" className="text-[#2E323A99] hover:text-gray-900 transition-colors">Home</Link>
-                            <Link href="/product" className="text-[#2E323A99] hover:text-gray-900 transition-colors">Produtos</Link>
-                            <Link href="#contact" className="text-[#2E323A99] hover:text-gray-900 transition-colors">Suporte</Link>
-                            <Link href="/about" className="text-[#2E323A99] hover:text-gray-900 transition-colors">Sobre nós</Link>
+                            <Link href="/" className="text-gray-700 hover:text-gray-900 transition-colors">Home</Link>
+                            <Link href="/product" className="text-gray-700 hover:text-gray-900 transition-colors">Produtos</Link>
+                            <Link href="#contact" className="text-gray-700 hover:text-gray-900 transition-colors">Suporte</Link>
+                            <Link href="/about" className="text-gray-700 hover:text-gray-900 transition-colors">Sobre nós</Link>
                         </div>
  <div className="flex flex-col gap-3">
                             <h3 className="text-sm md:text-lg text-[#191c1e] font-semibold">Contactos</h3>
-                            <Link href={`https://wa.me/${phone}?text=${menssage}`} target="_blank" className="text-[#2E323A99] flex items-center gap-3 text-[14px] hover:text-gray-900 transition-colors">
+                            <Link href={`https://wa.me/${phone}?text=${menssage}`} target="_blank" className="text-gray-700 flex items-center gap-3 text-[14px] hover:text-gray-900 transition-colors">
                                 <MessageCircle size={20} className="text-green-500" />
                                 (+244) 933 103 913
                             </Link>
-                            <Link href={`https://wa.me/936884447?text=${menssage}`} target="_blank" className="text-[#2E323A99] flex items-center gap-3 text-[14px] hover:text-gray-900 transition-colors">
+                            <Link href={`https://wa.me/936884447?text=${menssage}`} target="_blank" className="text-gray-700 flex items-center gap-3 text-[14px] hover:text-gray-900 transition-colors">
                                 <MessageCircle size={20} className="text-green-500" />
                                 (+244) 936 884 447
                             </Link>
-                            <Link href={`tel:${phone}`} className="text-[#2E323A99] flex items-center gap-3 text-[14px] hover:text-gray-900 transition-colors">
+                            <Link href={`tel:${phone}`} className="text-gray-700 flex items-center gap-3 text-[14px] hover:text-gray-900 transition-colors">
                                 <Phone size={20} className="text-blue-500" />
                                 (+244) 933 103 904
                             </Link>
-                            <Link href="mailto:dbsd.angola@gmail.com" className="text-[#2E323A99] flex items-center gap-3 text-[14px] hover:text-gray-900 transition-colors">
+                            <Link href="mailto:dbsd.angola@gmail.com" className="text-gray-700 flex items-center gap-3 text-[14px] hover:text-gray-900 transition-colors">
                                 <Mail size={20} className="text-red-500" />
                                 dbsd.angola@gmail.com
                             </Link>
+                            <p>SEDE: Luanda – Talatona | Bairro Camama, Rua nº 8, Av. Principal do Camama, Casa nº 135</p>
                         </div>
                         <div className="flex flex-col gap-3">
                             <h3 className="text-sm md:text-lg text-[#191c1e] font-semibold">Siga-nos</h3>
@@ -111,7 +111,7 @@ export function Footer() {
                                 </Link>
                             </div>
 
-                            <p className="text-sm text-[#2E323A99] mt-3">Siga-nos para novidades, promoções e suporte.</p>
+                            <p className="text-sm text-gray-700 mt-3">Siga-nos para novidades, promoções e suporte.</p>
                         </div>
 
                     </div>
@@ -121,7 +121,7 @@ export function Footer() {
             </div>
             <div className="w-full bg-gradient-to-r from-[#0f172a] to-[#111827] text-white py-6">
                 <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-                     <p className="text-xs md:text-sm opacity-80"> &copy; 2026 WendySoft. Todos os direitos reservados. desenvolvido por <Link href="https://wendy-soft.vercel.app/" target="_blank" className="text-blue-400 hover:text-blue-300">WendySoft</Link></p>
+                     <p className="text-xs md:text-sm text-gray-300"> &copy; 2026 WendySoft. Todos os direitos reservados. desenvolvido por <Link href="https://wendy-soft.vercel.app/" target="_blank" className="text-blue-300 hover:text-blue-100 underline">WendySoft</Link></p>
                 </div>
             </div>
         </>

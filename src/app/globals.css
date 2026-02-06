@@ -179,3 +179,19 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Performance optimizations */
+img {
+  will-change: auto;
+}
+
+img[loading="lazy"] {
+  background-color: #f0f0f0;
+}
+
+/* Critical rendering path optimization */
+@media print {
+  body {
+    background: none;
+  }
+}

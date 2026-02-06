@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
@@ -28,9 +28,9 @@ export function Carousel({ slides, autoPlay = true, interval = 5000 }: CarouselP
         return () => clearInterval(timer)
     }, [autoPlay, interval, slides.length])
 
-    const goToSlide = (index: number) => setCurrentSlide(index)
-    const goToPrevious = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
-    const goToNext = () => setCurrentSlide((prev) => (prev + 1) % slides.length)
+    const goToSlide = useCallback((index: number) => setCurrentSlide(index), [])
+    const goToPrevious = useCallback(() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length), [slides.length])
+    const goToNext = useCallback(() => setCurrentSlide((prev) => (prev + 1) % slides.length), [slides.length])
 
     return (
         <div className="relative w-full h-screen overflow-hidden bg-black">
@@ -41,7 +41,7 @@ export function Carousel({ slides, autoPlay = true, interval = 5000 }: CarouselP
                         key={index}
                         className={cn(
                             "absolute inset-0 transition-opacity duration-700 ease-in-out",
-                            index === currentSlide ? "opacity-100" : "opacity-0"
+                            index === currentSlide ? "opacity-100" : "opacity-0 pointer-events-none"
                         )}
                         style={{
                             backgroundImage: `url(${slide.image || "/placeholder.svg"})`,

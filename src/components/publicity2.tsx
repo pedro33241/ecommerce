@@ -19,11 +19,11 @@ export function PublicityProductSecond(){
 <div className="bg-[#f3de6d] w-[312px] h-[288px] pt-3">
     <div className="text-center flex flex-col justify-center ">
         
-<h1 className="text-[#be4646] font-semibold text-[14px] mx-auto mt-3 text-center ">Produtos</h1>
+<h2 className="text-[#be4646] font-semibold text-[14px] mx-auto mt-3 text-center ">Produtos</h2>
 
 <h3 className="font-semibold text-[32px] text-center "> 5% Desconto</h3>
 
-<h5 className="text-[#475156] font-normal text-[14px]">Para todos os seguidores das nossas redes sociais</h5>
+<h4 className="text-[#475156] font-normal text-[14px]">Para todos os seguidores das nossas redes sociais</h4>
 <br/>
 
                                 <Link href={`https://wa.me/${phone}?text=${menssage}`} target="_blank"  className="rounded-[4px]  bg-[#2591d2] py-[12px] px-[32px] text-white w-[80%]  mx-auto   justify-center flex flex-row gap-3 " > Comprar&nbsp;agora 

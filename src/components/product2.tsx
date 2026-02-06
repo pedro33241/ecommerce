@@ -97,6 +97,7 @@ export function Product2() {
                                                 onClick={() => handleDecrement(item.id)}
                                                 className="p-1 hover:bg-gray-100 rounded"
                                                 disabled={getQuantity(item.id) === 1}
+                                                aria-label="Diminuir quantidade"
                                             >
                                                 <Minus className="h-3 w-3" />
                                             </button>
@@ -104,6 +105,7 @@ export function Product2() {
                                             <button
                                                 onClick={() => handleIncrement(item.id)}
                                                 className="p-1 hover:bg-gray-100 rounded"
+                                                aria-label="Aumentar quantidade"
                                             >
                                                 <Plus className="h-3 w-3" />
                                             </button>
@@ -111,6 +113,7 @@ export function Product2() {
                                         <Button
                                             onClick={() => handleAddToCart(item)}
                                             className="w-full md:flex-1 bg-green-500 hover:bg-green-600 text-white rounded-full text-xs py-1.5 px-2 flex items-center justify-center gap-1 truncate"
+                                            aria-label={`Adicionar ${item.nameProduct} ao carrinho`}
                                         >
                                             <ShoppingCart className="h-3 w-3 flex-shrink-0" />
                                             <span className="inline text-xs">Adicionar</span>

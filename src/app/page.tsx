@@ -1,16 +1,13 @@
 "use client"
 
 import "./globals.css"
-import { Product } from "../components/product";
-
+import dynamic from "next/dynamic";
 import { Footer } from "../components/footer/footer";
 
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react";
-import { Product2 } from "../components/product2";
 
 import { Publicity } from "../components/publicity"
-import { PublicityProductSecond } from "../components/publicity2";
 import Image from "next/image"
 
 import { motion, useInView } from "framer-motion";
@@ -19,8 +16,32 @@ import { Carousel } from "@/components/carousel";
 import { slides } from "@/components/constants";
 import NavBar from "@/components/layouts/navBar/navBar";
 import { Partners } from "@/components/partners";
-import { DecorativeElements } from "@/components/DecorativeElements"; 
-import { SplashAnimation } from "@/components/SplashAnimation";
+
+// Lazy load heavy components
+const Product = dynamic(() => import("../components/product").then(mod => ({ default: mod.Product })), {
+  loading: () => <div className="min-h-96 bg-gray-100 animate-pulse" />,
+  ssr: true
+});
+
+const Product2 = dynamic(() => import("../components/product2").then(mod => ({ default: mod.Product2 })), {
+  loading: () => <div className="min-h-96 bg-gray-100 animate-pulse" />,
+  ssr: true
+});
+
+const DecorativeElements = dynamic(() => import("../components/DecorativeElements").then(mod => ({ default: mod.DecorativeElements })), {
+  loading: () => null,
+  ssr: false
+});
+
+const SplashAnimation = dynamic(() => import("../components/SplashAnimation").then(mod => ({ default: mod.SplashAnimation })), {
+  loading: () => null,
+  ssr: false
+});
+
+const PublicityProductSecond = dynamic(() => import("../components/publicity2").then(mod => ({ default: mod.PublicityProductSecond })), {
+  loading: () => null,
+  ssr: true
+});
 export default function Home() {
 
 
@@ -53,7 +74,8 @@ export default function Home() {
     <>
       <NavBar />
     
-     <Carousel slides={slides} autoPlay interval={5000} />
+      <main>
+        <Carousel slides={slides} autoPlay interval={5000} />
 
       <motion.div
         ref={ref0}
@@ -77,6 +99,7 @@ export default function Home() {
                 height={40}
                 className=""
                 alt="imagem de entrega"
+                loading="lazy"
               /><h1 className="font-medium text-[14px]">ENTREGA MAIS RÁPIDA</h1>
               <span className="font-normal text-[14px] text-justify">Entrega em 24/H sobre confirmação de pagamento em transferência ou depósito bancário.</span>
           </div>
@@ -96,6 +119,7 @@ export default function Home() {
                 className="-mt-4"
                 height={40}
                 alt="imagem de entrega"
+                loading="lazy"
               />
               <h1 className="font-medium text-[14px]">RETORNO EM 24 HORAS</h1>
               <span className="font-normal text-[14px] text-justify">
@@ -115,6 +139,7 @@ export default function Home() {
                 height={40}
                 className="-mt-4"
                 alt="imagem de entrega"
+                loading="lazy"
               />
               <h1 className="font-medium text-[14px]">PAGAMENTO SEGURO</h1>
           <span className="font-normal text-[14px]">Seu dinheiro está seguro</span>
@@ -129,6 +154,7 @@ export default function Home() {
                 height={40}
                 className="-mt-4"
                 alt="imagem de entrega"
+                loading="lazy"
               />
               <h1 className="font-medium text-[14px]">SUPORTE DE 24 HORAS POR <br /> DIA, 7 DIAS POR SEMANA</h1>
             <span className="font-normal text-[14px]">Contato/mensagem ao vivo</span>
@@ -190,6 +216,7 @@ export default function Home() {
 
       <SplashAnimation />
       <Partners />
+      </main>
       <Footer />
       <Analytics />
       <SpeedInsights />

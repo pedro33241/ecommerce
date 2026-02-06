@@ -395,7 +395,7 @@ export function Product() {
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Cola e Resistente</h2>
                             <div className="lg:ml-10 sm:ml-0 flex items-center justify-center mt-24">
                                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 text-center">
-                                    <h3 className="text-lg font-semibold text-yellow-700">Sessão em atualização</h3>
+                                    <h4 className="text-lg font-semibold text-yellow-700">Sessão em atualização</h4>
                                     <p className="text-sm text-yellow-600 mt-2">Estamos atualizando os produtos desta categoria. Retornaremos em breve.</p>
                                 </div>
                             </div>
@@ -407,7 +407,7 @@ export function Product() {
                             <h2 className="ml-10 font-semibold lg:text-[24px] sm:text-[19px]">Melhores Produtos de Aditivo de Limpeza</h2>
                             <div className="lg:ml-10 sm:ml-0 flex items-center justify-center mt-24">
                                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 text-center">
-                                    <h3 className="text-lg font-semibold text-yellow-700">Sessão em atualização</h3>
+                                    <h4 className="text-lg font-semibold text-yellow-700">Sessão em atualização</h4>
                                     <p className="text-sm text-yellow-600 mt-2">Estamos atualizando os produtos desta categoria. Retornaremos em breve.</p>
                                 </div>
                             </div>

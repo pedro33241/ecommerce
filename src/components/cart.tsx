@@ -114,6 +114,7 @@ export function CartDrawer() {
                                                 size="icon"
                                                 onClick={() => removeData(item.id)}
                                                 className="h-6 w-6 shrink-0 text-gray-400 hover:text-red-500 transition-colors"
+                                                aria-label={`Remover ${item.nameProduct} do carrinho`}
                                             >
                                                 <X className="h-4 w-4" />
                                             </Button>
@@ -125,6 +126,7 @@ export function CartDrawer() {
                                                     size="icon"
                                                     onClick={() => decrementQuantity(item.id)}
                                                     className="h-7 w-7 text-gray-500 hover:text-gray-900 hover:bg-gray-200"
+                                                    aria-label="Diminuir quantidade"
                                                 >
                                                     <Minus className="h-3 w-3" />
                                                 </Button>
@@ -134,6 +136,7 @@ export function CartDrawer() {
                                                     size="icon"
                                                     onClick={() => incrementQuantity(item.id)}
                                                     className="h-7 w-7 text-gray-500 hover:text-gray-900 hover:bg-gray-200"
+                                                    aria-label="Aumentar quantidade"
                                                 >
                                                     <Plus className="h-3 w-3" />
                                                 </Button>
@@ -161,13 +164,15 @@ export function CartDrawer() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                             <button
                                 onClick={handleWhatsApp}
+                                aria-label="Enviar pedido por WhatsApp"
                                 className="w-full bg-green-500 text-white rounded-lg p-3 text-center font-semibold hover:bg-green-600 transition-colors"
                             >
                                 Enviar por WhatsApp
                             </button>
                             <button
                                 onClick={handleEmail}
-                                className="w-full bg-yellow-500 text-white rounded-lg p-3 text-center font-semibold hover:bg-yellow-600 transition-colors"
+                                aria-label="Enviar pedido por Email"
+                                className="w-full bg-orange-500 text-white rounded-lg p-3 text-center font-semibold hover:bg-orange-600 transition-colors"
                             >
                                 Enviar por Email
                             </button>
