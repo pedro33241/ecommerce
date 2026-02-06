@@ -7,6 +7,7 @@ import Link from "next/link"
 import { useState } from "react";
 import { CartDrawer } from "@/components/cart";
 import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
 
 export default function NavBar() {
     const [isOpen, setIsOpen] = useState(false)
@@ -14,7 +15,7 @@ export default function NavBar() {
     const handleClick = () => {
         setIsVisible(false)
     }
-    const phone = 936884337;
+    const phone = 933103913;
     const menssage = "Olá! Estou interessado(a) em um produto da sua empresa. Poderia me fornecer mais informações sobre ele, como preço, disponibilidade e características? Obrigado(a)!"
     const pathName = usePathname();
 
@@ -32,7 +33,7 @@ export default function NavBar() {
     return (
         <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
             <div className="mx-auto px-3 sm:px-4 md:px-6 lg:px-12 py-3 md:py-4 flex items-center justify-between h-auto md:h-20">
-                <Link href="/" className="h-full flex items-center justify-center flex-shrink-0">
+                <Link href="/" className="h-full flex items-center justify-center flex-shrink-0 mt-12">
                     <Image
                         src="/logo2.png"
                         alt="logo"
@@ -55,21 +56,26 @@ export default function NavBar() {
                 </nav>
                 <div className="md:hidden flex items-center gap-3 md:gap-4">
 
-                    <button onClick={() => setIsOpen(!isOpen)} className="w-9 md:w-10 rounded-full p-1.5 md:p-2 hover:bg-gray-200 h-9 md:h-10 flex flex-col justify-center gap-1">
-                        <span className="w-full h-0.5 bg-gray-700"></span>
-                        <span className="w-full h-0.5 bg-gray-700"></span>
-                        <span className="w-full h-0.5 bg-gray-700"></span>
+                    <button 
+                        onClick={() => setIsOpen(!isOpen)} 
+                        className="w-9 md:w-10 rounded-full p-1.5 md:p-2 hover:bg-gray-200 h-9 md:h-10 flex items-center justify-center transition-transform duration-300"
+                    >
+                        {isOpen ? (
+                            <X size={24} className="text-gray-700 transition-all duration-300" />
+                        ) : (
+                            <Menu size={24} className="text-gray-700 transition-all duration-300" />
+                        )}
                     </button>
 
                     <CartDrawer />
                 </div>
 
                 {isOpen && (
-                    <nav className="shadow absolute top-full left-0 right-0 bg-white border-t border-gray-200 md:hidden flex flex-col gap-3 p-4">
-                        <Link href="/" className="text-sm text-gray-600 hover:text-black transition-colors">
+                    <nav className="shadow absolute top-full left-0 right-0 bg-white border-t border-gray-200 md:hidden flex flex-col gap-3 p-8">
+                        <Link href="/" className="text-sm text-gray-600 hover:text-black transition-colors py-4">
                             Home
                         </Link>
-                        <Link href="/product" className="text-sm text-gray-600 hover:text-black transition-colors">
+                        <Link href="/product" className="text-sm text-gray-600 hover:text-black transition-colors py-4">
                             Produtos
                         </Link>
                         <Link href="/about" className="text-sm text-gray-600 hover:text-black transition-colors">
@@ -89,16 +95,15 @@ export default function NavBar() {
                     <div className="w-[80%] mx-auto bg-[#191c1f] md:flex-row sx:flex-col flex justify-between">
                         <div className={`mf:ml-24 md:ml-2 mt-4 flex flex-row  `}>
                             <label
-                                className="bg-[#f3de6d] w-[74px] h-[40px] px-[18px] pt-[8px] font-semibold"
+                                className="bg-[#f3de6d] w-[124px] h-[40px] px-[18px] pt-[8px] font-semibold"
                                 style={{ transform: 'rotate(-3deg)', display: 'inline-block' }}
                             >
-                                Black
+                                Seguidores
                             </label>
-                            <label className="font-semibold mf:text-2xl  ml-4 text-white">Friday</label>
-                        </div>
+                           </div>
                         <div className="flex ">
                             <span className="mf:text-[14px] sx:text-sm text-white font-medium mt-8 mr-3">Até</span>
-                            <span className="mt-7 text-[#ebc80c] font-semibold md:text-3xl mf:text-[40px]">59%</span>
+                            <span className="mt-7 text-[#ebc80c] font-semibold md:text-3xl mf:text-[40px]">5%</span>
                             <span className="mf:text-[14px] sx:text-sm text-white font-medium mt-8 ml-3">de Desconto</span>
                         </div>
                         <div>

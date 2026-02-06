@@ -6,9 +6,12 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { Badge } from "@/components/ui/badge"
 import { useStore } from "@/hook/useZustand"
 import Image from "next/image"
+
 export function CartDrawer() {
     const { data, removeData, incrementQuantity, decrementQuantity } = useStore();
- 
+    const whatsappPhone = "933103913"; // número usado no projeto
+    const emailTo = "dbsd.angola@gmail.com";
+
     type ProductType = {
         id: number;
         nameProduct: string;
@@ -17,6 +20,43 @@ export function CartDrawer() {
         alt: string;
         price: number;
         quantity?: number;
+    };
+
+    const buildMessage = () => {
+        if (!data || data.length === 0) return "";
+        const lines: string[] = [];
+        lines.push("Olá! Gostaria de comprar os seguintes produtos:");
+        lines.push("");
+       
+
+        data.forEach((item: ProductType, idx: number) => {
+            const qty = item.quantity || 1; 
+            lines.push(`${idx + 1}. ${item.nameProduct} (x${qty})`);
+        });
+        lines.push("");
+        lines.push(`Total de itens: ${data.reduce((s: number, it: ProductType) => s + (it.quantity||1), 0)}`);
+        lines.push("");
+        lines.push("Por favor, confirme disponibilidade e formas de pagamento.");
+        return lines.join("\n");
+    };
+
+    const handleWhatsApp = () => {
+        const msg = encodeURIComponent(buildMessage());
+        const url = `https://wa.me/${whatsappPhone}?text=${msg}`;
+        window.open(url, "_blank");
+    };
+
+    const handleEmail = () => {
+        const message = buildMessage();
+        if (!message) {
+            alert("Seu carrinho está vazio. Adicione produtos antes de enviar o pedido.");
+            return;
+        }
+        
+        const subject = "Pedido de Compra - Loja";
+        const gmailLink = `https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${encodeURIComponent(emailTo)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+        
+        window.open(gmailLink, "_blank");
     };
 
     // Calcular total de itens considerando quantidade
@@ -118,15 +158,20 @@ export function CartDrawer() {
                                 <span className="text-2xl font-bold text-blue-600">{totalItems}</span>
                             </div>
                         </div>
-                        <Button
-                            onClick={() => {
-                                // Lógica para comprar produtos
-                                alert(`${totalItems} produto(s) selecionado(s)! Redirecionando para checkout...`);
-                            }}
-                            className="w-full bg-blue-600 text-white rounded-lg p-3 text-center font-semibold hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg"
-                        >
-                            🛍️ Comprar Produtos
-                        </Button>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                            <button
+                                onClick={handleWhatsApp}
+                                className="w-full bg-green-500 text-white rounded-lg p-3 text-center font-semibold hover:bg-green-600 transition-colors"
+                            >
+                                Enviar por WhatsApp
+                            </button>
+                            <button
+                                onClick={handleEmail}
+                                className="w-full bg-yellow-500 text-white rounded-lg p-3 text-center font-semibold hover:bg-yellow-600 transition-colors"
+                            >
+                                Enviar por Email
+                            </button>
+                        </div>
 
                     </div>
                 )}

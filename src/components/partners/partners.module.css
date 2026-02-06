@@ -1,0 +1,124 @@
+.scrollContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+.scrollContent {
+  display: flex;
+  gap: 30px;
+  width: fit-content;
+}
+
+.partnerCard {
+  flex: 0 0 auto;
+  width: 250px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  transition: all 0.3s ease;
+}
+
+.partnerCard:hover {
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageWrapper img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+/* Fundo com ondas */
+.waveBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.wave {
+  width: 100%;
+  height: 100%;
+  animation: wave 15s linear infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(1200px);
+  }
+}
+
+/* Bolas flutuantes */
+.floatingBalls {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ball {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(135deg, rgba(59, 130, 246, 0.4), rgba(59, 130, 246, 0.1));
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
+  filter: blur(0.5px);
+}
+
+.ballSmall {
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(135deg, rgba(147, 197, 253, 0.5), rgba(147, 197, 253, 0.1));
+  box-shadow: 0 0 20px rgba(147, 197, 253, 0.3);
+}
+
+/* Gradientes e efeitos suaves */
+.scrollContainer::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  background: linear-gradient(to right, white 0%, transparent 100%);
+  z-index: 10;
+}
+
+.scrollContainer::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  background: linear-gradient(to left, white 0%, transparent 100%);
+  z-index: 10;
+}

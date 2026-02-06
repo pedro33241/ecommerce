@@ -54,14 +54,14 @@ export function Carousel({ slides, autoPlay = true, interval = 5000 }: CarouselP
                         <div className="absolute inset-0 bg-black/40" />
 
                         {/* Conteúdo */}
-                        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-                            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 max-w-5xl leading-tight">
+                        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6">
+                            <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-2 sm:mb-4 max-w-5xl leading-tight">
                                 {slide.title}
                             </h2>
-                            <p className="text-2xl md:text-3xl lg:text-4xl text-white font-semibold mb-6 max-w-4xl">
+                            <p className="text-sm sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl text-white font-semibold mb-3 sm:mb-6 max-w-4xl">
                                 {slide.subtitle}
                             </p>
-                            <p className="text-lg md:text-xl text-white/90 max-w-2xl">
+                            <p className="text-xs sm:text-sm md:text-lg lg:text-xl text-white/90 max-w-2xl">
                                 {slide.description}
                             </p>
                         </div>
@@ -73,7 +73,7 @@ export function Carousel({ slides, autoPlay = true, interval = 5000 }: CarouselP
             <Button
                 variant="ghost"
                 size="icon"
-                className="absolute left-4 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white"
+                className="absolute left-4 bottom-20 h-12 w-12 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white z-10"
                 onClick={goToPrevious}
             >
                 <ChevronLeft className="h-6 w-6" />
@@ -82,7 +82,7 @@ export function Carousel({ slides, autoPlay = true, interval = 5000 }: CarouselP
             <Button
                 variant="ghost"
                 size="icon"
-                className="absolute right-4 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white"
+                className="absolute right-4 bottom-20 h-12 w-12 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white z-10"
                 onClick={goToNext}
             >
                 <ChevronRight className="h-6 w-6" />

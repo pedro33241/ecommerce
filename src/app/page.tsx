@@ -18,6 +18,9 @@ import {  useRef } from "react";
 import { Carousel } from "@/components/carousel";
 import { slides } from "@/components/constants";
 import NavBar from "@/components/layouts/navBar/navBar";
+import { Partners } from "@/components/partners";
+import { DecorativeElements } from "@/components/DecorativeElements"; 
+import { SplashAnimation } from "@/components/SplashAnimation";
 export default function Home() {
 
 
@@ -60,7 +63,7 @@ export default function Home() {
         variants={variant}
       > 
 
-      <div className="p-7 justify-center mx-auto flex flex-wrap gap-24 mt-2 border border-[#e4e7e9]">
+      <div className="p-7 justify-center mx-auto flex flex-wrap gap-24 mt-2">
 
 
         <aside className="flex flex-row gap-4 md:border-r md:pr-24">
@@ -142,10 +145,12 @@ export default function Home() {
         transition={{ duration: 0.2, delay: 0 }}
         variants={variant}
       > 
+      <DecorativeElements variant="waves" position="top" />
       <Product />
-
+      <DecorativeElements variant="balls" position="bottom" />
 
       </motion.div>
+     
       <motion.div
         ref={ref2}
         initial="initial"
@@ -153,11 +158,14 @@ export default function Home() {
         transition={{ duration: 0.2, delay: 0 }}
         variants={variant}
       > 
-        <Publicity />
+        <div className="relative">
+          <Publicity />
+        </div>
 
       </motion.div>
+         
     
-      <div className="flex flex-col md:flex-row gap-8 mx-auto ">
+      <div className="flex flex-col md:flex-row gap-8 mx-auto relative">
           <motion.div
             ref={ref3}
             initial="initial"
@@ -180,6 +188,8 @@ export default function Home() {
 
       </div>
 
+      <SplashAnimation />
+      <Partners />
       <Footer />
       <Analytics />
       <SpeedInsights />

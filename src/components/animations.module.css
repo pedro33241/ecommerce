@@ -1,0 +1,55 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(240,249,255,0.5) 100%);
+}
+
+.sphere1 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(59, 130, 246, 0.05));
+  filter: blur(40px);
+  top: 10%;
+  left: 10%;
+  box-shadow: 0 0 60px rgba(59, 130, 246, 0.2);
+}
+
+.sphere2 {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(99, 102, 241, 0.02));
+  filter: blur(50px);
+  bottom: 10%;
+  right: 10%;
+  box-shadow: 0 0 80px rgba(99, 102, 241, 0.15);
+}
+
+.sphere3 {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(135deg, rgba(147, 197, 253, 0.4), rgba(147, 197, 253, 0.05));
+  filter: blur(35px);
+  top: 50%;
+  right: 20%;
+  box-shadow: 0 0 50px rgba(147, 197, 253, 0.2);
+}
+
+.lines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+}
