@@ -83,7 +83,7 @@ export function Footer() {
                             </Link>
                             <Link href={`https://wa.me/936884447?text=${menssage}`} target="_blank" className="text-gray-700 flex items-center gap-3 text-[14px] hover:text-gray-900 transition-colors">
                                 <MessageCircle size={20} className="text-green-500" />
-                                (+244) 936 884 447
+                                (+244) 936 884 337
                             </Link>
                             <Link href={`tel:${phone}`} className="text-gray-700 flex items-center gap-3 text-[14px] hover:text-gray-900 transition-colors">
                                 <Phone size={20} className="text-blue-500" />
@@ -111,7 +111,7 @@ export function Footer() {
                                 </Link>
                             </div>
 
-                            <p className="text-sm text-gray-700 mt-3">Siga-nos para novidades, promoções e suporte.</p>
+                            <p className="text-sm text-gray-700 mt-3">Siga-nos para novidades, promoções e suporte(Quem segue, poupa mais 😉).</p>
                         </div>
 
                     </div>
