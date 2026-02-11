@@ -9,7 +9,7 @@ export function Footer() {
     const menssage = "Olá! Estou interessado(a) em um produto da sua empresa. Poderia me fornecer mais informações sobre ele, como preço, disponibilidade e características? Obrigado(a)!"
     return (
         <>
-            <div id="contact" className=" relative w-full bg-[#f9fbfc] mt-36 pt-16 md:pt-0" style={{
+            <div id="contact" className=" relative w-full bg-[#F0F0F0] mt-36 pt-16 md:pt-0" style={{
                 borderTop: '1px solid',
                 borderImageSource: 'linear-gradient(90deg, rgba(1, 2, 2, 0.16) 0%, rgba(255, 255, 255, 0.16) 50%, rgba(1, 2, 2, 0.16) 100%)',
                 borderImageSlice: 1
@@ -121,7 +121,7 @@ export function Footer() {
             </div>
             <div className="w-full bg-gradient-to-r from-[#0f172a] to-[#111827] text-white py-6">
                 <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-                     <p className="text-xs md:text-sm text-gray-300"> &copy; 2026 WendySoft. Todos os direitos reservados. desenvolvido por <Link href="https://wendy-soft.vercel.app/" target="_blank" className="text-blue-300 hover:text-blue-100 underline">WendySoft</Link></p>
+                     <p className="text-xs md:text-sm text-gray-300"> &copy; 2026 DBSD. Todos os direitos reservados. desenvolvido por <Link href="https://wendy-soft.vercel.app/" target="_blank" className="text-blue-300 hover:text-blue-100 underline">WendySoft</Link></p>
                 </div>
             </div>
         </>
