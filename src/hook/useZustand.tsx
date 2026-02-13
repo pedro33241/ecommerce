@@ -21,6 +21,7 @@ type ZustandType = {
     updateQuantity: (id: number, quantity: number) => void;
     incrementQuantity: (id: number) => void;
     decrementQuantity: (id: number) => void;
+     clearData: () => void;
 };
 
 export const useStore = create<ZustandType>((set) => ({
@@ -30,7 +31,7 @@ export const useStore = create<ZustandType>((set) => ({
     handleOpen: () => set((state) => ({ open: !state.open })),
 
     setData: (newData) => set({ data: newData }),
-
+clearData: () => set({ data: [] }),
     addData: (newItem) =>
         set((state) => {
             const existingItem = state.data.find((item: ProductType) => item.id === newItem.id);

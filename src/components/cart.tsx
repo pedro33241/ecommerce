@@ -8,10 +8,9 @@ import { useStore } from "@/hook/useZustand"
 import Image from "next/image"
 
 export function CartDrawer() {
-    const { data, removeData, incrementQuantity, decrementQuantity } = useStore();
+    const { data, removeData, incrementQuantity, decrementQuantity ,clearData} = useStore();
     const whatsappPhone = "933103913"; // número usado no projeto
     const emailTo = "dbsd.angola@gmail.com";
-
     type ProductType = {
         id: number;
         nameProduct: string;
@@ -41,12 +40,15 @@ export function CartDrawer() {
     };
 
     const handleWhatsApp = () => {
+        
+        clearData()
         const msg = encodeURIComponent(buildMessage());
         const url = `https://wa.me/${whatsappPhone}?text=${msg}`;
         window.open(url, "_blank");
     };
 
     const handleEmail = () => {
+        clearData()
         const message = buildMessage();
         if (!message) {
             alert("Seu carrinho está vazio. Adicione produtos antes de enviar o pedido.");

@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Plus, Minus, ShoppingCart } from "lucide-react";
 import { useStore } from "@/hook/useZustand";
-import { useState, memo } from "react";
+import { useState } from "react";
 
 type ProductCardProps = {
     id: number;
@@ -15,7 +15,7 @@ type ProductCardProps = {
     price?: number;
 };
 
-function ProductCardComponent({ id, nameProduct, details, srcImage, alt, price }: ProductCardProps) {
+export function ProductCard({ id, nameProduct, details, srcImage, alt, price }: ProductCardProps) {
     const [quantity, setQuantity] = useState(1);
     const [showModal, setShowModal] = useState(false);
     const { addData } = useStore();
@@ -45,7 +45,7 @@ function ProductCardComponent({ id, nameProduct, details, srcImage, alt, price }
     return (
         <>
             <Card className="group overflow-hidden border-border transition-all hover:shadow-lg">
-                <div className="relative overflow-hidden h-40 w-full flex items-center justify-center">
+                <div className="">
                     <button
                         onClick={() => setShowModal(true)}
                         className="block w-full h-full p-0 m-0 bg-transparent border-0"
@@ -83,7 +83,6 @@ function ProductCardComponent({ id, nameProduct, details, srcImage, alt, price }
                             onClick={handleDecrement}
                             className="p-1 hover:bg-gray-100 rounded"
                             disabled={quantity === 1}
-                            aria-label="Diminuir quantidade"
                         >
                             <Minus className="h-3 w-3" />
                         </button>
@@ -91,7 +90,6 @@ function ProductCardComponent({ id, nameProduct, details, srcImage, alt, price }
                         <button
                             onClick={handleIncrement}
                             className="p-1 hover:bg-gray-100 rounded"
-                            aria-label="Aumentar quantidade"
                         >
                             <Plus className="h-3 w-3" />
                         </button>
@@ -99,7 +97,6 @@ function ProductCardComponent({ id, nameProduct, details, srcImage, alt, price }
                     <Button
                         onClick={handleAddToCart}
                         className="w-full md:flex-1 bg-green-500 hover:bg-green-600 text-white rounded-full text-xs py-1.5 px-2 flex items-center justify-center gap-1 truncate"
-                        aria-label={`Adicionar ${nameProduct} ao carrinho`}
                     >
                         <ShoppingCart className="h-3 w-3 flex-shrink-0" />
                         <span className="inline text-xs">Adicionar</span>
@@ -130,6 +127,3 @@ function ProductCardComponent({ id, nameProduct, details, srcImage, alt, price }
         </>
     );
 }
-
-export const ProductCard = memo(ProductCardComponent);
-

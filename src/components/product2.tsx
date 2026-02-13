@@ -55,7 +55,7 @@ export function Product2() {
                     <h1 className="font-semibold text-[18px] sm:text-[22px] text-black">Categorias De Produtos</h1>
                     <Link href="/product" className="text-[#1a73e8] font-medium text-[12px] sm:text-[14px] flex flex-row gap-3 w-fit">
                         Ver&nbsp;mais
-                        <Image alt="seta" src="setBlue.svg" width={24} className="-mt-2" height={24} />
+                        <Image alt="seta" src="/setBlue.svg" width={24} className="-mt-2" height={24} loading="lazy" unoptimized={true} />
                     </Link>
                 </div>
 
@@ -66,7 +66,7 @@ export function Product2() {
                                 <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
                                     <button
                                         onClick={() => { setModalImage(item.srcImage); setModalAlt(item.alt); }}
-                                        className="block w-full h-full p-0 m-0 bg-transparent border-0"
+                                        className=""
                                         aria-label={`Ver imagem de ${item.nameProduct}`}
                                     >
                                         <Image
@@ -74,7 +74,7 @@ export function Product2() {
                                             src={item.srcImage}
                                             width={250}
                                             height={180}
-                                            className="max-h-full max-w-full object-contain block m-auto"
+                                            className="max-h-full max-w-full object-contain  block m-auto"
                                         />
                                     </button>
                                 </div>

@@ -38,9 +38,11 @@ export function PublicityProductSecond(){
 
 <Image
 alt="imagem de publicidade"
-src="set2.svg"
+src="/set2.svg"
 width={312}
-height={428}/>
+height={428}
+loading="lazy"
+unoptimized={true}/>
 
 </div>
 </div>
