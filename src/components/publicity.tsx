@@ -14,8 +14,8 @@ export function Publicity() {
                 <div className="text-white flex flex-col gap-9">
                     <label htmlFor="" className="font-normal md:text-[18px] sm:text-[14px] md:w-[195px] sm:w-[165px] bg-[#2591d2] py-[6px] px-[12px] ">Economizar até 5%</label>
                     <div>
-                        <h2 className="font-semibold md:text-[36px]  sm:text-[24px]">Bem-Estar & Cuidados</h2>
-                        <span className="w-[360px] md:text-[16px] sm:text-[14px]">Descubra soluções completas para o seu bem-estar e saúde. Oferecemos cuidados essenciais que promovem equilíbrio, qualidade de vida e mais disposição para o seu dia a dia.
+                        <h2 className="font-semibold md:text-[36px]  sm:text-[24px]">BEM-ESTAR & CUIDADOS</h2>
+                        <span className="w-[360px] md:text-[16px] sm:text-[14px]">Soluções integradas que acompanham o seu ritmo. Oferecemos uma linha selecionada de cuidados de higiene, estética e conveniência para o seu ambiente corporativo e para o conforto da sua família. Da energia do café à excelência nos cuidados diários, garantimos o suporte necessário para o seu dia a dia.
  </span>
                     </div>
 

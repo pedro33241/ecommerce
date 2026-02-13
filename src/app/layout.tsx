@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { BackToTop } from "@/components/BackToTop";
-
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import "./globals.css";
 
 
@@ -49,8 +50,8 @@ export default function RootLayout({
       <body className={`antialiased`}  >
         {children}
         <BackToTop />
-        
-
+        <SpeedInsights />
+       <Analytics />
       </body>
       
     </html>
