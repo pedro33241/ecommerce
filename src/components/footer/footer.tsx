@@ -109,12 +109,7 @@ export function Footer() {
                                     </svg>
                                 </Link>
                             </div>
-<<<<<<< HEAD
                             <p className="text-[12px] font-bold text-gray-700 mt-3">Siga-nos para novidades, promoções e suporte.</p>
-=======
-
-                            <p className="text-sm text-gray-700 mt-3">Siga-nos para novidades, promoções e suporte(Quem segue, poupa mais 😉).</p>
->>>>>>> 81410b4bab75d3cde9486d68ac59f0cdc6c1141f
                         </div>
                     </div>
                 </div>
