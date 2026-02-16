@@ -19,12 +19,12 @@ import { Partners } from "@/components/partners";
 
 // Lazy load heavy components
 const Product = dynamic(() => import("../components/product").then(mod => ({ default: mod.Product })), {
-  loading: () => <div className="min-h-96 bg-gray-100 animate-pulse" />,
+  loading: () => <div className="min-h-96 bg-white border border-gray-200 animate-pulse" />,
   ssr: true
 });
 
 const Product2 = dynamic(() => import("../components/product2").then(mod => ({ default: mod.Product2 })), {
-  loading: () => <div className="min-h-96 bg-gray-100 animate-pulse" />,
+  loading: () => <div className="min-h-96 bg-white border border-gray-200 animate-pulse" />,
   ssr: true
 });
 
@@ -94,13 +94,12 @@ export default function Home() {
             <div className="flex flex-col gap-2 w-[240px] ">
 
               <Image
-                src="/entrega.svg"
+                src="/entrega.png"
                 width={40}
                 height={40}
-                className=""
                 alt="imagem de entrega"
                 loading="lazy"
-              /><h1 className="font-medium text-[14px]">ENTREGA MAIS RÁPIDA</h1>
+              /><h1 className="font-medium text-[14px]  font-bold">ENTREGA MAIS RÁPIDA</h1>
               <span className="font-normal text-[14px] text-justify">Entrega em 24/H sobre confirmação de pagamento em transferência ou depósito bancário.</span>
           </div>
         </aside>
@@ -116,12 +115,12 @@ export default function Home() {
                 src="/trop.svg"
                 width={40}
 
-                className="-mt-4"
+                className="-mt-4 bg-transparent"
                 height={40}
                 alt="imagem de entrega"
                 loading="lazy"
               />
-              <h1 className="font-medium text-[14px]">RETORNO EM 24 HORAS</h1>
+              <h1 className="font-medium text-[14px] font-bold">RETORNO EM 24 HORAS</h1>
               <span className="font-normal text-[14px] text-justify">
                 As devoluções são feitas apenas sobre defeitos de fábrica. As devoluções não poderão ser efectuadas 24 horas após a data de compra.
                 Os artigos e as embalagens a devolver terão de estar em boas condições.
@@ -137,11 +136,11 @@ export default function Home() {
                 src="/pagamento.svg"
                 width={40}
                 height={40}
-                className="-mt-4"
+                className="-mt-4 bg-transparent"
                 alt="imagem de entrega"
                 loading="lazy"
               />
-              <h1 className="font-medium text-[14px]">PAGAMENTO SEGURO</h1>
+              <h1 className="font-medium text-[14px]  font-bold">PAGAMENTO SEGURO</h1>
           <span className="font-normal text-[14px]">Seu dinheiro está seguro</span>
           </div>
         </aside>
@@ -152,11 +151,11 @@ export default function Home() {
                 src="/music.svg"
                 width={40}
                 height={40}
-                className="-mt-4"
+                className="-mt-4 bg-transparent"
                 alt="imagem de entrega"
                 loading="lazy"
               />
-              <h1 className="font-medium text-[14px]">SUPORTE DE 24 HORAS POR <br /> DIA, 7 DIAS POR SEMANA</h1>
+              <h1 className="font-medium text-[14px]  font-bold">SUPORTE DE 24 HORAS POR <br /> DIA, 7 DIAS POR SEMANA</h1>
             <span className="font-normal text-[14px]">Contato/mensagem ao vivo</span>
           </div>
         </aside>

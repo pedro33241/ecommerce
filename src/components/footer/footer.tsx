@@ -9,7 +9,7 @@ export function Footer() {
     const menssage = "Olá! Estou interessado(a) em um produto da sua empresa. Poderia me fornecer mais informações sobre ele, como preço, disponibilidade e características? Obrigado(a)!"
     return (
         <>
-            <div id="contact" className=" relative w-full bg-[#F0F0F0] mt-36 pt-16 md:pt-0" style={{
+            <div id="contact" className=" relative w-full bg-white mt-36 pt-16 md:pt-0" style={{
                 borderTop: '1px solid',
                 borderImageSource: 'linear-gradient(90deg, rgba(1, 2, 2, 0.16) 0%, rgba(255, 255, 255, 0.16) 50%, rgba(1, 2, 2, 0.16) 100%)',
                 borderImageSlice: 1
@@ -18,7 +18,7 @@ export function Footer() {
 
                 <Image
                     alt="decor-top-left"
-                    src="/img.svg"
+                    src="/circle.png"
                     width={116}
                     height={124}
                     className={`${styles.float} top-0 absolute left-0 hidden md:block z-20`}
@@ -26,7 +26,7 @@ export function Footer() {
 
                 <Image
                     alt="decor-top-right"
-                    src="/img.svg"
+                    src="/circle.png"
                     width={116}
                     height={124}
                     className={`${styles.floatReverse} top-0 absolute right-0 hidden md:block z-20`}
@@ -34,7 +34,7 @@ export function Footer() {
 
                 <Image
                     alt="decor-bottom-left"
-                    src="/img.svg"
+                    src="/circle.png"
                     width={116}
                     height={124}
                     className={`${styles.floatReverse} -mt-2 left-4 absolute bottom-4 hidden md:block z-20`}
@@ -42,7 +42,7 @@ export function Footer() {
 
                 <Image
                     alt="decor-bottom-right"
-                    src="/img.svg"
+                    src="/circle.png"
                     width={116}
                     height={124}
                     className={`${styles.float} -mt-2 right-4 absolute bottom-4 hidden lg:block z-20`}
@@ -57,7 +57,7 @@ export function Footer() {
                     <div className="w-full md:w-1/3 flex items-center md:items-start">
                         <Image
                             alt="logo"
-                            src="/logo.jpg"
+                            src="/logo.jpeg"
                             width={280}
                             height={8}
                             className="w-44 md:w-64 md:-mt-12 lg:-mt-16"

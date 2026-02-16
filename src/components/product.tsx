@@ -146,7 +146,7 @@ export function Product() {
                         {objectMaterial.map((item) => (
                             <button
                                 key={item.id}
-                                className={` flex flex-row gap-2 md:gap-4 pt-3 md:pt-4 rounded-[15px] h-12 md:h-[60px] justify-center px-2 md:px-4 py-auto text-xs md:text-[14px] font-medium ${activeTab === item?.id ? "active" : ""}`}
+                                className={` flex flex-row gap-2 md:gap-4 item-center justify-center p-4 rounded-[15px]  text-xs md:text-[14px] font-medium ${activeTab === item?.id ? "active" : ""}`}
                                 style={{ background: `${item?.background}`, color: `${item?.color}` }}
                                 onClick={() => handleTabChange(item?.id)}
                             >

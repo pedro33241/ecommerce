@@ -117,7 +117,7 @@ const ProductInfo = () => {
                     </div>
                 </section>
 
-                <section className="py-20 sm:py-28 bg-gray-50">
+                <section className="py-20 sm:py-28 bg-white">
                     <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
                         <div className="text-center mb-16">
                             <p className="text-yellow-400 text-sm font-semibold uppercase tracking-widest   mb-4">Nossos Pilares</p>
@@ -150,7 +150,7 @@ const ProductInfo = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             {competencies.map((comp, index) => (
                                 <ScrollAnimation key={index} direction={index % 2 === 0 ? "right" : "left"} delay={index * 0.1}>
-                                    <div className="relative p-8 bg-gray-50 rounded-lg border border-gray-200 hover:bg-yellow-600 hover:text-white hover:border-yellow-400 transition-all duration-300 group">
+                                    <div className="relative p-8 bg-white rounded-lg border border-gray-200 hover:bg-yellow-600 hover:text-white hover:border-yellow-400 transition-all duration-300 group">
                                         <div className="absolute top-0 left-0 w-1 h-full bg-yellow-400 rounded-l-lg"></div>
                                         <h3 className="text-xl font-bold mb-3 group-hover:text-white">{comp.title}</h3>
                                         <p className="text-gray-600 group-hover:text-white group-hover:text-opacity-90 leading-relaxed">
@@ -163,7 +163,7 @@ const ProductInfo = () => {
                     </div>
                 </section>
 
-                <section className="py-20 sm:py-28 bg-gray-50">
+                <section className="py-20 sm:py-28 bg-white">
                     <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                             <ScrollAnimation direction="right" delay={0.2}>

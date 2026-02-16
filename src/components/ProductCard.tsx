@@ -45,10 +45,10 @@ export function ProductCard({ id, nameProduct, details, srcImage, alt, price }: 
     return (
         <>
             <Card className="group overflow-hidden border-border transition-all hover:shadow-lg">
-                <div className="">
+                <div className="h-56 w-full bg-transparent flex items-center justify-center">
                     <button
                         onClick={() => setShowModal(true)}
-                        className="block w-full h-full p-0 m-0 bg-transparent border-0"
+                        className="block w-full h-full p-0 m-0 bg-transparent border-0 flex items-center justify-center"
                         aria-label={`Ver imagem de ${nameProduct}`}
                     >
                         <Image
@@ -56,7 +56,9 @@ export function ProductCard({ id, nameProduct, details, srcImage, alt, price }: 
                             src={srcImage}
                             width={180}
                             height={160}
-                            className="max-h-full max-w-full object-contain block m-auto transition-transform duration-300 group-hover:scale-105"
+                            className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                            loading="lazy"
+                            unoptimized={true}
                         />
                     </button>
                 </div>
@@ -78,10 +80,10 @@ export function ProductCard({ id, nameProduct, details, srcImage, alt, price }: 
 
                 {/* Quantity Controls and Cart Button */}
                 <div className="flex flex-col md:flex-row items-center gap-1 w-full">
-                    <div className="flex items-center gap-0.5 border border-gray-300 rounded-lg p-1 flex-shrink-0">
+                    <div className="flex items-center gap-0.5 border border-gray-300 rounded-lg p-1 flex-shrink-0 md:-mt-6 md:self-center">
                         <button
                             onClick={handleDecrement}
-                            className="p-1 hover:bg-gray-100 rounded"
+                            className="p-1 hover:opacity-70 rounded"
                             disabled={quantity === 1}
                         >
                             <Minus className="h-3 w-3" />
@@ -89,7 +91,7 @@ export function ProductCard({ id, nameProduct, details, srcImage, alt, price }: 
                         <span className="w-5 text-center text-xs font-medium">{quantity}</span>
                         <button
                             onClick={handleIncrement}
-                            className="p-1 hover:bg-gray-100 rounded"
+                            className="p-1 hover:opacity-70 rounded"
                         >
                             <Plus className="h-3 w-3" />
                         </button>

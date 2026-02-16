@@ -73,7 +73,7 @@ export function Carousel({ slides, autoPlay = true, interval = 5000 }: CarouselP
             <Button
                 variant="ghost"
                 size="icon"
-                className="absolute left-4 bottom-20 h-12 w-12 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white z-10"
+                className="absolute left-4 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white z-10"
                 onClick={goToPrevious}
             >
                 <ChevronLeft className="h-6 w-6" />
@@ -82,26 +82,11 @@ export function Carousel({ slides, autoPlay = true, interval = 5000 }: CarouselP
             <Button
                 variant="ghost"
                 size="icon"
-                className="absolute right-4 bottom-20 h-12 w-12 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white z-10"
+                className="absolute right-4 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white z-10"
                 onClick={goToNext}
             >
                 <ChevronRight className="h-6 w-6" />
             </Button>
-
-            {/* Indicadores */}
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
-                {slides.map((_, index) => (
-                    <button
-                        key={index}
-                        onClick={() => goToSlide(index)}
-                        className={cn(
-                            "h-3 rounded-full transition-all duration-300",
-                            index === currentSlide ? "w-12 bg-yellow-500" : "w-3 bg-white hover:bg-white/70"
-                        )}
-                        aria-label={`Ir para slide ${index + 1}`}
-                    />
-                ))}
-            </div>
         </div>
     )
 }

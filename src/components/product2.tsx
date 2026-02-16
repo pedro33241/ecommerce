@@ -62,19 +62,21 @@ export function Product2() {
                 <div className="tab-content mb-12">
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6 mt-12 sm:mt-24 px-2 sm:px-4 md:px-6 lg:px-10">
                         {accessoryProducts?.map((item: ProductType) => (
-                            <Card key={item.id} className="group overflow-hidden border-border  transition-all hover:shadow-lg">
-                                <div className="relative overflow-hidden  h-48 w-full flex items-center justify-center">
+                            <Card key={item.id} className="group overflow-hidden border-border transition-all hover:shadow-lg">
+                                <div className="relative w-full h-56 bg-transparent">
                                     <button
                                         onClick={() => { setModalImage(item.srcImage); setModalAlt(item.alt); }}
-                                        className=""
+                                        className="w-full h-full flex items-center justify-center"
                                         aria-label={`Ver imagem de ${item.nameProduct}`}
                                     >
                                         <Image
                                             alt={item.alt}
                                             src={item.srcImage}
                                             width={250}
-                                            height={180}
-                                            className="max-h-full max-w-full object-contain  block m-auto"
+                                            height={200}
+                                            className="h-full w-full object-contain"
+                                            loading="lazy"
+                                            unoptimized={true}
                                         />
                                     </button>
                                 </div>
@@ -95,7 +97,7 @@ export function Product2() {
                                         <div className="flex items-center gap-0.5 border border-gray-300 rounded-lg p-1 flex-shrink-0">
                                             <button
                                                 onClick={() => handleDecrement(item.id)}
-                                                className="p-1 hover:bg-gray-100 rounded"
+                                                className="p-1 hover:opacity-70 rounded"
                                                 disabled={getQuantity(item.id) === 1}
                                                 aria-label="Diminuir quantidade"
                                             >
@@ -104,7 +106,7 @@ export function Product2() {
                                             <span className="w-5 text-center text-xs font-medium">{getQuantity(item.id)}</span>
                                             <button
                                                 onClick={() => handleIncrement(item.id)}
-                                                className="p-1 hover:bg-gray-100 rounded"
+                                                className="p-1 hover:opacity-70 rounded"
                                                 aria-label="Aumentar quantidade"
                                             >
                                                 <Plus className="h-3 w-3" />

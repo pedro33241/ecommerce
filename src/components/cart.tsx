@@ -96,13 +96,15 @@ export function CartDrawer() {
                         <div className="space-y-3">
                             {data?.map((item: ProductType) => (
                                 <div key={item.id} className="flex gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition-shadow">
-                                    <div className="h-24 w-24 shrink-0 overflow-hidden rounded-lg bg-gray-100">
+                                    <div className="h-24 w-24 shrink-0 overflow-hidden rounded-lg bg-transparent">
                                         <Image
                                             alt={item.alt}
                                             src={item.srcImage}
                                             width={250}
                                             height={180}
                                             className="h-full w-full object-cover"
+                                            loading="lazy"
+                                            unoptimized={true}
                                         />
                                     </div>
                                     <div className="flex flex-1 flex-col justify-between">
@@ -122,12 +124,12 @@ export function CartDrawer() {
                                             </Button>
                                         </div>
                                         <div className="flex items-center justify-between mt-3">
-                                            <div className="flex items-center gap-2 bg-gray-100 rounded-lg p-1">
+                                            <div className="flex items-center gap-2 border border-gray-300 rounded-lg p-1">
                                                 <Button
                                                     variant="ghost"
                                                     size="icon"
                                                     onClick={() => decrementQuantity(item.id)}
-                                                    className="h-7 w-7 text-gray-500 hover:text-gray-900 hover:bg-gray-200"
+                                                    className="h-7 w-7 text-gray-500 hover:text-gray-900 hover:opacity-70"
                                                     aria-label="Diminuir quantidade"
                                                 >
                                                     <Minus className="h-3 w-3" />
@@ -137,7 +139,7 @@ export function CartDrawer() {
                                                     variant="ghost"
                                                     size="icon"
                                                     onClick={() => incrementQuantity(item.id)}
-                                                    className="h-7 w-7 text-gray-500 hover:text-gray-900 hover:bg-gray-200"
+                                                    className="h-7 w-7 text-gray-500 hover:text-gray-900 hover:opacity-70"
                                                     aria-label="Aumentar quantidade"
                                                 >
                                                     <Plus className="h-3 w-3" />
@@ -157,7 +159,7 @@ export function CartDrawer() {
                 </div>
                 {data?.length > 0 && (
                     <div className="border-t border-gray-200 pt-6 w-full space-y-4">
-                        <div className="bg-gray-50 rounded-lg p-4 space-y-2">
+                        <div className="bg-white border border-gray-200 rounded-lg p-4 space-y-2">
                             <div className="flex items-center justify-between">
                                 <span className="text-base font-medium text-gray-700">Total de Itens</span>
                                 <span className="text-2xl font-bold text-blue-600">{totalItems}</span>

@@ -56,7 +56,7 @@ function NavBarComponent() {
 
                     <button 
                         onClick={() => setIsOpen(!isOpen)} 
-                        className="w-9 md:w-10 rounded-full p-1.5 md:p-2 hover:bg-gray-200 h-9 md:h-10 flex items-center justify-center transition-transform duration-300"
+                        className="w-9 md:w-10 rounded-full p-1.5 md:p-2 hover:opacity-70 h-9 md:h-10 flex items-center justify-center transition-transform duration-300"
                     >
                         {isOpen ? (
                             <X size={24} className="text-gray-700 transition-all duration-300" />
@@ -118,7 +118,7 @@ function NavBarComponent() {
                         </div>
                     </div>
 
-                    <button onClick={handleClick} className="outline-none w-[32px] h-[32px] bg-[#303639] top-5 rounded-[2px] absolute right-6">
+                    <button onClick={handleClick} className="outline-none w-[32px] h-[32px] top-5 rounded-[2px] absolute right-6">
                         <Image
                             src="/X.svg"
                             alt="closed"
