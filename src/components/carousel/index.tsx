@@ -28,7 +28,6 @@ export function Carousel({ slides, autoPlay = true, interval = 5000 }: CarouselP
         return () => clearInterval(timer)
     }, [autoPlay, interval, slides.length])
 
-    const goToSlide = useCallback((index: number) => setCurrentSlide(index), [])
     const goToPrevious = useCallback(() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length), [slides.length])
     const goToNext = useCallback(() => setCurrentSlide((prev) => (prev + 1) % slides.length), [slides.length])
 
