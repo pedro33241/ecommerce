@@ -155,7 +155,7 @@ export default function Home() {
                 alt="imagem de entrega"
                 loading="lazy"
               />
-              <h1 className="font-medium text-[14px]  font-bold">SUPORTE DE 24 HORAS POR <br /> DIA, 7 DIAS POR SEMANA</h1>
+              <h1 className="font-bold text-[14px]  font-bold">SUPORTE DE 24 HORAS POR <br /> DIA, 7 DIAS POR SEMANA</h1>
             <span className="font-normal text-[14px]">Contato/mensagem ao vivo</span>
           </div>
         </aside>
