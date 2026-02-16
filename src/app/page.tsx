@@ -99,7 +99,7 @@ export default function Home() {
                 height={40}
                 alt="imagem de entrega"
                 loading="lazy"
-              /><h1 className="font-medium text-[14px]  font-bold">ENTREGA MAIS RÁPIDA</h1>
+              /><h1 className="f text-[14px]  font-bold">ENTREGA MAIS RÁPIDA</h1>
               <span className="font-normal text-[14px] text-justify">Entrega em 24/H sobre confirmação de pagamento em transferência ou depósito bancário.</span>
           </div>
         </aside>
@@ -120,7 +120,7 @@ export default function Home() {
                 alt="imagem de entrega"
                 loading="lazy"
               />
-              <h1 className="font-medium text-[14px] font-bold">RETORNO EM 24 HORAS</h1>
+              <h1 className="font-bold text-[14px] font-bold">RETORNO EM 24 HORAS</h1>
               <span className="font-normal text-[14px] text-justify">
                 As devoluções são feitas apenas sobre defeitos de fábrica. As devoluções não poderão ser efectuadas 24 horas após a data de compra.
                 Os artigos e as embalagens a devolver terão de estar em boas condições.
@@ -140,7 +140,7 @@ export default function Home() {
                 alt="imagem de entrega"
                 loading="lazy"
               />
-              <h1 className="font-medium text-[14px]  font-bold">PAGAMENTO SEGURO</h1>
+              <h1 className="font-bold text-[14px]  font-bold">PAGAMENTO SEGURO</h1>
           <span className="font-normal text-[14px]">Seu dinheiro está seguro</span>
           </div>
         </aside>
