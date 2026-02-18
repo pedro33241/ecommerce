@@ -28,7 +28,7 @@ export function PublicityProductSecond(){
 
          <div className={`flex flex-col justify-center mx-auto h:mb-24  `}>
 
-<div className="bg-[#f3de6d] w-[312px] h-[288px] pt-3">
+<div className="bg-[#f3de6d] rounded-sm w-[312px] h-[300px]">
     <div className="text-center flex flex-col justify-center ">
         
 <h2 className="text-[#be4646] font-semibold text-[14px] mx-auto mt-3 text-center ">Produtos</h2>
@@ -48,13 +48,13 @@ export function PublicityProductSecond(){
 
 
 
-<div className="relative w-full md:w-[312px] md:h-[428px] sm:w-[280px] sm:h-[380px] h-[320px] mx-auto overflow-hidden rounded-lg shadow-lg">
+<div className="relative -mt-5 w-full md:w-[312px] md:h-[428px] sm:w-[280px] sm:h-[380px] h-[320px] mx-auto overflow-hidden rounded-lg shadow-lg">
     <Image
         alt={`imagem de publicidade ${index + 1}`}
         src={images[index]}
         fill
         unoptimized={true}
-        className="object-cover transition-opacity duration-700 ease-in-out"
+                            className="object-contain transition-opacity duration-700 ease-in-out"
         priority={index === 0}
     />
 

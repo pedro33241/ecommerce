@@ -19,10 +19,10 @@ export function Publicity() {
                     <div>
                         <h2 className="font-semibold md:text-[36px]  sm:text-[24px]">BEM-ESTAR & </h2>
                         <span className="w-[360px] md:text-[16px] sm:text-[14px]">Soluções integradas que acompanham o seu ritmo. Oferecemos uma linha selecionada de cuidados de higiene, estética e conveniência para o seu ambiente corporativo e para o conforto da sua família. Da energia do café à excelência nos cuidados diários, garantimos o suporte necessário para o seu dia a dia.
- </span>
+                        </span>
                     </div>
 
-                    <Link href={`https://wa.me/${phone}?text=${menssage}`} target="_blank" className="rounded-[4px]  bg-[#fa8232] py-[12px] px-[32px] text-white md:w-[206px] sm:w-[180px]  sm:text-[14px] flex flex-row gap-3 " >
+                    <Link href={`https://wa.me/${phone}?text=${menssage}`} target="_blank" className="rounded-[4px]  bg-[#fa8232] py-[12px] px-[32px] text-white md:w-[206px] sm:w-[180px]  mb-12 sm:text-[14px] flex flex-row gap-3 " >
                         Compre&nbsp;agora
                         <Image
                             alt="seta para comprar"
@@ -42,7 +42,7 @@ export function Publicity() {
     )
 }
 
-function HealthCarousel({ className }: { className?: string }){
+function HealthCarousel({ className }: { className?: string }) {
     const images = Array.from({ length: 25 }, (_, i) => `/health/${i + 1}.jpg`);
     const [index, setIndex] = useState(0);
 
@@ -55,13 +55,13 @@ function HealthCarousel({ className }: { className?: string }){
     const next = () => setIndex((s) => (s + 1) % images.length);
 
     return (
-        <div className="relative w-full md:w-[700px] md:h-[475px] sm:w-[400px] sm:h-[300px] h-[280px] overflow-hidden rounded-lg shadow-xl">
+        <div className="relative w-full md:w-[1350px] md:h-[550px] sm:w-[500px] sm:h-[380px] h-[300px] overflow-visible rounded-lg shadow-xl">
             <Image
                 alt={`imagem de bem-estar ${index + 1}`}
                 src={images[index]}
                 fill
                 unoptimized={true}
-                className={`${className ?? ''} object-cover transition-opacity duration-700 ease-in-out`}
+                className={`${className ?? ''} w-full object-contain transition-opacity duration-700 ease-in-out`}
                 priority={index === 0}
             />
 
