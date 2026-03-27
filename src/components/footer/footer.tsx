@@ -37,7 +37,7 @@ export function Footer() {
                     src="/circle2.png"
                     width={116}
                     height={124}
-                    className={`${styles.floatReverse} -mt-2 left-4 absolute bottom-4 hidden md:block z-20`}
+                    className={`${styles.floatReverse} -mt-2 left-4 absolute bottom-4 hidden md:block z-24`}
                 />
 
                 <Image
