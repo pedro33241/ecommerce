@@ -18,7 +18,7 @@ export function Footer() {
 
                 <Image
                     alt="decor-top-left"
-                    src="/circle.png"
+                    src="/circle2.png"
                     width={116}
                     height={124}
                     className={`${styles.float} top-0 absolute left-0 hidden md:block z-20`}
@@ -26,7 +26,7 @@ export function Footer() {
 
                 <Image
                     alt="decor-top-right"
-                    src="/circle.png"
+                    src="/circle2.png"
                     width={116}
                     height={124}
                     className={`${styles.floatReverse} top-0 absolute right-0 hidden md:block z-20`}
@@ -34,7 +34,7 @@ export function Footer() {
 
                 <Image
                     alt="decor-bottom-left"
-                    src="/circle.png"
+                    src="/circle2.png"
                     width={116}
                     height={124}
                     className={`${styles.floatReverse} -mt-2 left-4 absolute bottom-4 hidden md:block z-20`}
@@ -42,7 +42,7 @@ export function Footer() {
 
                 <Image
                     alt="decor-bottom-right"
-                    src="/circle.png"
+                    src="/circle2.png"
                     width={116}
                     height={124}
                     className={`${styles.float} -mt-2 right-4 absolute bottom-4 hidden lg:block z-20`}
@@ -109,7 +109,7 @@ export function Footer() {
                                     </svg>
                                 </Link>
                             </div>
-                            <p className="text-[12px] font-bold text-gray-700 mt-3">Siga-nos para novidades, promoções e suporte.</p>
+                            <p className="text-[12px] font-bold text-gray-700 mt-3">Siga-nos para novidades, promoções e suporte.(Quem segue compra menos😉).</p>
                         </div>
                     </div>
                 </div>
