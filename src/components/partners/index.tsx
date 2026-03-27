@@ -10,9 +10,9 @@ export function Partners() {
     { id: 2, src: '/marc2.jpg', alt: 'Parceiro 2' },
     { id: 3, src: '/marc3.jpg', alt: 'Parceiro 3' },
     { id: 4, src: '/marc4.jpg', alt: 'Parceiro 4' },
+    { id: 5, src: '/marc5.jpg', alt: 'Parceiro 5' },
   ];
-
-  // Duplicar parceiros para efeito contínuo
+ 
   const duplicatedPartners = [...partners, ...partners];
 
   return (
