@@ -1,6 +1,5 @@
 import { create } from "zustand";
-import { persist, createJSONStorage } from "zustand/middleware";
-
+import { persist } from "zustand/middleware";
 
 
 type ProductType = {
@@ -23,6 +22,59 @@ type ZustandType = {
     incrementQuantity: (id: number) => void;
     decrementQuantity: (id: number) => void;
      clearData: () => void;
+};
+
+const createStorage = () => {
+    const noopStorage = {
+        getItem: async () => null,
+        setItem: () => {},
+        removeItem: () => {},
+    };
+
+    if (typeof window === 'undefined') {
+        return noopStorage;
+    }
+
+    try {
+        const testKey = '__zustand_storage_test__';
+        localStorage.setItem(testKey, '1');
+        localStorage.removeItem(testKey);
+    } catch (error) {
+        console.warn('localStorage not available, using in-memory storage', error);
+        return noopStorage;
+    }
+
+    return {
+        getItem: async (name: string) => {
+            try {
+                const value = localStorage.getItem(name);
+                if (!value) return null;
+                return JSON.parse(value);
+            } catch (error) {
+                console.warn('Failed to parse persisted cart storage. Clearing invalid data.', error);
+                try {
+                    localStorage.removeItem(name);
+                } catch {
+                    // ignore cleanup failures
+                }
+                return null;
+            }
+        },
+        setItem: (name: string, value: unknown) => {
+            try {
+                localStorage.setItem(name, JSON.stringify(value));
+            } catch (error) {
+                console.warn('Failed to write persisted cart storage.', error);
+            }
+        },
+        removeItem: (name: string) => {
+            try {
+                localStorage.removeItem(name);
+            } catch (error) {
+                console.warn('Failed to remove persisted cart storage.', error);
+            }
+        },
+    };
 };
 
 export const useStore = create<ZustandType>()(
@@ -82,38 +134,7 @@ export const useStore = create<ZustandType>()(
         }),
         {
             name: 'cart-storage',
-            storage: createJSONStorage(() => {
-                if (typeof window === 'undefined') {
-                    return {
-                        getItem: () => null,
-                        setItem: () => {},
-                        removeItem: () => {},
-                    };
-                }
-                try {
-                    return localStorage;
-                } catch (error) {
-                    console.warn('localStorage not available, using in-memory storage', error);
-                    return {
-                        getItem: () => null,
-                        setItem: () => {},
-                        removeItem: () => {},
-                    };
-                }
-            }),
-            deserialize: (value) => {
-                try {
-                    return value ? JSON.parse(value) : undefined;
-                } catch (error) {
-                    console.warn('Failed to parse persisted cart storage. Clearing invalid data.', error);
-                    try {
-                        localStorage.removeItem('cart-storage');
-                    } catch {
-                        // ignore cleanup failures
-                    }
-                    return undefined;
-                }
-            },
+            storage: createStorage(),
             skipHydration: true,
         }
     )
