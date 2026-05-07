@@ -101,6 +101,19 @@ export const useStore = create<ZustandType>()(
                     };
                 }
             }),
+            deserialize: (value) => {
+                try {
+                    return value ? JSON.parse(value) : undefined;
+                } catch (error) {
+                    console.warn('Failed to parse persisted cart storage. Clearing invalid data.', error);
+                    try {
+                        localStorage.removeItem('cart-storage');
+                    } catch {
+                        // ignore cleanup failures
+                    }
+                    return undefined;
+                }
+            },
             skipHydration: true,
         }
     )

@@ -1,4 +1,5 @@
- 
+"use client"
+
 import {  lightingProduct } from "@/components/mook/lightingProduct";
 import { useZustand } from "@/context/zustand";
 import { useState } from "react";
